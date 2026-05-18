@@ -2,6 +2,8 @@ package dev.uiweaver.forge.client.screen;
 
 import dev.uiweaver.api.spec.UIScreenSpec;
 import dev.uiweaver.api.view.UIViewModel;
+import dev.uiweaver.forge.client.debug.UIDebugOverlay;
+import dev.uiweaver.forge.client.debug.UIInspector;
 import dev.uiweaver.forge.client.input.InputHandler;
 import dev.uiweaver.forge.client.render.UIRenderer;
 import dev.uiweaver.runtime.menu.UIMenu;
@@ -9,6 +11,7 @@ import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Inventory;
+import org.lwjgl.glfw.GLFW;
 
 public class UIContainerScreen extends AbstractContainerScreen<UIMenu> {
 
@@ -16,12 +19,12 @@ public class UIContainerScreen extends AbstractContainerScreen<UIMenu> {
     private final UIViewModel viewModel;
     private UIRenderer renderer;
     private InputHandler inputHandler;
+    private final UIInspector inspector = new UIInspector();
 
     public UIContainerScreen(UIMenu menu, Inventory inventory, Component title) {
         super(menu, inventory, title);
         this.spec = menu.getSpec();
         this.viewModel = new UIViewModel();
-        // move labels off-screen so AbstractContainerScreen doesn't draw them
         this.titleLabelX = -10000;
         this.titleLabelY = -10000;
         this.inventoryLabelX = -10000;
@@ -46,6 +49,21 @@ public class UIContainerScreen extends AbstractContainerScreen<UIMenu> {
         super.render(graphics, mouseX, mouseY, partialTick);
         renderer.renderForeground(graphics, mouseX, mouseY);
         renderTooltip(graphics, mouseX, mouseY);
+
+        if (UIDebugOverlay.isEnabled()) {
+            UIDebugOverlay.render(graphics, spec.getRoot());
+            inspector.render(graphics, spec, viewModel, mouseX, mouseY, height);
+        }
+    }
+
+    @Override
+    public boolean keyPressed(int keyCode, int scanCode, int modifiers) {
+        if (keyCode == GLFW.GLFW_KEY_U && (modifiers & GLFW.GLFW_MOD_CONTROL) != 0) {
+            UIDebugOverlay.toggle();
+            return true;
+        }
+        if (inputHandler.onKeyPressed(keyCode, scanCode, modifiers)) return true;
+        return super.keyPressed(keyCode, scanCode, modifiers);
     }
 
     @Override
@@ -58,12 +76,6 @@ public class UIContainerScreen extends AbstractContainerScreen<UIMenu> {
     public boolean mouseScrolled(double mouseX, double mouseY, double delta) {
         if (inputHandler.onMouseScrolled(mouseX, mouseY, delta)) return true;
         return super.mouseScrolled(mouseX, mouseY, delta);
-    }
-
-    @Override
-    public boolean keyPressed(int keyCode, int scanCode, int modifiers) {
-        if (inputHandler.onKeyPressed(keyCode, scanCode, modifiers)) return true;
-        return super.keyPressed(keyCode, scanCode, modifiers);
     }
 
     @Override

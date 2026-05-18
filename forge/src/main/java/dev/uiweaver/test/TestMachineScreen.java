@@ -52,23 +52,33 @@ public class TestMachineScreen implements UIScreen {
                 .action("stop",  onStop)
 
                 .root(ui.column().padding(8).gap(4).size(176, 200)
-                        .add(ui.label(Component.literal("Test Machine")).id("title").size(160, 10))
 
-                        .add(ui.row().gap(6).size(160, 54)
-                                .add(ui.energyBar().id("energyBar").bind("energy", "maxEnergy").size(8, 52))
-                                .add(ui.column().gap(4).size(60, 52)
-                                        .add(ui.button(Component.literal("Start")).id("btnStart").action("start").size(56, 20))
-                                        .add(ui.button(Component.literal("Stop")).id("btnStop").action("stop").size(56, 20))
+                        .add(ui.label(Component.literal("Test Machine"))
+                                .id("title").fillWidth().height(10))
+
+                        .add(ui.row().gap(6).fillWidth().height(54)
+
+                                .add(ui.energyBar().id("energyBar")
+                                        .bind("energy", "maxEnergy")
+                                        .size(8, 52))
+
+                                .add(ui.column().gap(4).grow().height(52)
+
+                                        .add(ui.button(Component.literal("Start"))
+                                                .id("btnStart").action("start")
+                                                .fillWidth().height(20).minWidth(40))
+
+                                        .add(ui.button(Component.literal("Stop"))
+                                                .id("btnStop").action("stop")
+                                                .fillWidth().height(20).minWidth(40))
                                 )
                         )
 
-                        .add(ui.column().gap(0).padding(8, 0) // 8px de padding top
-                                .add(ui.slotGrid(3, 3).id("slots"))
-                        )
-                )
+                        .add(ui.label(Component.literal("Items"))
+                                .id("invLabel").fillWidth().height(10))
 
-                .bind("energyBar", "energy",    "energy")
-                .bind("energyBar", "maxEnergy", "maxEnergy")
+                        .add(ui.slotGrid(3, 3).id("slots"))
+                )
                 .build();
     }
 }

@@ -1,10 +1,10 @@
 package dev.uiweaver.fabric.client.render;
 
 import dev.uiweaver.api.component.AbstractComponent;
+import dev.uiweaver.api.component.LayoutContainer;
 import dev.uiweaver.api.component.UIComponent;
 import dev.uiweaver.api.layout.Bounds;
 import dev.uiweaver.api.layout.Size;
-import dev.uiweaver.client.render.LayoutAware;
 
 public class LayoutResolver {
 
@@ -16,17 +16,17 @@ public class LayoutResolver {
     private static void resolveChildren(UIComponent component) {
         if (component.getChildren().isEmpty()) return;
 
-        if (component instanceof LayoutAware layoutAware) {
-            layoutAware.getLayoutEngine().layout(component.getChildren(), component.getBounds());
+        if (component instanceof LayoutContainer container) {
+            container.getLayoutEngine().layout(component.getChildren(), component.getBounds());
         }
 
         for (UIComponent child : component.getChildren()) {
             if (child instanceof AbstractComponent ac) {
                 Size pref = ac.getPreferredSize();
                 Bounds current = child.getBounds();
-                if (current != null) {
-                    int w = pref.isFixedWidth()  ? pref.width()  : current.width();
-                    int h = pref.isFixedHeight() ? pref.height() : current.height();
+                if (current != null && pref.isFixedWidth() && pref.isFixedHeight()) {
+                    int w = pref.clampWidth(pref.width());
+                    int h = pref.clampHeight(pref.height());
                     if (w != current.width() || h != current.height()) {
                         child.setBounds(Bounds.of(current.x(), current.y(), w, h));
                     }

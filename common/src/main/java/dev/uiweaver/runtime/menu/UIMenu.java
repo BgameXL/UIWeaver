@@ -49,6 +49,9 @@ public class UIMenu extends AbstractContainerMenu {
         registerSlotsFromSpec(spec.getRoot());
         this.machineSlotCount = slots.size();
         addPlayerInventorySlots(playerInventory);
+
+        // force full sync on open so client doesn't start with empty values
+        this.syncManager.forceFullSync();
     }
 
     private void registerSlotsFromSpec(UIComponent component) {
@@ -79,7 +82,7 @@ public class UIMenu extends AbstractContainerMenu {
         super.broadcastChanges();
 
         if (!(playerInventory.player instanceof ServerPlayer serverPlayer)) {
-            LOGGER.debug("[UIWeaver] broadcastChanges skipped — player is not ServerPlayer ({})",
+            LOGGER.debug("[UIWeaver] broadcastChanges skipped — not ServerPlayer ({})",
                     playerInventory.player == null ? "null" : playerInventory.player.getClass().getSimpleName());
             return;
         }
@@ -128,7 +131,7 @@ public class UIMenu extends AbstractContainerMenu {
         dispatcher.dispatch(packet, player);
     }
 
-    public void forceFullSync(ServerPlayer player) {
+    public void forceFullSync() {
         syncManager.forceFullSync();
     }
 

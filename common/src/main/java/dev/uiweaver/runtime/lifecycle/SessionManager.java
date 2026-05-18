@@ -12,7 +12,7 @@ public class SessionManager {
 
     public static void onOpen(ServerPlayer player, UIMenu menu) {
         ACTIVE.put(player.getUUID(), menu);
-        menu.forceFullSync(player);
+        menu.forceFullSync();
     }
 
     public static void onClose(ServerPlayer player) {

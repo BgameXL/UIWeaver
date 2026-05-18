@@ -55,7 +55,9 @@ public class TestMachineScreen implements UIScreen {
                         .add(ui.label(Component.literal("Test Machine")).id("title").size(160, 10))
 
                         .add(ui.row().gap(6).size(160, 54)
-                                .add(ui.energyBar().id("energyBar").bind("energy", "maxEnergy").size(8, 52))
+                                .add(ui.energyBar().id("energyBar")
+                                        .bind("energy", "maxEnergy")
+                                        .size(8, 52))
                                 .add(ui.column().gap(4).size(60, 52)
                                         .add(ui.button(Component.literal("Start")).id("btnStart").action("start").size(56, 20))
                                         .add(ui.button(Component.literal("Stop")).id("btnStop").action("stop").size(56, 20))
@@ -65,9 +67,6 @@ public class TestMachineScreen implements UIScreen {
                         .add(ui.label(Component.literal("Items")).id("invLabel").size(160, 10))
                         .add(ui.slotGrid(3, 3).id("slots"))
                 )
-
-                .bind("energyBar", "energy",    "energy")
-                .bind("energyBar", "maxEnergy", "maxEnergy")
                 .build();
     }
 }

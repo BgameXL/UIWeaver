@@ -27,7 +27,9 @@ public class ContextValidator {
         if (pos == null) return Result.BLOCK_ENTITY_MISSING;
 
         int maxDist = spec.getMaxDistance();
-        if (player.blockPosition().distSqr(pos) > (double) maxDist * maxDist) return Result.TOO_FAR;
+        double distSqr = player.distanceToSqr(
+                pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5);
+        if (distSqr > (double) maxDist * maxDist) return Result.TOO_FAR;
 
         BlockEntity be = player.serverLevel().getBlockEntity(pos);
         if (be == null) return Result.BLOCK_ENTITY_MISSING;

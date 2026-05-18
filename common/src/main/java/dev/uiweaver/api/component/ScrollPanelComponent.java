@@ -2,11 +2,10 @@ package dev.uiweaver.api.component;
 
 import dev.uiweaver.api.layout.LayoutEngine;
 import dev.uiweaver.api.layout.Size;
-import dev.uiweaver.client.render.LayoutAware;
 
 import java.util.List;
 
-public class ScrollPanelComponent extends AbstractComponent implements LayoutAware {
+public class ScrollPanelComponent extends AbstractComponent implements LayoutContainer {
 
     private final LayoutEngine layoutEngine;
     private int scrollOffset = 0;

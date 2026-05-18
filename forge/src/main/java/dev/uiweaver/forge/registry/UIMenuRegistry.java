@@ -54,7 +54,7 @@ public class UIMenuRegistry {
         MenuScreens.<UIMenu, UIContainerScreen>register(
                 GENERIC_MENU.get(),
                 (menu, inventory, title) -> new UIContainerScreen(
-                        menu, inventory, title)
+                        menu, inventory, Component.literal(menu.getSpec().getScreenId()))
         );
     }
 
@@ -76,11 +76,15 @@ public class UIMenuRegistry {
             buf.writeBoolean(pos != null);
             if (pos != null) buf.writeBlockPos(pos);
         });
+
+        if (player.containerMenu instanceof UIMenu menu) {
+            menu.broadcastChanges();
+        }
     }
 
     public static void open(ServerPlayer player, String screenId, BlockPos pos) {
         UIScreen factory = UIRegistry.getFactory(screenId);
-        if (factory == null) throw new IllegalArgumentException("No factory registered for: " + screenId);
+        if (factory == null) throw new IllegalArgumentException("No factory for screen: " + screenId);
         open(player, factory, screenId, pos);
     }
 

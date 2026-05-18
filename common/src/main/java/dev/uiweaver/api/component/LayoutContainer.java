@@ -1,8 +1,7 @@
-package dev.uiweaver.client.render;
+package dev.uiweaver.api.component;
 
 import dev.uiweaver.api.layout.LayoutEngine;
 
-public interface LayoutAware {
-
+public interface LayoutContainer {
     LayoutEngine getLayoutEngine();
 }
