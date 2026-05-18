@@ -5,6 +5,8 @@ import dev.uiweaver.api.debug.ComponentTreeNode;
 import dev.uiweaver.api.layout.Bounds;
 import dev.uiweaver.api.spec.UIScreenSpec;
 import dev.uiweaver.api.view.UIViewModel;
+import dev.uiweaver.api.component.TabsComponent;
+import dev.uiweaver.api.component.UIComponent;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
@@ -26,28 +28,26 @@ public class UIInspector {
     private static final int COLOR_HOVER  = 0x33FFFFFF;
     private static final int COLOR_WARN   = 0xFFFF4444;
 
-    private ComponentTreeNode hoveredNode = null;
+    private UIComponent hoveredComponent = null;
 
     public void render(GuiGraphics graphics, UIScreenSpec spec, UIViewModel viewModel,
                        int mouseX, int mouseY, int screenHeight) {
         Font font = Minecraft.getInstance().font;
-        ComponentTreeNode root = ComponentTreeBuilder.snapshot(spec.getRoot());
-        hoveredNode = findHovered(root, mouseX, mouseY);
+        UIComponent root = spec.getRoot();
+        hoveredComponent = findHovered(root, mouseX, mouseY);
 
-        // collect lines
         var lines = new java.util.ArrayList<InspectorLine>();
         lines.add(new InspectorLine("── Component Tree ──", COLOR_ID, 0));
         collectTreeLines(root, 0, lines, mouseX, mouseY);
         lines.add(new InspectorLine("", COLOR_TYPE, 0));
         lines.add(new InspectorLine("── ViewModel ──", COLOR_ID, 0));
         collectViewModelLines(viewModel, lines);
-        if (hoveredNode != null) {
+        if (hoveredComponent != null) {
             lines.add(new InspectorLine("", COLOR_TYPE, 0));
             lines.add(new InspectorLine("── Hovered ──", COLOR_ID, 0));
-            collectNodeDetail(hoveredNode, lines);
+            collectComponentDetail(hoveredComponent, lines);
         }
 
-        // draw panel
         int panelH = lines.size() * LINE_H + PADDING * 2;
         int panelY = Math.min(PANEL_X, screenHeight - panelH - PANEL_X);
         graphics.fill(PANEL_X, panelY, PANEL_X + PANEL_W, panelY + panelH, BG);
@@ -62,31 +62,51 @@ public class UIInspector {
             y += LINE_H;
         }
 
-        if (hoveredNode != null && hoveredNode.bounds() != null) {
-            Bounds b = hoveredNode.bounds();
+        if (hoveredComponent != null && hoveredComponent.getBounds() != null) {
+            Bounds b = hoveredComponent.getBounds();
             graphics.fill(b.x(), b.y(), b.right(), b.bottom(), COLOR_HOVER);
             graphics.renderOutline(b.x(), b.y(), b.width(), b.height(), COLOR_ID);
         }
     }
 
-    private void collectTreeLines(ComponentTreeNode node, int depth,
-                                   List<InspectorLine> lines, int mouseX, int mouseY) {
-        boolean hovered = node.bounds() != null && node.bounds().contains(mouseX, mouseY);
+    private void collectTreeLines(UIComponent component, int depth,
+                                  List<InspectorLine> lines, int mouseX, int mouseY) {
+        if (component == null || !component.isVisible()) {
+            return;
+        }
+
+        Bounds bounds = component.getBounds();
+        boolean hovered = bounds != null && bounds.contains(mouseX, mouseY);
+
         String prefix = depth == 0 ? "" : "└ ";
-        String typeStr = prefix + node.type().toLowerCase();
-        int typeColor = !node.visible() ? COLOR_WARN : hovered ? COLOR_ID : COLOR_TYPE;
+        String typeStr = prefix + String.valueOf(component.getType()).toLowerCase();
+
+        int typeColor = hovered ? COLOR_ID : COLOR_TYPE;
         lines.add(new InspectorLine(typeStr, typeColor, depth));
 
-        if (node.hasId()) {
-            lines.add(new InspectorLine("id=" + node.id(), COLOR_ID, depth + 1));
-        }
-        if (node.bounds() != null) {
-            Bounds b = node.bounds();
-            lines.add(new InspectorLine(b.x() + "," + b.y() + " " + b.width() + "×" + b.height(),
-                    COLOR_BOUNDS, depth + 1));
+        if (component.getId() != null) {
+            lines.add(new InspectorLine("id=" + component.getId(), COLOR_ID, depth + 1));
         }
 
-        for (ComponentTreeNode child : node.children()) {
+        if (bounds != null) {
+            lines.add(new InspectorLine(
+                    bounds.x() + "," + bounds.y() + " " + bounds.width() + "×" + bounds.height(),
+                    COLOR_BOUNDS,
+                    depth + 1
+            ));
+        }
+
+        if (component instanceof TabsComponent tabs) {
+            UIComponent active = tabs.getActiveContent();
+
+            if (active != null && active.isVisible()) {
+                collectTreeLines(active, depth + 1, lines, mouseX, mouseY);
+            }
+
+            return;
+        }
+
+        for (UIComponent child : component.getChildren()) {
             collectTreeLines(child, depth + 1, lines, mouseX, mouseY);
         }
     }
@@ -102,23 +122,59 @@ public class UIInspector {
         }
     }
 
-    private void collectNodeDetail(ComponentTreeNode node, List<InspectorLine> lines) {
-        lines.add(new InspectorLine("type=" + node.type(), COLOR_TYPE, 1));
-        if (node.hasId()) lines.add(new InspectorLine("id=" + node.id(), COLOR_ID, 1));
-        if (node.bounds() != null) {
-            Bounds b = node.bounds();
+    private void collectComponentDetail(UIComponent component, List<InspectorLine> lines) {
+        lines.add(new InspectorLine("type=" + component.getType(), COLOR_TYPE, 1));
+
+        if (component.getId() != null) {
+            lines.add(new InspectorLine("id=" + component.getId(), COLOR_ID, 1));
+        }
+
+        if (component.getBounds() != null) {
+            Bounds b = component.getBounds();
             lines.add(new InspectorLine("x=" + b.x() + " y=" + b.y(), COLOR_BOUNDS, 1));
             lines.add(new InspectorLine("w=" + b.width() + " h=" + b.height(), COLOR_BOUNDS, 1));
         }
-        lines.add(new InspectorLine("visible=" + node.visible() + " enabled=" + node.enabled(), COLOR_TYPE, 1));
+
+        lines.add(new InspectorLine(
+                "visible=" + component.isVisible() + " enabled=" + component.isEnabled(),
+                COLOR_TYPE,
+                1
+        ));
     }
 
-    private ComponentTreeNode findHovered(ComponentTreeNode node, int mouseX, int mouseY) {
-        for (int i = node.children().size() - 1; i >= 0; i--) {
-            ComponentTreeNode found = findHovered(node.children().get(i), mouseX, mouseY);
+    private UIComponent findHovered(UIComponent component, int mouseX, int mouseY) {
+        if (component == null || !component.isVisible()) {
+            return null;
+        }
+
+        if (component instanceof TabsComponent tabs) {
+            UIComponent active = tabs.getActiveContent();
+
+            if (active != null) {
+                UIComponent found = findHovered(active, mouseX, mouseY);
+                if (found != null) return found;
+            }
+
+            Bounds b = component.getBounds();
+            if (b != null && b.contains(mouseX, mouseY)) {
+                return component;
+            }
+
+            return null;
+        }
+
+        List<UIComponent> children = component.getChildren();
+
+        for (int i = children.size() - 1; i >= 0; i--) {
+            UIComponent found = findHovered(children.get(i), mouseX, mouseY);
             if (found != null) return found;
         }
-        if (node.bounds() != null && node.bounds().contains(mouseX, mouseY)) return node;
+
+        Bounds b = component.getBounds();
+        if (b != null && b.contains(mouseX, mouseY)) {
+            return component;
+        }
+
         return null;
     }
 

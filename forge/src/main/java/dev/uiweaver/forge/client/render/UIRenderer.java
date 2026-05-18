@@ -46,7 +46,13 @@ public class UIRenderer {
         if (!component.isVisible()) return;
 
         var renderer = renderers.get(component.getType());
-        if (renderer != null) renderer.render(graphics, component, viewModel, theme, mouseX, mouseY, layer);
+        if (renderer != null) {
+            renderer.render(graphics, component, viewModel, theme, mouseX, mouseY, layer);
+        }
+
+        if (component instanceof dev.uiweaver.api.component.TabsComponent) {
+            return;
+        }
 
         for (UIComponent child : component.getChildren()) {
             renderComponent(graphics, child, theme, mouseX, mouseY, layer);

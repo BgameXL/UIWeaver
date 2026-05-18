@@ -10,6 +10,7 @@ import java.util.List;
 public class TabsComponent extends AbstractComponent implements LayoutContainer {
 
     public static final int TAB_HEIGHT = 20;
+    public static final int CONTENT_GAP = 16;
 
     private final List<Component> tabLabels;
     private int activeTab = 0;
@@ -48,7 +49,15 @@ public class TabsComponent extends AbstractComponent implements LayoutContainer 
     public Bounds getContentBounds() {
         Bounds b = getBounds();
         if (b == null) return null;
-        return Bounds.of(b.x(), b.y() + TAB_HEIGHT, b.width(), b.height() - TAB_HEIGHT);
+
+        int offset = TAB_HEIGHT + CONTENT_GAP;
+
+        return Bounds.of(
+                b.x(),
+                b.y() + offset,
+                b.width(),
+                Math.max(0, b.height() - offset)
+        );
     }
 
     public int getTabWidth() {

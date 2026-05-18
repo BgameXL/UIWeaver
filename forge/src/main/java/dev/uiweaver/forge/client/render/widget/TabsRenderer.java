@@ -73,9 +73,7 @@ public class TabsRenderer implements ForgeWidgetRenderer<TabsComponent> {
         Bounds cb = component.getContentBounds();
         if (cb == null) return;
 
-        if (content.getBounds() == null) {
-            content.setBounds(cb);
-        }
+        content.setBounds(cb);
 
         ForgeWidgetRendererRegistry reg = ForgeWidgetRendererRegistry.instance();
         renderTree(graphics, content, viewModel, theme, mouseX, mouseY, layer, reg);

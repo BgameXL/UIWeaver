@@ -94,8 +94,17 @@ public class InputHandler {
             childOffset += panel.getScrollOffset();
         }
 
-        for (int i = component.getChildren().size() - 1; i >= 0; i--) {
-            if (dispatchClick(component.getChildren().get(i), mouseX, mouseY, button, childOffset)) return true;
+        if (component instanceof TabsComponent tabs) {
+            UIComponent active = tabs.getActiveContent();
+            if (active != null && dispatchClick(active, mouseX, mouseY, button, childOffset)) {
+                return true;
+            }
+        } else {
+            for (int i = component.getChildren().size() - 1; i >= 0; i--) {
+                if (dispatchClick(component.getChildren().get(i), mouseX, mouseY, button, childOffset)) {
+                    return true;
+                }
+            }
         }
 
         Bounds bounds = component.getBounds();

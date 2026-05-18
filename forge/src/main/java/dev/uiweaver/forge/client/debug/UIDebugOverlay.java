@@ -4,6 +4,7 @@ import dev.uiweaver.api.component.UIComponent;
 import dev.uiweaver.api.layout.Bounds;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
+import dev.uiweaver.api.component.TabsComponent;
 
 public class UIDebugOverlay {
 
@@ -18,6 +19,8 @@ public class UIDebugOverlay {
     }
 
     private static void renderComponent(GuiGraphics graphics, UIComponent component, int depth) {
+        if (component == null || !component.isVisible()) return;
+
         Bounds b = component.getBounds();
         if (b == null) return;
 
@@ -29,6 +32,14 @@ public class UIDebugOverlay {
 
         if (component.getId() != null) {
             graphics.drawString(Minecraft.getInstance().font, component.getId(), b.x() + 1, b.y() + 1, color, false);
+        }
+
+        if (component instanceof TabsComponent tabs) {
+            UIComponent active = tabs.getActiveContent();
+            if (active != null && active.isVisible()) {
+                renderComponent(graphics, active, depth + 1);
+            }
+            return;
         }
 
         for (UIComponent child : component.getChildren()) {
