@@ -5,5 +5,7 @@ public enum SyncType {
     LONG,
     BOOLEAN,
     FLOAT,
-    STRING
+    STRING,
+    STRING_LIST,
+    NBT_LIST
 }

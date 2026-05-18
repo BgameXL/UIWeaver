@@ -4,8 +4,6 @@ import dev.uiweaver.api.component.UIComponent;
 import dev.uiweaver.api.spec.UIScreenSpec;
 import dev.uiweaver.api.view.UIViewModel;
 import dev.uiweaver.client.render.RenderLayer;
-import dev.uiweaver.client.render.WidgetRenderer;
-import dev.uiweaver.client.render.WidgetRendererRegistry;
 import dev.uiweaver.client.theme.ThemeRegistry;
 import dev.uiweaver.client.theme.UITheme;
 import net.minecraft.client.gui.GuiGraphics;
@@ -14,19 +12,19 @@ public class UIRenderer {
 
     private final UIScreenSpec spec;
     private final UIViewModel viewModel;
-    private final WidgetRendererRegistry renderers = WidgetRendererRegistry.instance();
+    private final ForgeWidgetRendererRegistry renderers = ForgeWidgetRendererRegistry.instance();
     private int leftPos, topPos, width, height;
 
     public UIRenderer(UIScreenSpec spec, UIViewModel viewModel) {
-        this.spec = spec;
+        this.spec      = spec;
         this.viewModel = viewModel;
     }
 
     public void init(int leftPos, int topPos, int width, int height) {
         this.leftPos = leftPos;
-        this.topPos = topPos;
-        this.width = width;
-        this.height = height;
+        this.topPos  = topPos;
+        this.width   = width;
+        this.height  = height;
         LayoutResolver.resolve(spec.getRoot(), leftPos, topPos, width, height);
     }
 
@@ -39,7 +37,7 @@ public class UIRenderer {
     public void renderForeground(GuiGraphics graphics, int mouseX, int mouseY) {
         UITheme theme = ThemeRegistry.getActive();
         renderComponent(graphics, spec.getRoot(), theme, mouseX, mouseY, RenderLayer.FOREGROUND);
-        renderComponent(graphics, spec.getRoot(), theme, mouseX, mouseY, RenderLayer.TOOLTIP);
+        TooltipRenderer.renderTooltips(graphics, spec.getRoot(), mouseX, mouseY);
     }
 
     @SuppressWarnings("unchecked")
@@ -47,10 +45,8 @@ public class UIRenderer {
                                  UITheme theme, int mouseX, int mouseY, RenderLayer layer) {
         if (!component.isVisible()) return;
 
-        WidgetRenderer<UIComponent> renderer = renderers.get(component.getType());
-        if (renderer != null) {
-            renderer.render(graphics, component, viewModel, theme, mouseX, mouseY, layer);
-        }
+        var renderer = renderers.get(component.getType());
+        if (renderer != null) renderer.render(graphics, component, viewModel, theme, mouseX, mouseY, layer);
 
         for (UIComponent child : component.getChildren()) {
             renderComponent(graphics, child, theme, mouseX, mouseY, layer);

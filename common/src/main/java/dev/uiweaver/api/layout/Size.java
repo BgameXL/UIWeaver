@@ -50,6 +50,14 @@ public final class Size {
         return new Size(width, 0, Mode.FIXED, Mode.WRAP, 0, 0, 0, 0, 0);
     }
 
+    public Size withWidth(int w)  { return new Size(w, height, widthMode, heightMode, minWidth, minHeight, maxWidth, maxHeight, grow); }
+
+    public Size withHeight(int h) { return new Size(width, h, widthMode, heightMode, minWidth, minHeight, maxWidth, maxHeight, grow); }
+
+    public Size fixedWidth(int w)  { return new Size(w, height, Mode.FIXED, heightMode, minWidth, minHeight, maxWidth, maxHeight, grow); }
+
+    public Size fixedHeight(int h) { return new Size(width, h, widthMode, Mode.FIXED, minWidth, minHeight, maxWidth, maxHeight, grow); }
+
     public Size minWidth(int min)  { return new Size(width, height, widthMode, heightMode, min, minHeight, maxWidth, maxHeight, grow); }
     public Size minHeight(int min) { return new Size(width, height, widthMode, heightMode, minWidth, min, maxWidth, maxHeight, grow); }
     public Size maxWidth(int max)  { return new Size(width, height, widthMode, heightMode, minWidth, minHeight, max, maxHeight, grow); }

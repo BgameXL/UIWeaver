@@ -4,10 +4,11 @@ import dev.uiweaver.api.action.ActionContext;
 import dev.uiweaver.api.action.ActionDeclaration;
 import dev.uiweaver.api.binding.UIBinding;
 import dev.uiweaver.api.component.*;
+import dev.uiweaver.api.context.UIContextPayload;
 import dev.uiweaver.api.slot.SlotBindingDeclaration;
-import dev.uiweaver.api.spec.UIContextSpec;
 import dev.uiweaver.api.spec.UIScreenSpec;
 import dev.uiweaver.api.sync.SyncDeclaration;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.Container;
 
@@ -20,7 +21,7 @@ public class UIBuilder {
 
     private final String screenId;
     private UIComponent root;
-    private UIContextSpec contextSpec = UIContextSpec.NONE;
+    private UIContextPayload contextPayload = UIContextPayload.NONE;
 
     private final List<SyncDeclaration<?>>     syncs        = new ArrayList<>();
     private final List<ActionDeclaration>      actions      = new ArrayList<>();
@@ -33,9 +34,19 @@ public class UIBuilder {
 
     // ── Layout ─────────────────────────────────────────────────────────────
 
-    public ColumnBuilder      column()              { return new ColumnBuilder(); }
-    public RowBuilder         row()                 { return new RowBuilder(); }
-    public ScrollPanelBuilder scrollPanel()         { return new ScrollPanelBuilder(); }
+    public ColumnBuilder      column()      { return new ColumnBuilder(); }
+    public RowBuilder         row()         { return new RowBuilder(); }
+    public GridBuilder     grid(int columns)  { return new GridBuilder(columns); }
+    public StackBuilder    stack()            { return new StackBuilder(); }
+    public AbsoluteBuilder absolute()         { return new AbsoluteBuilder(); }
+
+    public TabsBuilder tabs() { return new TabsBuilder(); }
+    public CheckboxBuilder checkbox(String label)         { return new CheckboxBuilder(label); }
+    public CheckboxBuilder checkbox(net.minecraft.network.chat.Component l) { return new CheckboxBuilder(l); }
+    public ToggleBuilder   toggle()                       { return new ToggleBuilder(); }
+    public SliderBuilder   slider(int min, int max)       { return new SliderBuilder().range(min, max); }
+
+    public ScrollPanelBuilder scrollPanel() { return new ScrollPanelBuilder(); }
 
     // ── Basic widgets ──────────────────────────────────────────────────────
 
@@ -46,12 +57,12 @@ public class UIBuilder {
 
     // ── Tech widgets ───────────────────────────────────────────────────────
 
-    public EnergyBarBuilder      energyBar()                  { return new EnergyBarBuilder(); }
-    public FluidBarBuilder       fluidBar()                   { return new FluidBarBuilder(); }
-    public ProgressBarBuilder    progressBar()                { return new ProgressBarBuilder(); }
-    public SlotGridBuilder       slotGrid(int cols, int rows) { return new SlotGridBuilder(cols, rows); }
-    public TextInputBuilder      textInput()                  { return new TextInputBuilder(); }
-    public PlayerInventoryBuilder playerInventory()           { return new PlayerInventoryBuilder(); }
+    public EnergyBarBuilder       energyBar()                  { return new EnergyBarBuilder(); }
+    public FluidBarBuilder        fluidBar()                   { return new FluidBarBuilder(); }
+    public ProgressBarBuilder     progressBar()                { return new ProgressBarBuilder(); }
+    public SlotGridBuilder        slotGrid(int cols, int rows) { return new SlotGridBuilder(cols, rows); }
+    public TextInputBuilder       textInput()                  { return new TextInputBuilder(); }
+    public PlayerInventoryBuilder playerInventory()            { return new PlayerInventoryBuilder(); }
 
     // ── Slot bindings ──────────────────────────────────────────────────────
 
@@ -66,6 +77,9 @@ public class UIBuilder {
     public UIBuilder syncLong   (String key, Supplier<Long> s)    { syncs.add(SyncDeclaration.ofLong(key, s));    return this; }
     public UIBuilder syncBoolean(String key, Supplier<Boolean> s) { syncs.add(SyncDeclaration.ofBoolean(key, s)); return this; }
     public UIBuilder syncFloat  (String key, Supplier<Float> s)   { syncs.add(SyncDeclaration.ofFloat(key, s));   return this; }
+    public UIBuilder syncStringList(String key, Supplier<List<String>> s)      { syncs.add(SyncDeclaration.ofStringList(key, s)); return this; }
+    public UIBuilder syncNbtList   (String key, Supplier<List<CompoundTag>> s) { syncs.add(SyncDeclaration.ofNbtList(key, s));    return this; }
+
     public UIBuilder syncString (String key, Supplier<String> s)  { syncs.add(SyncDeclaration.ofString(key, s));  return this; }
 
     // ── Actions ────────────────────────────────────────────────────────────
@@ -75,7 +89,7 @@ public class UIBuilder {
         return this;
     }
 
-    // ── Explicit bindings ──────────────────────────────────────────────────
+    // ── Bindings ───────────────────────────────────────────────────────────
 
     public UIBuilder bind(String componentId, String property, String syncKey) {
         bindings.add(UIBinding.of(componentId, property, syncKey));
@@ -84,16 +98,12 @@ public class UIBuilder {
 
     // ── Context ────────────────────────────────────────────────────────────
 
-    public UIBuilder context(UIContextSpec ctx) { this.contextSpec = ctx; return this; }
+    public UIBuilder context(UIContextPayload payload) { this.contextPayload = payload; return this; }
 
     // ── Root ───────────────────────────────────────────────────────────────
 
-    public UIBuilder root(UIComponent component) { this.root = component; return this; }
-
-    public UIBuilder root(ComponentBuilder<?> builder) {
-        this.root = builder.build();
-        return this;
-    }
+    public UIBuilder root(UIComponent component)      { this.root = component;        return this; }
+    public UIBuilder root(ComponentBuilder<?> builder) { this.root = builder.build(); return this; }
 
     // ── Build ──────────────────────────────────────────────────────────────
 
@@ -106,13 +116,13 @@ public class UIBuilder {
                 .actions(actions)
                 .bindings(bindings)
                 .slotBindings(slotBindings)
-                .context(contextSpec)
+                .context(contextPayload)
                 .build();
     }
 
     private void collectAutoBindings(UIComponent component) {
         if (component instanceof EnergyBarComponent eb && eb.getId() != null && eb.getEnergyKey() != null) {
-            bindings.add(UIBinding.of(eb.getId(), eb.getEnergyKey(),    eb.getEnergyKey()));
+            bindings.add(UIBinding.of(eb.getId(), eb.getEnergyKey(), eb.getEnergyKey()));
             bindings.add(UIBinding.of(eb.getId(), eb.getMaxEnergyKey(), eb.getMaxEnergyKey()));
         }
         for (UIComponent child : component.getChildren()) {

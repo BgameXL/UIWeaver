@@ -2,13 +2,15 @@ package dev.uiweaver.forge.registry;
 
 import dev.uiweaver.api.UIBuilder;
 import dev.uiweaver.api.UIScreen;
+import dev.uiweaver.api.context.UIContextPayload;
 import dev.uiweaver.api.spec.UIScreenSpec;
 import dev.uiweaver.forge.client.screen.UIContainerScreen;
 import dev.uiweaver.forge.network.ForgeNetworkChannel;
+import dev.uiweaver.runtime.lifecycle.SessionManager;
+import dev.uiweaver.runtime.lifecycle.UIScreenSession;
 import dev.uiweaver.runtime.menu.UIMenu;
 import dev.uiweaver.runtime.registry.UIRegistry;
 import net.minecraft.client.gui.screens.MenuScreens;
-import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.MenuProvider;
@@ -35,15 +37,15 @@ public class UIMenuRegistry {
         GENERIC_MENU = register.register("generic_menu", () ->
                 IForgeMenuType.create((containerId, inventory, buf) -> {
                     String screenId = buf.readUtf();
-                    boolean hasPos = buf.readBoolean();
-                    BlockPos pos = hasPos ? buf.readBlockPos() : null;
+                    int sessionId   = buf.readInt();
+                    UIContextPayload payload = UIContextPayload.decode(buf);
 
                     UIScreen factory = UIRegistry.getFactory(screenId);
                     if (factory == null) return null;
 
                     UIScreenSpec spec = factory.build(UIBuilder.screen(screenId));
                     UIMenu menu = new UIMenu(GENERIC_MENU.get(), containerId, inventory, spec, networkChannel);
-                    menu.setOpenPos(pos);
+                    menu.setClientSessionId(sessionId);
                     return menu;
                 })
         );
@@ -58,9 +60,11 @@ public class UIMenuRegistry {
         );
     }
 
-    public static void open(ServerPlayer player, UIScreen screen, String screenId, BlockPos pos) {
+    public static void open(ServerPlayer player, UIScreen screen, String screenId, UIContextPayload payload) {
         UIRegistry.registerFactory(screenId, screen);
         UIScreenSpec spec = screen.build(UIBuilder.screen(screenId));
+        UIScreenSession session = new UIScreenSession(player, spec);
+        SessionManager.open(player, session);
 
         NetworkHooks.openScreen(player, new MenuProvider() {
             @Override public Component getDisplayName() { return Component.literal(screenId); }
@@ -68,27 +72,23 @@ public class UIMenuRegistry {
             @Override
             public UIMenu createMenu(int containerId, Inventory inventory, Player p) {
                 UIMenu menu = new UIMenu(GENERIC_MENU.get(), containerId, inventory, spec, networkChannel);
-                menu.setOpenPos(pos);
+                menu.onOpened(player);
                 return menu;
             }
         }, buf -> {
             buf.writeUtf(screenId);
-            buf.writeBoolean(pos != null);
-            if (pos != null) buf.writeBlockPos(pos);
+            buf.writeInt(session.getSessionId());
+            UIContextPayload.encode(payload, buf);
         });
-
-        if (player.containerMenu instanceof UIMenu menu) {
-            menu.broadcastChanges();
-        }
     }
 
-    public static void open(ServerPlayer player, String screenId, BlockPos pos) {
+    public static void open(ServerPlayer player, String screenId, UIContextPayload payload) {
         UIScreen factory = UIRegistry.getFactory(screenId);
         if (factory == null) throw new IllegalArgumentException("No factory for screen: " + screenId);
-        open(player, factory, screenId, pos);
+        open(player, factory, screenId, payload);
     }
 
     public static void open(ServerPlayer player, String screenId) {
-        open(player, screenId, null);
+        open(player, screenId, UIContextPayload.NONE);
     }
 }

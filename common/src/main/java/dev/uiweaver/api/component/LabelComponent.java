@@ -3,7 +3,7 @@ package dev.uiweaver.api.component;
 import dev.uiweaver.api.layout.Size;
 import net.minecraft.network.chat.Component;
 
-public class LabelComponent extends AbstractComponent {
+public class LabelComponent extends AbstractComponent implements Measurable {
 
     private Component text;
     private final int maxWidth;
@@ -19,8 +19,15 @@ public class LabelComponent extends AbstractComponent {
 
     @Override public ComponentType getType() { return ComponentType.LABEL; }
 
-    public Component getText() { return text; }
+    @Override
+    public Size measure(int availableWidth, int availableHeight) {
+        int w = MeasureProvider.textWidth(text.getString());
+        if (maxWidth > 0) w = Math.min(w, maxWidth);
+        return Size.fixed(w, MeasureProvider.lineHeight());
+    }
+
+    public Component getText()   { return text; }
     public void setText(Component text) { this.text = text; }
-    public int getMaxWidth() { return maxWidth; }
-    public boolean isEllipsis() { return ellipsis; }
+    public int getMaxWidth()     { return maxWidth; }
+    public boolean isEllipsis()  { return ellipsis; }
 }

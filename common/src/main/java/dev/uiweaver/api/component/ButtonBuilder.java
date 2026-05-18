@@ -13,6 +13,6 @@ public class ButtonBuilder extends ComponentBuilder<ButtonBuilder> {
 
     @Override
     public ButtonComponent build() {
-        return new ButtonComponent(id, visible, enabled, preferredSize, label, actionId);
+        return applyTooltip(new ButtonComponent(id, visible, enabled, preferredSize, label, actionId));
     }
 }

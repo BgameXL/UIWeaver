@@ -13,5 +13,8 @@ public enum ComponentType {
     TEXT_INPUT,
     SCROLL_PANEL,
     TABS,
+    CHECKBOX,
+    TOGGLE,
+    SLIDER,
     CUSTOM
 }

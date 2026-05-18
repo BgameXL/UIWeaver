@@ -4,11 +4,11 @@ import dev.uiweaver.api.component.PlayerInventoryComponent;
 import dev.uiweaver.api.layout.Bounds;
 import dev.uiweaver.api.view.UIViewModel;
 import dev.uiweaver.client.render.RenderLayer;
-import dev.uiweaver.client.render.WidgetRenderer;
+import dev.uiweaver.forge.client.render.ForgeWidgetRenderer;
 import dev.uiweaver.client.theme.UITheme;
 import net.minecraft.client.gui.GuiGraphics;
 
-public class PlayerInventoryRenderer implements WidgetRenderer<PlayerInventoryComponent> {
+public class PlayerInventoryRenderer implements ForgeWidgetRenderer<PlayerInventoryComponent> {
 
     private static final int SLOT_SIZE  = 18;
     private static final int COLS       = 9;
@@ -26,14 +26,12 @@ public class PlayerInventoryRenderer implements WidgetRenderer<PlayerInventoryCo
         Bounds b = component.getBounds();
         if (b == null) return;
 
-        // main inventory — 3 rows x 9 cols
         for (int row = 0; row < ROWS; row++) {
             for (int col = 0; col < COLS; col++) {
                 drawSlot(graphics, b.x() + col * SLOT_SIZE, b.y() + row * SLOT_SIZE);
             }
         }
 
-        // hotbar — 1 row x 9 cols, below with gap
         if (component.isIncludeHotbar()) {
             int hotbarY = b.y() + ROWS * SLOT_SIZE + HOTBAR_GAP;
             for (int col = 0; col < COLS; col++) {

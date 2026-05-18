@@ -1,38 +1,45 @@
 package dev.uiweaver.runtime.network;
 
-import net.minecraft.core.BlockPos;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.FriendlyByteBuf;
 
 public class ActionPacket {
 
     public static final String ID = "uiweaver:action";
 
+    private final int sessionId;
     private final String screenId;
     private final String actionId;
-    private final BlockPos pos;
+    private final CompoundTag payload;
 
-    public ActionPacket(String screenId, String actionId, BlockPos pos) {
-        this.screenId = screenId;
-        this.actionId = actionId;
-        this.pos = pos;
+    public ActionPacket(int sessionId, String screenId, String actionId, CompoundTag payload) {
+        this.sessionId = sessionId;
+        this.screenId  = screenId;
+        this.actionId  = actionId;
+        this.payload   = payload != null ? payload : new CompoundTag();
+    }
+
+    public ActionPacket(int sessionId, String screenId, String actionId) {
+        this(sessionId, screenId, actionId, new CompoundTag());
     }
 
     public static ActionPacket decode(FriendlyByteBuf buf) {
+        int sessionId   = buf.readInt();
         String screenId = buf.readUtf();
         String actionId = buf.readUtf();
-        boolean hasPos = buf.readBoolean();
-        BlockPos pos = hasPos ? buf.readBlockPos() : null;
-        return new ActionPacket(screenId, actionId, pos);
+        CompoundTag payload = buf.readNbt();
+        return new ActionPacket(sessionId, screenId, actionId, payload);
     }
 
     public void encode(FriendlyByteBuf buf) {
+        buf.writeInt(sessionId);
         buf.writeUtf(screenId);
         buf.writeUtf(actionId);
-        buf.writeBoolean(pos != null);
-        if (pos != null) buf.writeBlockPos(pos);
+        buf.writeNbt(payload);
     }
 
-    public String getScreenId() { return screenId; }
-    public String getActionId() { return actionId; }
-    public BlockPos getPos() { return pos; }
+    public int getSessionId()       { return sessionId; }
+    public String getScreenId()     { return screenId; }
+    public String getActionId()     { return actionId; }
+    public CompoundTag getPayload() { return payload; }
 }

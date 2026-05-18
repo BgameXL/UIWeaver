@@ -3,7 +3,7 @@ package dev.uiweaver.api.component;
 import dev.uiweaver.api.binding.Bindable;
 import dev.uiweaver.api.layout.Size;
 
-public class FluidBarComponent extends AbstractComponent implements Bindable {
+public class FluidBarComponent extends AbstractComponent implements Bindable, Measurable {
 
     private long amount;
     private long capacity;
@@ -16,11 +16,16 @@ public class FluidBarComponent extends AbstractComponent implements Bindable {
     @Override public ComponentType getType() { return ComponentType.FLUID_BAR; }
 
     @Override
+    public Size measure(int availableWidth, int availableHeight) {
+        return Size.fixed(8, 52);
+    }
+
+    @Override
     public void applyBinding(String property, Object val) {
         switch (property) {
-            case "amount" -> amount = ((Number) val).longValue();
+            case "amount"   -> amount   = ((Number) val).longValue();
             case "capacity" -> capacity = ((Number) val).longValue();
-            case "fluidId" -> fluidId = (String) val;
+            case "fluidId"  -> fluidId  = (String) val;
         }
     }
 
@@ -34,7 +39,7 @@ public class FluidBarComponent extends AbstractComponent implements Bindable {
         return Math.min(1f, (float) amount / capacity);
     }
 
-    public long getAmount() { return amount; }
+    public long getAmount()   { return amount; }
     public long getCapacity() { return capacity; }
     public String getFluidId() { return fluidId; }
 }

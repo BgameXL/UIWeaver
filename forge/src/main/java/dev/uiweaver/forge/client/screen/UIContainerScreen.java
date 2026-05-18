@@ -1,7 +1,10 @@
 package dev.uiweaver.forge.client.screen;
 
+import dev.uiweaver.api.component.AbstractComponent;
+import dev.uiweaver.api.layout.Size;
 import dev.uiweaver.api.spec.UIScreenSpec;
 import dev.uiweaver.api.view.UIViewModel;
+import dev.uiweaver.client.input.FocusManager;
 import dev.uiweaver.forge.client.debug.UIDebugOverlay;
 import dev.uiweaver.forge.client.debug.UIInspector;
 import dev.uiweaver.forge.client.input.InputHandler;
@@ -23,18 +26,24 @@ public class UIContainerScreen extends AbstractContainerScreen<UIMenu> {
 
     public UIContainerScreen(UIMenu menu, Inventory inventory, Component title) {
         super(menu, inventory, title);
-        this.spec = menu.getSpec();
+        this.spec      = menu.getSpec();
         this.viewModel = new UIViewModel();
         this.titleLabelX = -10000;
         this.titleLabelY = -10000;
         this.inventoryLabelX = -10000;
         this.inventoryLabelY = -10000;
+
+        if (spec.getRoot() instanceof AbstractComponent ac) {
+            Size pref = ac.getPreferredSize();
+            if (pref.isFixedWidth())  this.imageWidth  = pref.width();
+            if (pref.isFixedHeight()) this.imageHeight = pref.height();
+        }
     }
 
     @Override
     protected void init() {
         super.init();
-        this.renderer = new UIRenderer(spec, viewModel);
+        this.renderer     = new UIRenderer(spec, viewModel);
         this.inputHandler = new InputHandler(spec, viewModel, this::sendAction);
         renderer.init(leftPos, topPos, imageWidth, imageHeight);
     }
@@ -73,6 +82,18 @@ public class UIContainerScreen extends AbstractContainerScreen<UIMenu> {
     }
 
     @Override
+    public boolean mouseDragged(double mouseX, double mouseY, int button, double dx, double dy) {
+        if (inputHandler.onMouseDragged(mouseX, mouseY, button, dx, dy)) return true;
+        return super.mouseDragged(mouseX, mouseY, button, dx, dy);
+    }
+
+    @Override
+    public boolean mouseReleased(double mouseX, double mouseY, int button) {
+        if (inputHandler.onMouseReleased(mouseX, mouseY, button)) return true;
+        return super.mouseReleased(mouseX, mouseY, button);
+    }
+
+    @Override
     public boolean mouseScrolled(double mouseX, double mouseY, double delta) {
         if (inputHandler.onMouseScrolled(mouseX, mouseY, delta)) return true;
         return super.mouseScrolled(mouseX, mouseY, delta);
@@ -84,12 +105,18 @@ public class UIContainerScreen extends AbstractContainerScreen<UIMenu> {
         return super.charTyped(c, modifiers);
     }
 
+    @Override
+    public void onClose() {
+        FocusManager.clearFocus();
+        super.onClose();
+    }
+
     public void applySync(String key, Object value) {
         viewModel.put(key, value);
         renderer.onViewModelUpdated(key);
     }
 
     private void sendAction(String actionId) {
-        ForgeScreenActionSender.send(spec.getScreenId(), actionId, menu);
+        ForgeScreenActionSender.sendAction(spec.getScreenId(), actionId);
     }
 }

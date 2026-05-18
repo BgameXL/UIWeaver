@@ -1,6 +1,6 @@
 package dev.uiweaver.test.forge;
 
-import dev.uiweaver.api.spec.UIContextSpec;
+import dev.uiweaver.api.context.UIContextPayload;
 import dev.uiweaver.forge.registry.UIMenuRegistry;
 import dev.uiweaver.test.TestMachineScreen;
 import net.minecraft.core.BlockPos;
@@ -32,7 +32,8 @@ public class TestMachineBlock extends BaseEntityBlock {
         if (!(level.getBlockEntity(pos) instanceof TestMachineBlockEntity machine)) return InteractionResult.PASS;
         if (!(player instanceof ServerPlayer serverPlayer)) return InteractionResult.PASS;
 
-        UIContextSpec context = UIContextSpec.forBlockEntity(TestMachineBlockEntity.class).maxDistance(8);
+        UIContextPayload context = UIContextPayload.forBlock(
+                level.dimension(), pos, TestMachineBlockEntity.class, 8);
 
         UIMenuRegistry.open(serverPlayer,
                 new TestMachineScreen(
@@ -45,7 +46,7 @@ public class TestMachineBlock extends BaseEntityBlock {
                         context
                 ),
                 TestMachineScreen.ID,
-                pos
+                context
         );
         return InteractionResult.CONSUME;
     }
@@ -59,7 +60,7 @@ public class TestMachineBlock extends BaseEntityBlock {
     public @Nullable <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state,
                                                                             BlockEntityType<T> type) {
         if (level.isClientSide) return null;
-        return (lvl, pos, blockState, be) -> {
+        return (lvl, p, blockState, be) -> {
             if (be instanceof TestMachineBlockEntity machine) machine.tick();
         };
     }

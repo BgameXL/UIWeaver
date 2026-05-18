@@ -3,7 +3,7 @@ package dev.uiweaver.api.component;
 import dev.uiweaver.api.binding.Bindable;
 import dev.uiweaver.api.layout.Size;
 
-public class ProgressBarComponent extends AbstractComponent implements Bindable {
+public class ProgressBarComponent extends AbstractComponent implements Bindable, Measurable {
 
     public enum Direction { LEFT_TO_RIGHT, RIGHT_TO_LEFT, BOTTOM_TO_TOP, TOP_TO_BOTTOM }
 
@@ -20,9 +20,14 @@ public class ProgressBarComponent extends AbstractComponent implements Bindable 
     @Override public ComponentType getType() { return ComponentType.PROGRESS_BAR; }
 
     @Override
+    public Size measure(int availableWidth, int availableHeight) {
+        return Size.fixed(16, 16);
+    }
+
+    @Override
     public void applyBinding(String property, Object val) {
         switch (property) {
-            case "value" -> value = ((Number) val).longValue();
+            case "value"    -> value    = ((Number) val).longValue();
             case "maxValue" -> maxValue = ((Number) val).longValue();
         }
     }
@@ -37,7 +42,7 @@ public class ProgressBarComponent extends AbstractComponent implements Bindable 
         return Math.min(1f, (float) value / maxValue);
     }
 
-    public long getValue() { return value; }
-    public long getMaxValue() { return maxValue; }
+    public long getValue()      { return value; }
+    public long getMaxValue()   { return maxValue; }
     public Direction getDirection() { return direction; }
 }

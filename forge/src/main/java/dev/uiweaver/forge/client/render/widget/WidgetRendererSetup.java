@@ -1,13 +1,12 @@
 package dev.uiweaver.forge.client.render.widget;
 
 import dev.uiweaver.api.component.ComponentType;
-import dev.uiweaver.client.render.WidgetRendererRegistry;
-import dev.uiweaver.forge.client.render.widget.*;
+import dev.uiweaver.forge.client.render.ForgeWidgetRendererRegistry;
 
 public class WidgetRendererSetup {
 
     public static void init() {
-        WidgetRendererRegistry reg = WidgetRendererRegistry.instance();
+        ForgeWidgetRendererRegistry reg = ForgeWidgetRendererRegistry.instance();
         reg.register(ComponentType.PANEL,            new PanelRenderer());
         reg.register(ComponentType.LABEL,            new LabelRenderer());
         reg.register(ComponentType.BUTTON,           new ButtonRenderer());

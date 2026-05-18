@@ -1,5 +1,8 @@
 package dev.uiweaver.api.sync;
 
+import net.minecraft.nbt.CompoundTag;
+
+import java.util.List;
 import java.util.function.Supplier;
 
 public class SyncDeclaration<T> {
@@ -10,10 +13,10 @@ public class SyncDeclaration<T> {
     private final int rateMs;
 
     private SyncDeclaration(String key, SyncType type, Supplier<T> serverSource, int rateMs) {
-        this.key = key;
-        this.type = type;
+        this.key          = key;
+        this.type         = type;
         this.serverSource = serverSource;
-        this.rateMs = rateMs;
+        this.rateMs       = rateMs;
     }
 
     public static SyncDeclaration<Integer> ofInt(String key, Supplier<Integer> source) {
@@ -36,12 +39,20 @@ public class SyncDeclaration<T> {
         return new SyncDeclaration<>(key, SyncType.STRING, source, 0);
     }
 
+    public static SyncDeclaration<List<String>> ofStringList(String key, Supplier<List<String>> source) {
+        return new SyncDeclaration<>(key, SyncType.STRING_LIST, source, 0);
+    }
+
+    public static SyncDeclaration<List<CompoundTag>> ofNbtList(String key, Supplier<List<CompoundTag>> source) {
+        return new SyncDeclaration<>(key, SyncType.NBT_LIST, source, 0);
+    }
+
     public SyncDeclaration<T> debounce(int ms) {
         return new SyncDeclaration<>(key, type, serverSource, ms);
     }
 
-    public String getKey() { return key; }
-    public SyncType getType() { return type; }
+    public String getKey()              { return key; }
+    public SyncType getType()           { return type; }
     public Supplier<T> getServerSource() { return serverSource; }
-    public int getRateMs() { return rateMs; }
+    public int getRateMs()              { return rateMs; }
 }

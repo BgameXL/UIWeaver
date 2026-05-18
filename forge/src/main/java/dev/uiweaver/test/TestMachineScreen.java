@@ -3,7 +3,7 @@ package dev.uiweaver.test;
 import dev.uiweaver.api.UIBuilder;
 import dev.uiweaver.api.UIScreen;
 import dev.uiweaver.api.action.ActionContext;
-import dev.uiweaver.api.spec.UIContextSpec;
+import dev.uiweaver.api.context.UIContextPayload;
 import dev.uiweaver.api.spec.UIScreenSpec;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.Container;
@@ -15,18 +15,18 @@ public class TestMachineScreen implements UIScreen {
 
     public static final String ID = "uiweaver_test:machine";
 
-    private final Supplier<Long>      energy;
-    private final Supplier<Long>      maxEnergy;
-    private final Supplier<Boolean>   working;
-    private final Supplier<Container> inventory;
+    private final Supplier<Long>         energy;
+    private final Supplier<Long>         maxEnergy;
+    private final Supplier<Boolean>      working;
+    private final Supplier<Container>    inventory;
     private final Consumer<ActionContext> onStart;
     private final Consumer<ActionContext> onStop;
-    private final UIContextSpec context;
+    private final UIContextPayload        context;
 
     public TestMachineScreen(Supplier<Long> energy, Supplier<Long> maxEnergy,
                              Supplier<Boolean> working, Supplier<Container> inventory,
                              Consumer<ActionContext> onStart, Consumer<ActionContext> onStop,
-                             UIContextSpec context) {
+                             UIContextPayload context) {
         this.energy    = energy;
         this.maxEnergy = maxEnergy;
         this.working   = working;
@@ -40,7 +40,7 @@ public class TestMachineScreen implements UIScreen {
         return new TestMachineScreen(
                 () -> 0L, () -> 1L, () -> false, () -> null,
                 ctx -> {}, ctx -> {},
-                UIContextSpec.NONE
+                UIContextPayload.NONE
         );
     }
 

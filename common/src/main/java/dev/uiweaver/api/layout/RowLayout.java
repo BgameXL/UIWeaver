@@ -1,6 +1,7 @@
 package dev.uiweaver.api.layout;
 
 import dev.uiweaver.api.component.AbstractComponent;
+import dev.uiweaver.api.component.Measurable;
 import dev.uiweaver.api.component.UIComponent;
 
 import java.util.List;
@@ -12,8 +13,8 @@ public class RowLayout implements LayoutEngine {
     private final Alignment crossAxis;
 
     public RowLayout(Insets padding, int gap, Alignment crossAxis) {
-        this.padding = padding;
-        this.gap = gap;
+        this.padding   = padding;
+        this.gap       = gap;
         this.crossAxis = crossAxis;
     }
 
@@ -33,9 +34,8 @@ public class RowLayout implements LayoutEngine {
             if (pref.fillsWidth() || pref.grows()) {
                 totalGrow += Math.max(1, pref.getGrow());
             } else {
-                int w = pref.isFixedWidth() ? pref.width() : 16;
-                w = pref.clampWidth(w);
-                widths[i] = w;
+                int w = resolveWidth(visible.get(i), pref, innerW, innerH);
+                widths[i]   = w;
                 totalFixed += w;
             }
         }
@@ -45,8 +45,7 @@ public class RowLayout implements LayoutEngine {
             Size pref = pref(visible.get(i));
             if (pref.fillsWidth() || pref.grows()) {
                 int weight = Math.max(1, pref.getGrow());
-                int w = totalGrow > 0 ? (remaining * weight / totalGrow) : 0;
-                widths[i] = pref.clampWidth(w);
+                widths[i] = pref.clampWidth(totalGrow > 0 ? (remaining * weight / totalGrow) : 0);
             }
         }
 
@@ -55,9 +54,9 @@ public class RowLayout implements LayoutEngine {
             UIComponent child = visible.get(i);
             Size pref = pref(child);
 
-            int childH = pref.fillsHeight() ? innerH
-                    : pref.isFixedHeight()  ? pref.clampHeight(pref.height())
-                      : innerH;
+            int childH = pref.fillsHeight()  ? innerH
+                    : pref.isFixedHeight() ? pref.clampHeight(pref.height())
+                      : resolveHeight(child, pref, widths[i], innerH);
 
             int childY = switch (crossAxis) {
                 case CENTER -> container.y() + padding.top() + (innerH - childH) / 2;
@@ -80,10 +79,22 @@ public class RowLayout implements LayoutEngine {
             if (!child.isVisible()) continue;
             if (!first) totalW += gap;
             Size pref = pref(child);
-            totalW += pref.isFixedWidth() ? pref.width() : 16;
+            totalW += resolveWidth(child, pref, 0, innerH);
             first = false;
         }
         return Size.fixed(totalW, innerH + padding.vertical());
+    }
+
+    private static int resolveWidth(UIComponent c, Size pref, int availW, int availH) {
+        if (pref.isFixedWidth()) return pref.clampWidth(pref.width());
+        if (pref.wrapsWidth() && c instanceof Measurable m) return pref.clampWidth(m.measure(availW, availH).width());
+        return pref.clampWidth(16);
+    }
+
+    private static int resolveHeight(UIComponent c, Size pref, int availW, int availH) {
+        if (pref.isFixedHeight()) return pref.clampHeight(pref.height());
+        if (pref.wrapsHeight() && c instanceof Measurable m) return pref.clampHeight(m.measure(availW, availH).height());
+        return availH;
     }
 
     private static Size pref(UIComponent c) {

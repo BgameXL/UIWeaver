@@ -1,6 +1,5 @@
 package dev.uiweaver.runtime.lifecycle;
 
-import dev.uiweaver.runtime.menu.UIMenu;
 import net.minecraft.server.level.ServerPlayer;
 
 import java.util.UUID;
@@ -8,22 +7,23 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class SessionManager {
 
-    private static final ConcurrentHashMap<UUID, UIMenu> ACTIVE = new ConcurrentHashMap<>();
+    private static final ConcurrentHashMap<UUID, UIScreenSession> ACTIVE = new ConcurrentHashMap<>();
 
-    public static void onOpen(ServerPlayer player, UIMenu menu) {
-        ACTIVE.put(player.getUUID(), menu);
-        menu.forceFullSync();
+    public static UIScreenSession open(ServerPlayer player, UIScreenSession session) {
+        ACTIVE.put(player.getUUID(), session);
+        return session;
     }
 
-    public static void onClose(ServerPlayer player) {
+    public static void close(ServerPlayer player) {
         ACTIVE.remove(player.getUUID());
     }
 
-    public static UIMenu getMenu(ServerPlayer player) {
+    public static UIScreenSession get(ServerPlayer player) {
         return ACTIVE.get(player.getUUID());
     }
 
-    public static boolean hasOpen(ServerPlayer player) {
-        return ACTIVE.containsKey(player.getUUID());
+    public static boolean isValid(ServerPlayer player, int sessionId) {
+        UIScreenSession session = ACTIVE.get(player.getUUID());
+        return session != null && session.getSessionId() == sessionId;
     }
 }

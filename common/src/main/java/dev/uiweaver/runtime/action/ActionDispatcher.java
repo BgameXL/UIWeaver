@@ -1,10 +1,10 @@
 package dev.uiweaver.runtime.action;
 
 import dev.uiweaver.api.action.ActionDeclaration;
-import dev.uiweaver.api.spec.UIContextSpec;
+import dev.uiweaver.api.context.UIContextPayload;
 import dev.uiweaver.runtime.context.ContextValidator;
 import dev.uiweaver.runtime.context.RuntimeActionContext;
-import dev.uiweaver.runtime.menu.UIMenu;
+import dev.uiweaver.runtime.lifecycle.SessionManager;
 import dev.uiweaver.runtime.network.ActionPacket;
 import net.minecraft.server.level.ServerPlayer;
 import org.slf4j.Logger;
@@ -21,44 +21,37 @@ public class ActionDispatcher {
 
     private final String screenId;
     private final Map<String, ActionDeclaration> actions;
-    private final UIContextSpec contextSpec;
+    private final UIContextPayload contextPayload;
 
-    public ActionDispatcher(String screenId, List<ActionDeclaration> actions, UIContextSpec contextSpec) {
-        this.screenId = screenId;
-        this.actions = actions.stream()
-                .collect(Collectors.toMap(ActionDeclaration::getActionId, Function.identity()));
-        this.contextSpec = contextSpec;
+    public ActionDispatcher(String screenId, List<ActionDeclaration> actions, UIContextPayload contextPayload) {
+        this.screenId       = screenId;
+        this.actions        = actions.stream().collect(Collectors.toMap(ActionDeclaration::getActionId, Function.identity()));
+        this.contextPayload = contextPayload;
     }
 
     public void dispatch(ActionPacket packet, ServerPlayer player) {
-        // Validate the packet targets the screen this player actually has open
-        if (!(player.containerMenu instanceof UIMenu openMenu)
-                || !openMenu.getSpec().getScreenId().equals(packet.getScreenId())) {
-            LOGGER.warn("Player {} sent action for screen '{}' but has '{}' open",
-                    player.getName().getString(), packet.getScreenId(),
-                    player.containerMenu == null ? "none" : player.containerMenu.getClass().getSimpleName());
+        if (!SessionManager.isValid(player, packet.getSessionId())) {
+            LOGGER.warn("[UIWeaver] Invalid session {} for player {}", packet.getSessionId(), player.getName().getString());
+            return;
+        }
+
+        if (!screenId.equals(packet.getScreenId())) {
+            LOGGER.warn("[UIWeaver] Screen mismatch: expected '{}', got '{}'", screenId, packet.getScreenId());
             return;
         }
 
         ActionDeclaration decl = actions.get(packet.getActionId());
         if (decl == null) {
-            LOGGER.warn("Unknown action '{}' in screen '{}' from player {}",
-                    packet.getActionId(), screenId, player.getName().getString());
+            LOGGER.warn("[UIWeaver] Unknown action '{}' in screen '{}'", packet.getActionId(), screenId);
             return;
         }
 
-        ContextValidator.Result result = ContextValidator.validate(player, packet.getPos(), contextSpec);
+        ContextValidator.Result result = ContextValidator.validate(player, contextPayload);
         if (result != ContextValidator.Result.OK) {
-            LOGGER.debug("Action '{}' rejected for player {}: {}",
-                    packet.getActionId(), player.getName().getString(), result);
+            LOGGER.debug("[UIWeaver] Action '{}' rejected for {}: {}", packet.getActionId(), player.getName().getString(), result);
             return;
         }
 
-        try {
-            decl.getHandler().accept(new RuntimeActionContext(player, packet.getPos(), packet.getActionId()));
-        } catch (Exception e) {
-            LOGGER.error("Error executing action '{}' for player {}",
-                    packet.getActionId(), player.getName().getString(), e);
-        }
+        decl.getHandler().accept(new RuntimeActionContext(player, contextPayload, packet.getActionId(), packet.getPayload()));
     }
 }

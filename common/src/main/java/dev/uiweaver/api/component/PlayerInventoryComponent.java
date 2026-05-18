@@ -2,7 +2,12 @@ package dev.uiweaver.api.component;
 
 import dev.uiweaver.api.layout.Size;
 
-public class PlayerInventoryComponent extends AbstractComponent {
+public class PlayerInventoryComponent extends AbstractComponent implements Measurable {
+
+    private static final int SLOT_SIZE  = 18;
+    private static final int COLS       = 9;
+    private static final int MAIN_ROWS  = 3;
+    private static final int HOTBAR_GAP = 4;
 
     private final boolean includeHotbar;
 
@@ -14,8 +19,14 @@ public class PlayerInventoryComponent extends AbstractComponent {
 
     @Override public ComponentType getType() { return ComponentType.PLAYER_INVENTORY; }
 
-    public boolean isIncludeHotbar() { return includeHotbar; }
+    @Override
+    public Size measure(int availableWidth, int availableHeight) {
+        int w = COLS * SLOT_SIZE;
+        int h = MAIN_ROWS * SLOT_SIZE;
+        if (includeHotbar) h += HOTBAR_GAP + SLOT_SIZE;
+        return Size.fixed(w, h);
+    }
 
-    // 9 cols x 3 rows = 27 slots, +9 hotbar = 36 total
-    public int getSlotCount() { return includeHotbar ? 36 : 27; }
+    public boolean isIncludeHotbar() { return includeHotbar; }
+    public int getSlotCount()        { return includeHotbar ? 36 : 27; }
 }

@@ -5,11 +5,11 @@ import dev.uiweaver.api.layout.Bounds;
 import dev.uiweaver.api.slot.SlotDescriptor;
 import dev.uiweaver.api.view.UIViewModel;
 import dev.uiweaver.client.render.RenderLayer;
-import dev.uiweaver.client.render.WidgetRenderer;
+import dev.uiweaver.forge.client.render.ForgeWidgetRenderer;
 import dev.uiweaver.client.theme.UITheme;
 import net.minecraft.client.gui.GuiGraphics;
 
-public class SlotGridRenderer implements WidgetRenderer<SlotGridComponent> {
+public class SlotGridRenderer implements ForgeWidgetRenderer<SlotGridComponent> {
 
     private static final int SLOT_BG = 0xFF8B8B8B;
     private static final int SLOT_BORDER = 0xFF373737;
