@@ -5,6 +5,7 @@ import dev.uiweaver.api.layout.Size;
 import dev.uiweaver.api.spec.UIScreenSpec;
 import dev.uiweaver.api.view.UIViewModel;
 import dev.uiweaver.client.input.FocusManager;
+import dev.uiweaver.client.modal.ModalManager;
 import dev.uiweaver.forge.client.debug.UIDebugOverlay;
 import dev.uiweaver.forge.client.debug.UIInspector;
 import dev.uiweaver.forge.client.input.InputHandler;
@@ -59,6 +60,9 @@ public class UIContainerScreen extends AbstractContainerScreen<UIMenu> {
         renderer.renderForeground(graphics, mouseX, mouseY);
         renderTooltip(graphics, mouseX, mouseY);
 
+        // Modal layer — rendered on top of everything
+        ModalManager.render(graphics, width, height, mouseX, mouseY);
+
         if (UIDebugOverlay.isEnabled()) {
             UIDebugOverlay.render(graphics, spec.getRoot());
             inspector.render(graphics, spec, viewModel, mouseX, mouseY, height);
@@ -67,6 +71,8 @@ public class UIContainerScreen extends AbstractContainerScreen<UIMenu> {
 
     @Override
     public boolean keyPressed(int keyCode, int scanCode, int modifiers) {
+        if (ModalManager.onKeyPressed(keyCode, scanCode, modifiers)) return true;
+
         if (keyCode == GLFW.GLFW_KEY_U && (modifiers & GLFW.GLFW_MOD_CONTROL) != 0) {
             UIDebugOverlay.toggle();
             return true;
@@ -77,30 +83,35 @@ public class UIContainerScreen extends AbstractContainerScreen<UIMenu> {
 
     @Override
     public boolean mouseClicked(double mouseX, double mouseY, int button) {
+        if (ModalManager.onMouseClicked(mouseX, mouseY, button)) return true;
         if (inputHandler.onMouseClicked(mouseX, mouseY, button)) return true;
         return super.mouseClicked(mouseX, mouseY, button);
     }
 
     @Override
     public boolean mouseDragged(double mouseX, double mouseY, int button, double dx, double dy) {
+        if (ModalManager.hasModal()) return true;
         if (inputHandler.onMouseDragged(mouseX, mouseY, button, dx, dy)) return true;
         return super.mouseDragged(mouseX, mouseY, button, dx, dy);
     }
 
     @Override
     public boolean mouseReleased(double mouseX, double mouseY, int button) {
+        if (ModalManager.hasModal()) return true;
         if (inputHandler.onMouseReleased(mouseX, mouseY, button)) return true;
         return super.mouseReleased(mouseX, mouseY, button);
     }
 
     @Override
     public boolean mouseScrolled(double mouseX, double mouseY, double delta) {
+        if (ModalManager.hasModal()) return true;
         if (inputHandler.onMouseScrolled(mouseX, mouseY, delta)) return true;
         return super.mouseScrolled(mouseX, mouseY, delta);
     }
 
     @Override
     public boolean charTyped(char c, int modifiers) {
+        if (ModalManager.onCharTyped(c, modifiers)) return true;
         if (inputHandler.onCharTyped(c, modifiers)) return true;
         return super.charTyped(c, modifiers);
     }
@@ -108,6 +119,7 @@ public class UIContainerScreen extends AbstractContainerScreen<UIMenu> {
     @Override
     public void onClose() {
         FocusManager.clearFocus();
+        ModalManager.clear();
         super.onClose();
     }
 

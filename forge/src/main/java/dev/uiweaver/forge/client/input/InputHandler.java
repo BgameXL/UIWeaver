@@ -1,6 +1,7 @@
 package dev.uiweaver.forge.client.input;
 
 import dev.uiweaver.api.component.ButtonComponent;
+import dev.uiweaver.forge.client.modal.Modals;
 import dev.uiweaver.api.component.ScrollPanelComponent;
 import dev.uiweaver.api.component.CheckboxComponent;
 import dev.uiweaver.api.component.SliderComponent;
@@ -105,7 +106,12 @@ public class InputHandler {
 
         if (button == 0) {
             if (component instanceof ButtonComponent btn && btn.getActionId() != null) {
-                actionSender.accept(btn.getActionId());
+                if (btn.hasConfirm()) {
+                    Modals.confirm(btn.getConfirmTitle(), btn.getConfirmMessage(),
+                            () -> actionSender.accept(btn.getActionId()));
+                } else {
+                    actionSender.accept(btn.getActionId());
+                }
                 return true;
             }
             if (component instanceof TabsComponent tabs) {

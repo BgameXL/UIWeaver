@@ -32,8 +32,6 @@ public class UIBuilder {
 
     public static UIBuilder screen(String screenId) { return new UIBuilder(screenId); }
 
-    // ── Layout ─────────────────────────────────────────────────────────────
-
     public ColumnBuilder      column()      { return new ColumnBuilder(); }
     public RowBuilder         row()         { return new RowBuilder(); }
     public GridBuilder     grid(int columns)  { return new GridBuilder(columns); }
@@ -47,15 +45,10 @@ public class UIBuilder {
     public SliderBuilder   slider(int min, int max)       { return new SliderBuilder().range(min, max); }
 
     public ScrollPanelBuilder scrollPanel() { return new ScrollPanelBuilder(); }
-
-    // ── Basic widgets ──────────────────────────────────────────────────────
-
     public LabelBuilder  label(String text)    { return new LabelBuilder(Component.literal(text)); }
     public LabelBuilder  label(Component text) { return new LabelBuilder(text); }
     public ButtonBuilder button(String label)  { return new ButtonBuilder(Component.literal(label)); }
     public ButtonBuilder button(Component l)   { return new ButtonBuilder(l); }
-
-    // ── Tech widgets ───────────────────────────────────────────────────────
 
     public EnergyBarBuilder       energyBar()                  { return new EnergyBarBuilder(); }
     public FluidBarBuilder        fluidBar()                   { return new FluidBarBuilder(); }
@@ -64,14 +57,10 @@ public class UIBuilder {
     public TextInputBuilder       textInput()                  { return new TextInputBuilder(); }
     public PlayerInventoryBuilder playerInventory()            { return new PlayerInventoryBuilder(); }
 
-    // ── Slot bindings ──────────────────────────────────────────────────────
-
     public UIBuilder slots(String name, Supplier<Container> source) {
         slotBindings.add(SlotBindingDeclaration.of(name, source));
         return this;
     }
-
-    // ── Sync ───────────────────────────────────────────────────────────────
 
     public UIBuilder syncInt    (String key, Supplier<Integer> s) { syncs.add(SyncDeclaration.ofInt(key, s));     return this; }
     public UIBuilder syncLong   (String key, Supplier<Long> s)    { syncs.add(SyncDeclaration.ofLong(key, s));    return this; }
@@ -82,30 +71,20 @@ public class UIBuilder {
 
     public UIBuilder syncString (String key, Supplier<String> s)  { syncs.add(SyncDeclaration.ofString(key, s));  return this; }
 
-    // ── Actions ────────────────────────────────────────────────────────────
-
     public UIBuilder action(String actionId, Consumer<ActionContext> handler) {
         actions.add(ActionDeclaration.of(actionId, handler));
         return this;
     }
-
-    // ── Bindings ───────────────────────────────────────────────────────────
 
     public UIBuilder bind(String componentId, String property, String syncKey) {
         bindings.add(UIBinding.of(componentId, property, syncKey));
         return this;
     }
 
-    // ── Context ────────────────────────────────────────────────────────────
-
     public UIBuilder context(UIContextPayload payload) { this.contextPayload = payload; return this; }
-
-    // ── Root ───────────────────────────────────────────────────────────────
 
     public UIBuilder root(UIComponent component)      { this.root = component;        return this; }
     public UIBuilder root(ComponentBuilder<?> builder) { this.root = builder.build(); return this; }
-
-    // ── Build ──────────────────────────────────────────────────────────────
 
     public UIScreenSpec build() {
         if (root == null) throw new IllegalStateException("Screen '" + screenId + "' has no root component");

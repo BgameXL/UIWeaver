@@ -10,12 +10,17 @@ public class ButtonComponent extends AbstractComponent implements Measurable {
 
     private final Component label;
     private final String actionId;
+    private final String confirmTitle;
+    private final String confirmMessage;
 
     public ButtonComponent(String id, boolean visible, boolean enabled, Size preferredSize,
-                           Component label, String actionId) {
+                           Component label, String actionId,
+                           String confirmTitle, String confirmMessage) {
         super(id, visible, enabled, preferredSize);
-        this.label    = label;
-        this.actionId = actionId;
+        this.label          = label;
+        this.actionId       = actionId;
+        this.confirmTitle   = confirmTitle;
+        this.confirmMessage = confirmMessage;
     }
 
     @Override public ComponentType getType() { return ComponentType.BUTTON; }
@@ -27,6 +32,9 @@ public class ButtonComponent extends AbstractComponent implements Measurable {
         return Size.fixed(w, h);
     }
 
-    public Component getLabel() { return label; }
-    public String getActionId() { return actionId; }
+    public Component getLabel()        { return label; }
+    public String getActionId()        { return actionId; }
+    public boolean hasConfirm()        { return confirmTitle != null; }
+    public String getConfirmTitle()    { return confirmTitle; }
+    public String getConfirmMessage()  { return confirmMessage; }
 }
