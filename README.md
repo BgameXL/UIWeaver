@@ -254,8 +254,8 @@ The next major step is stabilizing layout behavior, especially for tabs and inve
 ---
 ## License
 
-UIWeaver is licensed under the **GNU Lesser General Public License v3.0**.
+UIWeaver is licensed under the [GNU Lesser General Public License v3.0](https://www.gnu.org/licenses/lgpl-3.0.en.html).
 
 This means you may use UIWeaver as a library in your own Mods, including closed-source or commercial projects, as long as modifications to UIWeaver itself remain available under the LGPL-3.0 license.
 
-See the `LICENSE` file for the full license text.
+See the [LICENSE](./LICENSE) file for the full license text.
