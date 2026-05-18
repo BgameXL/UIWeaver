@@ -13,6 +13,7 @@ public class SlotGridBuilder extends ComponentBuilder<SlotGridBuilder> {
     private final int columns;
     private final int rows;
     private SlotDescriptor.Role role = SlotDescriptor.Role.INPUT;
+    private String bindingName = null;
 
     public SlotGridBuilder(int columns, int rows) {
         this.columns = columns;
@@ -21,6 +22,11 @@ public class SlotGridBuilder extends ComponentBuilder<SlotGridBuilder> {
     }
 
     public SlotGridBuilder role(SlotDescriptor.Role role) { this.role = role; return this; }
+
+    public SlotGridBuilder bind(String bindingName) {
+        this.bindingName = bindingName;
+        return this;
+    }
 
     @Override
     public SlotGridComponent build() {
@@ -33,6 +39,6 @@ public class SlotGridBuilder extends ComponentBuilder<SlotGridBuilder> {
                         .build());
             }
         }
-        return new SlotGridComponent(id, visible, enabled, preferredSize, slots, columns);
+        return new SlotGridComponent(id, visible, enabled, preferredSize, slots, columns, bindingName);
     }
 }

@@ -2,9 +2,10 @@ package dev.uiweaver.runtime.menu;
 
 import dev.uiweaver.api.component.SlotGridComponent;
 import dev.uiweaver.api.component.UIComponent;
+import dev.uiweaver.api.slot.SlotBindingDeclaration;
+import dev.uiweaver.api.slot.SlotDescriptor;
 import dev.uiweaver.api.spec.UIContextSpec;
 import dev.uiweaver.api.spec.UIScreenSpec;
-import dev.uiweaver.api.slot.SlotDescriptor;
 import dev.uiweaver.runtime.action.ActionDispatcher;
 import dev.uiweaver.runtime.context.ContextValidator;
 import dev.uiweaver.runtime.network.ActionPacket;
@@ -24,6 +25,9 @@ import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class UIMenu extends AbstractContainerMenu {
 
@@ -46,23 +50,51 @@ public class UIMenu extends AbstractContainerMenu {
         this.syncManager = new SyncManager(spec.getSyncs());
         this.dispatcher = new ActionDispatcher(spec.getScreenId(), spec.getActions(), spec.getContextSpec());
 
-        registerSlotsFromSpec(spec.getRoot());
+        Map<String, Container> resolvedContainers = resolveSlotBindings(spec);
+        registerSlotsFromSpec(spec.getRoot(), resolvedContainers);
         this.machineSlotCount = slots.size();
         addPlayerInventorySlots(playerInventory);
 
-        // force full sync on open so client doesn't start with empty values
-        this.syncManager.forceFullSync();
+        syncManager.forceFullSync();
     }
 
-    private void registerSlotsFromSpec(UIComponent component) {
+    private Map<String, Container> resolveSlotBindings(UIScreenSpec spec) {
+        Map<String, Container> resolved = new HashMap<>();
+        for (SlotBindingDeclaration decl : spec.getSlotBindings()) {
+            try {
+                Container container = decl.getSource().get();
+                if (container != null) {
+                    resolved.put(decl.getName(), container);
+                } else {
+                    LOGGER.warn("[UIWeaver] Slot binding '{}' returned null container", decl.getName());
+                }
+            } catch (Exception e) {
+                LOGGER.error("[UIWeaver] Failed to resolve slot binding '{}'", decl.getName(), e);
+            }
+        }
+        return resolved;
+    }
+
+    private void registerSlotsFromSpec(UIComponent component, Map<String, Container> containers) {
         if (component instanceof SlotGridComponent grid) {
-            Container container = new SimpleContainer(grid.getSlots().size());
+            Container container;
+            if (grid.hasBoundContainer()) {
+                container = containers.get(grid.getBindingName());
+                if (container == null) {
+                    LOGGER.warn("[UIWeaver] SlotGrid '{}' bound to '{}' but no matching slot binding found — using SimpleContainer",
+                            grid.getId(), grid.getBindingName());
+                    container = new SimpleContainer(grid.getSlots().size());
+                }
+            } else {
+                container = new SimpleContainer(grid.getSlots().size());
+            }
+
             for (SlotDescriptor descriptor : grid.getSlots()) {
                 addSlot(new FilteredSlot(container, descriptor));
             }
         }
         for (UIComponent child : component.getChildren()) {
-            registerSlotsFromSpec(child);
+            registerSlotsFromSpec(child, containers);
         }
     }
 
@@ -80,12 +112,7 @@ public class UIMenu extends AbstractContainerMenu {
     @Override
     public void broadcastChanges() {
         super.broadcastChanges();
-
-        if (!(playerInventory.player instanceof ServerPlayer serverPlayer)) {
-            LOGGER.debug("[UIWeaver] broadcastChanges skipped — not ServerPlayer ({})",
-                    playerInventory.player == null ? "null" : playerInventory.player.getClass().getSimpleName());
-            return;
-        }
+        if (!(playerInventory.player instanceof ServerPlayer serverPlayer)) return;
 
         syncManager.tick();
         if (syncManager.hasPending()) {
@@ -135,7 +162,7 @@ public class UIMenu extends AbstractContainerMenu {
         syncManager.forceFullSync();
     }
 
-    public UIScreenSpec getSpec() { return spec; }
-    public BlockPos getOpenPos() { return openPos; }
-    public void setOpenPos(BlockPos pos) { this.openPos = pos; }
+    public UIScreenSpec getSpec()      { return spec; }
+    public BlockPos getOpenPos()       { return openPos; }
+    public void setOpenPos(BlockPos p) { this.openPos = p; }
 }

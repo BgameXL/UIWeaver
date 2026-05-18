@@ -2,7 +2,6 @@ package dev.uiweaver.test.forge;
 
 import dev.uiweaver.api.spec.UIContextSpec;
 import dev.uiweaver.forge.registry.UIMenuRegistry;
-import dev.uiweaver.test.TestMachineBlockEntity;
 import dev.uiweaver.test.TestMachineScreen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
@@ -28,19 +27,22 @@ public class TestMachineBlock extends BaseEntityBlock {
 
     @Override
     public InteractionResult use(BlockState state, Level level, BlockPos pos,
-                                  Player player, InteractionHand hand, BlockHitResult hit) {
+                                 Player player, InteractionHand hand, BlockHitResult hit) {
         if (level.isClientSide) return InteractionResult.SUCCESS;
         if (!(level.getBlockEntity(pos) instanceof TestMachineBlockEntity machine)) return InteractionResult.PASS;
         if (!(player instanceof ServerPlayer serverPlayer)) return InteractionResult.PASS;
+
+        UIContextSpec context = UIContextSpec.forBlockEntity(TestMachineBlockEntity.class).maxDistance(8);
 
         UIMenuRegistry.open(serverPlayer,
                 new TestMachineScreen(
                         machine::getEnergy,
                         machine::getMaxEnergy,
                         machine::isWorking,
+                        machine::asContainer,
                         ctx -> ctx.blockEntity(TestMachineBlockEntity.class).start(),
                         ctx -> ctx.blockEntity(TestMachineBlockEntity.class).stop(),
-                        UIContextSpec.forBlockEntity(TestMachineBlockEntity.class).maxDistance(8)
+                        context
                 ),
                 TestMachineScreen.ID,
                 pos
@@ -55,7 +57,7 @@ public class TestMachineBlock extends BaseEntityBlock {
 
     @Override
     public @Nullable <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state,
-                                                                              BlockEntityType<T> type) {
+                                                                            BlockEntityType<T> type) {
         if (level.isClientSide) return null;
         return (lvl, pos, blockState, be) -> {
             if (be instanceof TestMachineBlockEntity machine) machine.tick();

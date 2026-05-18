@@ -9,6 +9,7 @@ public enum ComponentType {
     ENERGY_BAR,
     FLUID_BAR,
     SLOT_GRID,
+    PLAYER_INVENTORY,
     TEXT_INPUT,
     SCROLL_PANEL,
     TABS,

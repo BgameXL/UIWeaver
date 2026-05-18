@@ -1,7 +1,7 @@
 package dev.uiweaver.test.forge;
 
 import dev.uiweaver.runtime.registry.UIRegistry;
-import dev.uiweaver.test.TestMachineBlockEntity;
+import dev.uiweaver.test.forge.TestMachineBlockEntity;
 import dev.uiweaver.test.TestMachineScreen;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
