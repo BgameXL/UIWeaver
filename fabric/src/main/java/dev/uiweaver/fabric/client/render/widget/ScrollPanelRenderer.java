@@ -41,7 +41,6 @@ public class ScrollPanelRenderer implements WidgetRenderer<ScrollPanelComponent>
                                 int mouseX, int mouseY, Bounds b) {
         int contentWidth = component.canScroll() ? b.width() - SCROLLBAR_WIDTH - 1 : b.width();
 
-        // Apply scissor to clip content
         var window = Minecraft.getInstance().getWindow();
         double scale = window.getGuiScale();
         int sx = (int) (b.x() * scale);

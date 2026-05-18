@@ -47,7 +47,6 @@ public class UIInspector {
             collectNodeDetail(hoveredNode, lines);
         }
 
-        // draw panel
         int panelH = lines.size() * LINE_H + PADDING * 2;
         int panelY = Math.min(PANEL_X, screenHeight - panelH - PANEL_X);
         graphics.fill(PANEL_X, panelY, PANEL_X + PANEL_W, panelY + panelH, BG);

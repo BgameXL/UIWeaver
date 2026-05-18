@@ -6,9 +6,11 @@ import dev.uiweaver.api.spec.UIScreenSpec;
 import dev.uiweaver.api.view.UIViewModel;
 import dev.uiweaver.client.input.FocusManager;
 import dev.uiweaver.client.modal.ModalManager;
+import dev.uiweaver.client.popup.PopupManager;
 import dev.uiweaver.forge.client.debug.UIDebugOverlay;
 import dev.uiweaver.forge.client.debug.UIInspector;
 import dev.uiweaver.forge.client.input.InputHandler;
+import dev.uiweaver.forge.client.popup.PopupRenderer;
 import dev.uiweaver.forge.client.render.UIRenderer;
 import dev.uiweaver.runtime.menu.UIMenu;
 import net.minecraft.client.gui.GuiGraphics;
@@ -46,6 +48,7 @@ public class UIContainerScreen extends AbstractContainerScreen<UIMenu> {
         super.init();
         this.renderer     = new UIRenderer(spec, viewModel);
         this.inputHandler = new InputHandler(spec, viewModel, this::sendAction);
+        inputHandler.setScreenSize(width, height);
         renderer.init(leftPos, topPos, imageWidth, imageHeight);
     }
 
@@ -60,7 +63,8 @@ public class UIContainerScreen extends AbstractContainerScreen<UIMenu> {
         renderer.renderForeground(graphics, mouseX, mouseY);
         renderTooltip(graphics, mouseX, mouseY);
 
-        // Modal layer — rendered on top of everything
+        PopupRenderer.render(graphics, width, height, mouseX, mouseY);
+
         ModalManager.render(graphics, width, height, mouseX, mouseY);
 
         if (UIDebugOverlay.isEnabled()) {
@@ -72,7 +76,6 @@ public class UIContainerScreen extends AbstractContainerScreen<UIMenu> {
     @Override
     public boolean keyPressed(int keyCode, int scanCode, int modifiers) {
         if (ModalManager.onKeyPressed(keyCode, scanCode, modifiers)) return true;
-
         if (keyCode == GLFW.GLFW_KEY_U && (modifiers & GLFW.GLFW_MOD_CONTROL) != 0) {
             UIDebugOverlay.toggle();
             return true;
@@ -105,6 +108,7 @@ public class UIContainerScreen extends AbstractContainerScreen<UIMenu> {
     @Override
     public boolean mouseScrolled(double mouseX, double mouseY, double delta) {
         if (ModalManager.hasModal()) return true;
+        if (PopupManager.hasPopup()) { PopupManager.close(); return true; }
         if (inputHandler.onMouseScrolled(mouseX, mouseY, delta)) return true;
         return super.mouseScrolled(mouseX, mouseY, delta);
     }
@@ -120,6 +124,7 @@ public class UIContainerScreen extends AbstractContainerScreen<UIMenu> {
     public void onClose() {
         FocusManager.clearFocus();
         ModalManager.clear();
+        PopupManager.close();
         super.onClose();
     }
 

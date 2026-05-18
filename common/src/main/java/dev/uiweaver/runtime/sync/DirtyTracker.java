@@ -20,7 +20,6 @@ public class DirtyTracker {
 
     public void markClean(SyncDeclaration<?> decl) {
         Object current = decl.getServerSource().get();
-        // Deep-copy lists so mutations don't affect the snapshot
         if (current instanceof List<?> list) {
             lastValues.put(decl.getKey(), List.copyOf(list));
         } else {

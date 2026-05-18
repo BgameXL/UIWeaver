@@ -16,5 +16,6 @@ public enum ComponentType {
     CHECKBOX,
     TOGGLE,
     SLIDER,
+    DROPDOWN,
     CUSTOM
 }

@@ -61,7 +61,7 @@ public class TextInputRenderer implements ForgeWidgetRenderer<TextInputComponent
             if (sx2 > sx1) graphics.fill(sx1, textY - 1, sx2, textY + font.lineHeight + 1, SELECTION_COLOR);
         }
 
-        // Text — approximate scroll by char offset
+        // Text
         int charOffset = scrollX > 0 ? Math.min(scrollX / 6, value.length()) : 0;
         graphics.drawString(font,
                 font.plainSubstrByWidth(value.substring(charOffset), maxTextW),

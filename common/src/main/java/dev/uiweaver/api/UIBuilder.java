@@ -42,7 +42,8 @@ public class UIBuilder {
     public CheckboxBuilder checkbox(String label)         { return new CheckboxBuilder(label); }
     public CheckboxBuilder checkbox(net.minecraft.network.chat.Component l) { return new CheckboxBuilder(l); }
     public ToggleBuilder   toggle()                       { return new ToggleBuilder(); }
-    public SliderBuilder   slider(int min, int max)       { return new SliderBuilder().range(min, max); }
+    public SliderBuilder    slider(int min, int max)      { return new SliderBuilder().range(min, max); }
+    public DropdownBuilder  dropdown()                     { return new DropdownBuilder(); }
 
     public ScrollPanelBuilder scrollPanel() { return new ScrollPanelBuilder(); }
     public LabelBuilder  label(String text)    { return new LabelBuilder(Component.literal(text)); }

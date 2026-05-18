@@ -21,5 +21,6 @@ public class WidgetRendererSetup {
         reg.register(ComponentType.CHECKBOX,         new CheckboxRenderer());
         reg.register(ComponentType.TOGGLE,           new ToggleRenderer());
         reg.register(ComponentType.SLIDER,           new SliderRenderer());
+        reg.register(ComponentType.DROPDOWN,        new DropdownRenderer());
     }
 }

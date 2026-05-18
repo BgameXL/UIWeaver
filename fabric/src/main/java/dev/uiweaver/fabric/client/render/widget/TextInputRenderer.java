@@ -37,7 +37,6 @@ public class TextInputRenderer implements WidgetRenderer<TextInputComponent> {
         } else {
             graphics.drawString(font, value, textX, textY, theme.getTextColor(), false);
 
-            // simple end cursor
             int cursorX = textX + font.width(value);
             if (cursorX < b.right() - PADDING && (System.currentTimeMillis() / 500) % 2 == 0) {
                 graphics.fill(cursorX, textY, cursorX + 1, textY + font.lineHeight, CURSOR_COLOR);

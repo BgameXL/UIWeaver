@@ -49,8 +49,6 @@ public class InputHandler {
         return focusedInput.tryInsert(String.valueOf(c));
     }
 
-    // ── Dispatch ───────────────────────────────────────────────────────────
-
     private boolean dispatchClick(UIComponent component, double mouseX, double mouseY, int button) {
         if (!component.isVisible() || !component.isEnabled()) return false;
 

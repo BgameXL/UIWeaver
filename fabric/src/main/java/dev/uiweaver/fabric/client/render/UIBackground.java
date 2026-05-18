@@ -30,13 +30,9 @@ public class UIBackground {
 
     private static void renderSolid(GuiGraphics graphics, UITheme theme,
                                      int x, int y, int width, int height) {
-        // outer shadow
         graphics.fill(x + 2, y + 2, x + width + 2, y + height + 2, 0x55000000);
-        // main background
         graphics.fill(x, y, x + width, y + height, theme.getBackgroundColor());
-        // border
         graphics.renderOutline(x, y, width, height, theme.getBorderColor());
-        // inner highlight top-left
         graphics.fill(x + 1, y + 1, x + width - 1, y + 2, 0x22FFFFFF);
         graphics.fill(x + 1, y + 1, x + 2, y + height - 1, 0x22FFFFFF);
     }

@@ -1,23 +1,23 @@
 package dev.uiweaver.forge.client.input;
 
-import dev.uiweaver.api.component.ButtonComponent;
-import dev.uiweaver.forge.client.modal.Modals;
-import dev.uiweaver.api.component.ScrollPanelComponent;
-import dev.uiweaver.api.component.CheckboxComponent;
-import dev.uiweaver.api.component.SliderComponent;
-import dev.uiweaver.api.component.TabsComponent;
-import dev.uiweaver.api.component.ToggleComponent;
-import dev.uiweaver.api.component.TextInputComponent;
-import dev.uiweaver.api.component.UIComponent;
+import dev.uiweaver.api.component.*;
 import dev.uiweaver.api.layout.Bounds;
 import dev.uiweaver.api.spec.UIScreenSpec;
 import dev.uiweaver.api.view.UIViewModel;
 import dev.uiweaver.client.input.FocusManager;
+import dev.uiweaver.client.popup.ContextMenuItem;
+import dev.uiweaver.client.popup.PopupManager;
+import dev.uiweaver.client.popup.PopupMenu;
+import dev.uiweaver.forge.client.modal.Modals;
+import dev.uiweaver.forge.client.popup.PopupRenderer;
 import dev.uiweaver.forge.client.screen.ForgeScreenActionSender;
 import net.minecraft.client.Minecraft;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
 import org.lwjgl.glfw.GLFW;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Consumer;
 
 public class InputHandler {
@@ -26,14 +26,35 @@ public class InputHandler {
     private final UIScreenSpec spec;
     private final Consumer<String> actionSender;
 
+    // Screen dimensions — needed for popup hit testing
+    private int screenW = 0;
+    private int screenH = 0;
+
     public InputHandler(UIScreenSpec spec, UIViewModel viewModel, Consumer<String> actionSender) {
         this.spec         = spec;
         this.actionSender = actionSender;
     }
 
+    public void setScreenSize(int w, int h) { this.screenW = w; this.screenH = h; }
+
     public boolean onMouseClicked(double mouseX, double mouseY, int button) {
+        // Popup click handled first
+        if (PopupManager.hasPopup()) {
+            PopupMenu menu = PopupManager.getActive();
+            if (menu != null) {
+                ContextMenuItem item = PopupRenderer.itemAt(menu, (int) mouseX, (int) mouseY, screenW, screenH);
+                if (item != null && item.isEnabled() && item.getAction() != null) {
+                    item.getAction().run();
+                }
+                PopupManager.close();
+                return true;
+            }
+        }
+
         boolean handled = dispatchClick(spec.getRoot(), mouseX, mouseY, button, 0);
-        if (!handled) FocusManager.clearFocus();
+        if (!handled) {
+            FocusManager.clearFocus();
+        }
         return handled;
     }
 
@@ -42,6 +63,11 @@ public class InputHandler {
     }
 
     public boolean onKeyPressed(int keyCode, int scanCode, int modifiers) {
+        if (keyCode == GLFW.GLFW_KEY_ESCAPE && PopupManager.hasPopup()) {
+            PopupManager.close();
+            return true;
+        }
+
         TextInputComponent input = FocusManager.getFocused();
         if (input == null) return false;
 
@@ -85,6 +111,25 @@ public class InputHandler {
         return ok;
     }
 
+    public boolean onMouseDragged(double mouseX, double mouseY, int button, double dx, double dy) {
+        if (draggingSlider == null) return false;
+        Bounds b = draggingSlider.getBounds();
+        if (b != null) {
+            draggingSlider.setValueFromX((int) mouseX, b.x(), b.width());
+            fireSlider(draggingSlider);
+        }
+        return true;
+    }
+
+    public boolean onMouseReleased(double mouseX, double mouseY, int button) {
+        if (draggingSlider != null) {
+            draggingSlider.setDragging(false);
+            draggingSlider = null;
+            return true;
+        }
+        return false;
+    }
+
     private boolean dispatchClick(UIComponent component, double mouseX, double mouseY,
                                   int button, int scrollOffsetY) {
         if (!component.isVisible() || !component.isEnabled()) return false;
@@ -96,14 +141,10 @@ public class InputHandler {
 
         if (component instanceof TabsComponent tabs) {
             UIComponent active = tabs.getActiveContent();
-            if (active != null && dispatchClick(active, mouseX, mouseY, button, childOffset)) {
-                return true;
-            }
+            if (active != null && dispatchClick(active, mouseX, mouseY, button, childOffset)) return true;
         } else {
             for (int i = component.getChildren().size() - 1; i >= 0; i--) {
-                if (dispatchClick(component.getChildren().get(i), mouseX, mouseY, button, childOffset)) {
-                    return true;
-                }
+                if (dispatchClick(component.getChildren().get(i), mouseX, mouseY, button, childOffset)) return true;
             }
         }
 
@@ -127,6 +168,10 @@ public class InputHandler {
                 int tabIdx = tabs.getTabAt((int) mouseX, (int) adjustedY);
                 if (tabIdx >= 0) { tabs.setActiveTab(tabIdx); return true; }
             }
+            if (component instanceof DropdownComponent dropdown) {
+                openDropdownPopup(dropdown, bounds);
+                return true;
+            }
             if (component instanceof CheckboxComponent cb) {
                 cb.toggle();
                 fireAction(cb.getActionId(), cb.isChecked());
@@ -149,6 +194,17 @@ public class InputHandler {
                 return true;
             }
         }
+
+        if (button == 1) {
+            if (component instanceof dev.uiweaver.api.component.ContextMenuSource src) {
+                List<ContextMenuItem> items = src.getContextMenuItems();
+                if (!items.isEmpty()) {
+                    PopupManager.open(new PopupMenu(items, (int) mouseX, (int) adjustedY));
+                    return true;
+                }
+            }
+        }
+
         return false;
     }
 
@@ -169,23 +225,25 @@ public class InputHandler {
         return false;
     }
 
-    public boolean onMouseDragged(double mouseX, double mouseY, int button, double dx, double dy) {
-        if (draggingSlider == null) return false;
-        Bounds b = draggingSlider.getBounds();
-        if (b != null) {
-            draggingSlider.setValueFromX((int) mouseX, b.x(), b.width());
-            fireSlider(draggingSlider);
+    private void openDropdownPopup(DropdownComponent dropdown, Bounds bounds) {
+        List<ContextMenuItem> items = new ArrayList<>();
+        List<Component> options = dropdown.getOptions();
+        for (int i = 0; i < options.size(); i++) {
+            final int idx = i;
+            items.add(ContextMenuItem.of(options.get(i), () -> {
+                dropdown.setSelectedIndex(idx);
+                fireDropdown(dropdown, idx);
+            }));
         }
-        return true;
+        PopupManager.open(new PopupMenu(items, bounds.x(), bounds.bottom()));
     }
 
-    public boolean onMouseReleased(double mouseX, double mouseY, int button) {
-        if (draggingSlider != null) {
-            draggingSlider.setDragging(false);
-            draggingSlider = null;
-            return true;
-        }
-        return false;
+    private void fireDropdown(DropdownComponent dropdown, int selectedIndex) {
+        if (dropdown.getActionId() == null) return;
+        CompoundTag tag = new CompoundTag();
+        tag.putInt("index", selectedIndex);
+        tag.putString("value", dropdown.getSelectedOption().getString());
+        ForgeScreenActionSender.sendAction(spec.getScreenId(), dropdown.getActionId(), tag);
     }
 
     private void fireAction(String actionId, boolean value) {
