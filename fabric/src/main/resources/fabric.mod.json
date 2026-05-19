@@ -8,8 +8,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "dev.uiweaver.fabric.UIWeaverFabric",
-      "dev.uiweaver.test.fabric.TestModFabric"
+      "dev.uiweaver.fabric.UIWeaverFabric"
     ],
     "client": [
       "dev.uiweaver.fabric.UIWeaverFabricClient"
