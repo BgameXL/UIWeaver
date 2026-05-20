@@ -4,13 +4,13 @@ import dev.uiweaver.api.component.ButtonComponent;
 import dev.uiweaver.api.layout.Bounds;
 import dev.uiweaver.api.view.UIViewModel;
 import dev.uiweaver.client.render.RenderLayer;
-import dev.uiweaver.client.render.WidgetRenderer;
+import dev.uiweaver.fabric.client.render.FabricWidgetRenderer;
 import dev.uiweaver.client.theme.UITheme;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
 
-public class ButtonRenderer implements WidgetRenderer<ButtonComponent> {
+public class ButtonRenderer implements FabricWidgetRenderer<ButtonComponent> {
 
     @Override
     public void render(GuiGraphics graphics, ButtonComponent component, UIViewModel viewModel,

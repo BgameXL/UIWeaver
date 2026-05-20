@@ -4,13 +4,13 @@ import dev.uiweaver.api.component.TextInputComponent;
 import dev.uiweaver.api.layout.Bounds;
 import dev.uiweaver.api.view.UIViewModel;
 import dev.uiweaver.client.render.RenderLayer;
-import dev.uiweaver.client.render.WidgetRenderer;
+import dev.uiweaver.fabric.client.render.FabricWidgetRenderer;
 import dev.uiweaver.client.theme.UITheme;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
 
-public class TextInputRenderer implements WidgetRenderer<TextInputComponent> {
+public class TextInputRenderer implements FabricWidgetRenderer<TextInputComponent> {
 
     private static final int PLACEHOLDER_COLOR = 0xFF666666;
     private static final int CURSOR_COLOR = 0xFFCCCCCC;

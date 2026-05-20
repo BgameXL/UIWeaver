@@ -73,6 +73,6 @@ public class UIContainerScreen extends AbstractContainerScreen<UIMenu> {
     }
 
     private void sendAction(String actionId) {
-        FabricScreenActionSender.send(spec.getScreenId(), actionId, menu);
+        FabricScreenActionSender.sendAction(spec.getScreenId(), actionId);
     }
 }

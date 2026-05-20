@@ -105,11 +105,11 @@ UIWeaver includes debugging tools to inspect component bounds and layout behavio
 
 Useful for finding issues such as:
 
-- components overflowing their parent;
-- inactive tabs still being inspected;
-- stale child bounds after layout changes;
-- slot grids not matching their visual position;
-- panels being clipped or placed too high.
+- components overflowing their parent
+- inactive tabs still being inspected
+- stale child bounds after layout changes
+- slot grids not matching their visual position
+- panels being clipped or placed too high
 - 
 The debug overlay can draw colored bounds for visible components, and the inspector can show component type, id, bounds, visibility, and ViewModel values.
 
@@ -212,12 +212,7 @@ The framework would benefit from a stronger style system:
 - theme variants
 - reusable style presets
 
-### Better Responsive Layout
-
-The framework should continue improving behavior across different GUI scales and resolutions.
-
 ---
-
 ## Design Goals
 UIWeaver aims to become:
 
@@ -243,7 +238,8 @@ Potential future improvements:
 - screen editor
 - drag-and-drop layout debugging
 - reusable UI templates
-- better support for Forge, Fabric and NeoForge
+- better support for Forge and Fabric
+- add NeoForge support
 
 ---
 ## Project Status
