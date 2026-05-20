@@ -23,7 +23,7 @@ jobs:
       - name: Build
         run: ./gradlew build
 
-      - name: Publish to CurseForge and Modrinth
+      - name: Publish Forge
         uses: Kir-Antipov/mc-publish@v3.3
         with:
           curseforge-id: 1547409
@@ -32,17 +32,33 @@ jobs:
           modrinth-id: upvJ1pjQ
           modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
 
-          files: |
-            forge/build/libs/!(*-@(dev|sources|javadoc)).jar
-            fabric/build/libs/!(*-@(dev|sources|javadoc)).jar
+          files: forge/build/libs/!(*-@(dev|sources|javadoc)).jar
 
-          name: UIWeaver ${{ github.event.release.tag_name }}
-          version: ${{ github.event.release.tag_name }}
+          name: UIWeaver ${{ github.event.release.tag_name }} (Forge)
+          version: ${{ github.event.release.tag_name }}-forge
           version-type: release
           changelog: ${{ github.event.release.body }}
 
           game-versions: 1.20.1
-          loaders: |
-            forge
-            fabric
+          loaders: forge
+          java: 17
+
+      - name: Publish Fabric
+        uses: Kir-Antipov/mc-publish@v3.3
+        with:
+          curseforge-id: 1547409
+          curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
+
+          modrinth-id: upvJ1pjQ
+          modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
+
+          files: fabric/build/libs/!(*-@(dev|sources|javadoc)).jar
+
+          name: UIWeaver ${{ github.event.release.tag_name }} (Fabric)
+          version: ${{ github.event.release.tag_name }}-fabric
+          version-type: release
+          changelog: ${{ github.event.release.body }}
+
+          game-versions: 1.20.1
+          loaders: fabric
           java: 17
