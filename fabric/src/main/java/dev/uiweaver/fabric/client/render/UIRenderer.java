@@ -4,8 +4,8 @@ import dev.uiweaver.api.component.UIComponent;
 import dev.uiweaver.api.spec.UIScreenSpec;
 import dev.uiweaver.api.view.UIViewModel;
 import dev.uiweaver.client.render.RenderLayer;
-import dev.uiweaver.client.render.WidgetRenderer;
-import dev.uiweaver.client.render.WidgetRendererRegistry;
+import dev.uiweaver.fabric.client.render.FabricWidgetRenderer;
+import dev.uiweaver.fabric.client.render.FabricWidgetRendererRegistry;
 import dev.uiweaver.client.theme.ThemeRegistry;
 import dev.uiweaver.client.theme.UITheme;
 import net.minecraft.client.gui.GuiGraphics;
@@ -14,7 +14,7 @@ public class UIRenderer {
 
     private final UIScreenSpec spec;
     private final UIViewModel viewModel;
-    private final WidgetRendererRegistry renderers = WidgetRendererRegistry.instance();
+    private final FabricWidgetRendererRegistry renderers = FabricWidgetRendererRegistry.instance();
     private int leftPos, topPos, width, height;
 
     public UIRenderer(UIScreenSpec spec, UIViewModel viewModel) {
@@ -47,7 +47,7 @@ public class UIRenderer {
                                  UITheme theme, int mouseX, int mouseY, RenderLayer layer) {
         if (!component.isVisible()) return;
 
-        WidgetRenderer<UIComponent> renderer = renderers.get(component.getType());
+        FabricWidgetRenderer<UIComponent> renderer = renderers.get(component.getType());
         if (renderer != null) {
             renderer.render(graphics, component, viewModel, theme, mouseX, mouseY, layer);
         }

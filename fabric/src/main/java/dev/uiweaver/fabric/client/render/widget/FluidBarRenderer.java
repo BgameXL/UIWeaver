@@ -4,7 +4,7 @@ import dev.uiweaver.api.component.FluidBarComponent;
 import dev.uiweaver.api.layout.Bounds;
 import dev.uiweaver.api.view.UIViewModel;
 import dev.uiweaver.client.render.RenderLayer;
-import dev.uiweaver.client.render.WidgetRenderer;
+import dev.uiweaver.fabric.client.render.FabricWidgetRenderer;
 import dev.uiweaver.client.theme.UITheme;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
@@ -13,7 +13,7 @@ import net.minecraft.util.FormattedCharSequence;
 
 import java.util.List;
 
-public class FluidBarRenderer implements WidgetRenderer<FluidBarComponent> {
+public class FluidBarRenderer implements FabricWidgetRenderer<FluidBarComponent> {
 
     private static final int DEFAULT_FLUID_COLOR = 0xFF3355FF;
 

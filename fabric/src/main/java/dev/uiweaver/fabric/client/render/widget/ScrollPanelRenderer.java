@@ -5,13 +5,14 @@ import dev.uiweaver.api.component.UIComponent;
 import dev.uiweaver.api.layout.Bounds;
 import dev.uiweaver.api.view.UIViewModel;
 import dev.uiweaver.client.render.RenderLayer;
-import dev.uiweaver.client.render.WidgetRenderer;
-import dev.uiweaver.client.render.WidgetRendererRegistry;
+import dev.uiweaver.fabric.client.render.FabricWidgetRenderer;
+import dev.uiweaver.fabric.client.render.FabricWidgetRendererRegistry;
+
 import dev.uiweaver.client.theme.UITheme;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 
-public class ScrollPanelRenderer implements WidgetRenderer<ScrollPanelComponent> {
+public class ScrollPanelRenderer implements FabricWidgetRenderer<ScrollPanelComponent> {
 
     private static final int SCROLLBAR_WIDTH = 4;
     private static final int SCROLLBAR_COLOR = 0xFF555555;
@@ -51,7 +52,7 @@ public class ScrollPanelRenderer implements WidgetRenderer<ScrollPanelComponent>
         com.mojang.blaze3d.platform.GlStateManager._scissorBox(sx, sy, sw, sh);
 
         int offset = component.getScrollOffset();
-        WidgetRendererRegistry reg = WidgetRendererRegistry.instance();
+        FabricWidgetRendererRegistry reg = FabricWidgetRendererRegistry.instance();
 
         for (UIComponent child : component.getChildren()) {
             if (!child.isVisible()) continue;
@@ -63,7 +64,7 @@ public class ScrollPanelRenderer implements WidgetRenderer<ScrollPanelComponent>
 
             if (shifted.bottom() > b.y() && shifted.y() < b.bottom()) {
                 @SuppressWarnings("unchecked")
-                WidgetRenderer<UIComponent> renderer = reg.get(child.getType());
+                FabricWidgetRenderer<UIComponent> renderer = reg.get(child.getType());
                 if (renderer != null) {
                     renderer.render(graphics, child, viewModel, theme, mouseX, mouseY + offset, RenderLayer.FOREGROUND);
                 }
