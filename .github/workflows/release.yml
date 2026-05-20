@@ -1,64 +1,124 @@
 name: Release
 
 on:
-  release:
-    types: [published]
+  workflow_dispatch:
+    inputs:
+      versionType:
+        description: 'Version type'
+        required: false
+        type: choice
+        default: 'release'
+        options:
+          - release
+          - beta
+          - alpha
 
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      - name: Set up JDK 17
+      - name: Setup Java
         uses: actions/setup-java@v4
         with:
-          java-version: 17
-          distribution: temurin
+          java-version: '17'
+          distribution: 'temurin'
+          cache: 'gradle'
+
+      - name: Validate Gradle wrapper
+        uses: gradle/wrapper-validation-action@v2
 
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-home-cache-cleanup: true
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
 
       - name: Build
-        run: ./gradlew build
+        run: ./gradlew build --no-daemon --parallel
+        env:
+          GRADLE_OPTS: -Dorg.gradle.jvmargs="-Xmx2g -XX:MaxMetaspaceSize=512m"
 
-      - name: Publish Forge
-        uses: Kir-Antipov/mc-publish@v3.3
+      - name: Upload build artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
         with:
-          curseforge-id: 1547409
-          curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
+          name: build-artifacts
+          path: |
+            fabric/build/libs/
+            forge/build/libs/
+          retention-days: 7
 
-          modrinth-id: upvJ1pjQ
-          modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
-
-          files: forge/build/libs/!(*-@(dev|sources|javadoc)).jar
-
-          name: UIWeaver ${{ github.event.release.tag_name }} (Forge)
-          version: ${{ github.event.release.tag_name }}-forge
-          version-type: release
-          changelog: ${{ github.event.release.body }}
-
-          game-versions: 1.20.1
-          loaders: forge
-          java: 17
+      - name: Extract versions
+        id: version
+        run: |
+          FABRIC_VERSION=$(find fabric/build/libs -name "*.jar" -not -name "*sources*" -not -name "*dev*" -not -name "*javadoc*" -exec basename {} \; | head -1 | sed 's/uiweaver-fabric-\(.*\)\.jar/\1/')
+          FORGE_VERSION=$(find forge/build/libs -name "*.jar" -not -name "*sources*" -not -name "*dev*" -not -name "*javadoc*" -exec basename {} \; | head -1 | sed 's/uiweaver-forge-\(.*\)\.jar/\1/')
+          echo "fabric_version=$FABRIC_VERSION" >> $GITHUB_OUTPUT
+          echo "forge_version=$FORGE_VERSION" >> $GITHUB_OUTPUT
+          echo "Fabric: $FABRIC_VERSION"
+          echo "Forge:  $FORGE_VERSION"
 
       - name: Publish Fabric
         uses: Kir-Antipov/mc-publish@v3.3
         with:
+          modrinth-id: upvJ1pjQ
+          modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
           curseforge-id: 1547409
           curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
 
+          files: |
+            fabric/build/libs/!(*-@(dev|sources|javadoc)).jar
+            fabric/build/libs/*-@(sources|javadoc).jar
+
+          name: UIWeaver ${{ steps.version.outputs.fabric_version }} (Fabric)
+          version: ${{ steps.version.outputs.fabric_version }}-fabric
+          version-type: ${{ inputs.versionType }}
+
+          loaders: fabric
+          game-versions: 1.20.1
+          game-version-filter: none
+          java: 17
+
+          retry-attempts: 3
+          retry-delay: 10000
+          fail-mode: fail
+
+      - name: Publish Forge
+        uses: Kir-Antipov/mc-publish@v3.3
+        with:
           modrinth-id: upvJ1pjQ
           modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
+          curseforge-id: 1547409
+          curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
 
-          files: fabric/build/libs/!(*-@(dev|sources|javadoc)).jar
+          files: |
+            forge/build/libs/!(*-@(dev|sources|javadoc)).jar
+            forge/build/libs/*-@(sources|javadoc).jar
 
-          name: UIWeaver ${{ github.event.release.tag_name }} (Fabric)
-          version: ${{ github.event.release.tag_name }}-fabric
-          version-type: release
-          changelog: ${{ github.event.release.body }}
+          name: UIWeaver ${{ steps.version.outputs.forge_version }} (Forge)
+          version: ${{ steps.version.outputs.forge_version }}-forge
+          version-type: ${{ inputs.versionType }}
 
+          loaders: forge
           game-versions: 1.20.1
-          loaders: fabric
+          game-version-filter: none
           java: 17
+
+          retry-attempts: 3
+          retry-delay: 10000
+          fail-mode: fail
+
+      - name: Release summary
+        run: |
+          echo "## Release Summary" >> $GITHUB_STEP_SUMMARY
+          echo "- **Fabric**: ${{ steps.version.outputs.fabric_version }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Forge**: ${{ steps.version.outputs.forge_version }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Type**: ${{ inputs.versionType }}" >> $GITHUB_STEP_SUMMARY
