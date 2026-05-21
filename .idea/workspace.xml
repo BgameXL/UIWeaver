@@ -232,6 +232,9 @@
       <entry key="_/home/bgame/IdeaProjects/UIWeaver" value="3Drlb4Edd02JxUyprVGXzVEyiVZ" />
     </persistenceIdMap>
   </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="299" />
+  </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -285,6 +288,10 @@
     &quot;accountId&quot;: &quot;068aefb2-6928-4679-9d80-168fd9fbf886&quot;
   }
 }</component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8,
   &quot;fromUser&quot;: false
@@ -301,6 +308,7 @@
   "keyToString": {
     "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -308,7 +316,6 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "gh-pages",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/home/bgame/IdeaProjects/UIWeaver/forge/src/main/java/dev/uiweaver/test",
@@ -396,7 +403,7 @@
       <workItem from="1779312881956" duration="12760000" />
       <workItem from="1779328841133" duration="909000" />
       <workItem from="1779329839930" duration="42000" />
-      <workItem from="1779383623215" duration="1425000" />
+      <workItem from="1779383623215" duration="1753000" />
     </task>
     <task id="LOCAL-00001" summary="alright">
       <option name="closed" value="true" />

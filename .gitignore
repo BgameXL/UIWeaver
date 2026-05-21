@@ -1,0 +1,41 @@
+# Gradle
+.gradle/
+**/.gradle/
+build/
+**/build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Minecraft / Architectury / Loom run output
+run/
+**/run/
+**/.architectury-transformer/
+**/loom-cache/
+
+# Logs and crash reports
+*.log
+*.log.gz
+crash-reports/
+
+# IDEs and editors
+.idea/
+*.iml
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Local environment
+.env
+.env.*
+!.env.example
+
+# Generated archives and compiled output
+*.class
+*.jar
+*.war
+*.ear
+out/
