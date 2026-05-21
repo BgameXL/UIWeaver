@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: io.github.juuxel:unprotect:1.2.0" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="io.github.juuxel" artifactId="unprotect" version="1.2.0" baseVersion="1.2.0" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.github.juuxel/unprotect/1.2.0/49cc229a0469f28fae41593a9537743ac6a951dc/unprotect-1.2.0.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.github.juuxel/unprotect/1.2.0/e130c58b532c21aee5e833bdc02b926e3bb9383/unprotect-1.2.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.github.juuxel/unprotect/1.2.0/a64ee133a44e90e45d9be87c838271fae671d874/unprotect-1.2.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

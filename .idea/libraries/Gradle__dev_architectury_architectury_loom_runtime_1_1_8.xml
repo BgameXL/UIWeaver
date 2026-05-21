@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: dev.architectury:architectury-loom-runtime:1.1.8" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="dev.architectury" artifactId="architectury-loom-runtime" version="1.1.8" baseVersion="1.1.8" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/dev.architectury/architectury-loom-runtime/1.1.8/bf2a4a84e0479a0ab3bb8bfbd906c3737ceb1207/architectury-loom-runtime-1.1.8.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/dev.architectury/architectury-loom-runtime/1.1.8/3f87323eb6624600512bbcf9c361413647f11336/architectury-loom-runtime-1.1.8-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

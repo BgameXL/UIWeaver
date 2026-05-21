@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server Actions — UIWeaver</title>
+    <link rel="stylesheet" href="style.css">
+    <script>if(localStorage.getItem('theme')==='dark')document.documentElement.setAttribute('data-theme','dark');</script>
+</head>
+<body>
+<header>
+    <a class="logo" href="index.html">UIWeaver</a>
+    <span class="version">v0.1.0</span>
+    <nav>
+        <a href="https://github.com/BgameXL/UIWeaver">GitHub</a>
+        <button id="theme-btn" onclick="toggleTheme()">dark</button>
+    </nav>
+</header>
+<div class="layout">
+
+    <aside>
+        <div class="nav-section">
+            <div class="nav-section-title">Getting Started</div>
+            <a href="index.html" >Introduction</a>
+            <a href="installation.html" >Installation</a>
+            <a href="first-screen.html" >Your First Screen</a>
+        </div>
+        <div class="nav-section">
+            <div class="nav-section-title">Core Concepts</div>
+            <a href="component-tree.html" >Component Tree</a>
+            <a href="layout.html" >Layout Containers</a>
+            <a href="viewmodel.html" >ViewModel &amp; Binding</a>
+            <a href="server-actions.html" class="active">Server Actions</a>
+            <a href="debug.html" >Debug &amp; Inspector</a>
+        </div>
+        <div class="nav-section">
+            <div class="nav-section-title">Components</div>
+            <a href="components-layout.html" >Layout</a>
+            <a href="components-display.html" >Display</a>
+            <a href="components-input.html" >Input</a>
+            <a href="components-inventory.html" >Inventory</a>
+        </div>
+        <div class="nav-section">
+            <div class="nav-section-title">Reference</div>
+            <a href="api.html" >Component API</a>
+            <a href="limitations.html" >Known Limitations</a>
+        </div>
+    </aside>
+    <main>
+        <h1>Server Actions</h1>
+        <p class="page-subtitle">How user input reaches the server safely.</p>
+
+        <p>Interactive widgets like buttons and toggles send named actions to the server instead of directly changing state. This keeps the client from being trusted with anything it shouldn't control.</p>
+
+        <h2>Declaring an action</h2>
+        <pre><code>ui.button(Component.literal("Start"))
+    .id("btnStart")
+    .action("start")</code></pre>
+
+        <p>When clicked, UIWeaver sends an action packet with the name <code>"start"</code> to the server.</p>
+
+        <h2>Handling actions</h2>
+        <p>Override <code>onAction</code> in your screen handler or machine class:</p>
+        <pre><code>@Override
+public void onAction(ServerPlayer player, String action) {
+    switch (action) {
+        case "start"  -> { if (canStart()) startMachine(); }
+        case "stop"   -> stopMachine();
+        case "reset"  -> resetMachine();
+    }
+}</code></pre>
+
+        <h2>Actions with data</h2>
+        <p>Some widgets send additional data with their action:</p>
+        <pre><code>ui.slider(0, 100)
+    .id("speedSlider")
+    .action("setSpeed")   // sends value as int</code></pre>
+
+        <pre><code>@Override
+public void onAction(ServerPlayer player, String action, int value) {
+    if (action.equals("setSpeed")) setSpeed(value);
+}</code></pre>
+
+        <h2>Validation</h2>
+        <p>Always validate on the server. The client can send any action at any time:</p>
+        <pre><code>case "start" -> {
+    if (!player.hasPermissions(2)) return;
+    if (!isFormed()) return;
+    if (isRunning()) return;
+    startMachine();
+}</code></pre>
+
+        <div class="pagination"><a href="viewmodel.html"><span class="label">← Previous</span><span class="title">ViewModel & Binding</span></a><a href="debug.html" style="text-align:right"><span class="label">Next →</span><span class="title">Debug & Inspector</span></a></div>
+    </main>
+</div>
+<script>
+    function toggleTheme() {
+        var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+        document.documentElement.setAttribute('data-theme', dark ? '' : 'dark');
+        localStorage.setItem('theme', dark ? 'light' : 'dark');
+        document.getElementById('theme-btn').textContent = dark ? 'dark' : 'light';
+    }
+    if (localStorage.getItem('theme') === 'dark')
+        document.getElementById('theme-btn').textContent = 'light';
+</script>
+</body>
+</html>

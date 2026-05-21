@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Components — UIWeaver</title>
+    <link rel="stylesheet" href="style.css">
+    <script>if(localStorage.getItem('theme')==='dark')document.documentElement.setAttribute('data-theme','dark');</script>
+</head>
+<body>
+<header>
+    <a class="logo" href="index.html">UIWeaver</a>
+    <span class="version">v0.1.0</span>
+    <nav>
+        <a href="https://github.com/BgameXL/UIWeaver">GitHub</a>
+        <button id="theme-btn" onclick="toggleTheme()">dark</button>
+    </nav>
+</header>
+<div class="layout">
+
+    <aside>
+        <div class="nav-section">
+            <div class="nav-section-title">Getting Started</div>
+            <a href="index.html" >Introduction</a>
+            <a href="installation.html" >Installation</a>
+            <a href="first-screen.html" >Your First Screen</a>
+        </div>
+        <div class="nav-section">
+            <div class="nav-section-title">Core Concepts</div>
+            <a href="component-tree.html" >Component Tree</a>
+            <a href="layout.html" >Layout Containers</a>
+            <a href="viewmodel.html" >ViewModel &amp; Binding</a>
+            <a href="server-actions.html" >Server Actions</a>
+            <a href="debug.html" >Debug &amp; Inspector</a>
+        </div>
+        <div class="nav-section">
+            <div class="nav-section-title">Components</div>
+            <a href="components-layout.html" class="active">Layout</a>
+            <a href="components-display.html" >Display</a>
+            <a href="components-input.html" >Input</a>
+            <a href="components-inventory.html" >Inventory</a>
+        </div>
+        <div class="nav-section">
+            <div class="nav-section-title">Reference</div>
+            <a href="api.html" >Component API</a>
+            <a href="limitations.html" >Known Limitations</a>
+        </div>
+    </aside>
+    <main>
+        <h1>Layout Components</h1>
+        <p class="page-subtitle">column, row, grid, tabs, scrollPanel.</p>
+
+        <p>Layout components hold and position other components. They do not render any visible content themselves.</p>
+
+        <h2>column</h2>
+        <pre><code>ui.column()
+    .padding(8).gap(6)
+    .add(child1).add(child2)</code></pre>
+        <p>Stacks children top to bottom. Default width is the widest child. Default height is the sum of children plus gaps.</p>
+
+        <h2>row</h2>
+        <pre><code>ui.row()
+    .gap(8).fillWidth()
+    .add(child1).add(child2)</code></pre>
+        <p>Places children left to right. Default height is the tallest child.</p>
+
+        <h2>grid</h2>
+        <pre><code>ui.grid(cols, rows)
+    .gap(4)
+    .add(child1) ... .add(childN)</code></pre>
+        <p>Fills cells left to right, top to bottom. All cells are equal size.</p>
+
+        <h2>tabs</h2>
+        <pre><code>ui.tabs()
+    .tab("Label", panel)
+    .tab("Label2", panel2)</code></pre>
+        <p>Renders a tab bar above the active panel. Only the active panel participates in layout and input.</p>
+
+        <h2>scrollPanel</h2>
+        <pre><code>ui.scrollPanel()
+    .size(200, 140)
+    .add(ui.column().gap(4).add(...))</code></pre>
+        <p>Clips its content to the panel bounds and allows scrolling. Supports mouse wheel.</p>
+
+        <div class="pagination"><a href="debug.html"><span class="label">← Previous</span><span class="title">Debug & Inspector</span></a><a href="components-display.html" style="text-align:right"><span class="label">Next →</span><span class="title">Display Components</span></a></div>
+    </main>
+</div>
+<script>
+    function toggleTheme() {
+        var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+        document.documentElement.setAttribute('data-theme', dark ? '' : 'dark');
+        localStorage.setItem('theme', dark ? 'light' : 'dark');
+        document.getElementById('theme-btn').textContent = dark ? 'dark' : 'light';
+    }
+    if (localStorage.getItem('theme') === 'dark')
+        document.getElementById('theme-btn').textContent = 'light';
+</script>
+</body>
+</html>

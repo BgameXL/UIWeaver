@@ -1,0 +1,1198 @@
+[Architectury Transformer] Architectury Runtime 5.2.91
+[Architectury Transformer DEBUG] Closed File Systems for /home/bgame/IdeaProjects/UIWeaver/common/build/devlibs/uiweaver-0.1.0-dev.jar
+[Architectury Transformer DEBUG] Preparing tiny remapper prepared transformer: dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Provided 100 classpath jar(s):
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/fabric-loom/1.20.1/forge/1.20.1-47.2.1/forge-client-extra.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/dev.architectury/architectury-injectables/1.0.10/62db2a366d662606d1b23ad02ccc3212ed37ec3/architectury-injectables-1.0.10.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/net.fabricmc/fabric-loader/0.19.2/cc647a5b22dbc49b9a3267cebcee25fc4882b108/fabric-loader-0.19.2.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/24.0.1/13c5c75c4206580aa4d683bffee658caae6c9f43/annotations-24.0.1.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.2/25ea2e8b0c338a877313bd4672d3fe056ea78f0d/jsr305-3.0.2.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/net.minecraftforge/fmlearlydisplay/1.20.1-47.2.1/442918582c42123b9fc498bad4c7e8805a8d65be/fmlearlydisplay-1.20.1-47.2.1.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/net.minecraftforge/javafmllanguage/1.20.1-47.2.1/cf7ffa37334b68b8b0d92a45cc5222f9c71394b8/javafmllanguage-1.20.1-47.2.1.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/net.minecraftforge/lowcodelanguage/1.20.1-47.2.1/c0396469677b986ecb5a9b262f32a7dd4bd9ef1c/lowcodelanguage-1.20.1-47.2.1.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/net.minecraftforge/mclanguage/1.20.1-47.2.1/23935fad3965a65e9edd0a5c1c629141cbb873aa/mclanguage-1.20.1-47.2.1.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/net.minecraftforge/fmlcore/1.20.1-47.2.1/ca36242b045010330a1cd61cadb3212a0404188/fmlcore-1.20.1-47.2.1.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/fabric-loom/forge/transformed-dependencies-v1/net/minecraftforge/bf4e1fdacea3a3a23bb380a621afdbc0ae6b6c8280ce3e035a59198544d336fc/fmlloader/1.20.1-47.2.1/fmlloader-1.20.1-47.2.1.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/net.minecraftforge/coremods/5.0.1/386b00279628b105b2d507539c46e134e96f6237/coremods-5.0.1.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/net.minecraftforge/forgespi/7.0.1/3b4972a0cdb135853dba219be61a79b22cff1309/forgespi-7.0.1.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/net.minecraftforge/accesstransformers/8.0.4/272d240aa73f42195b2a68e2ebd8b701ecf41f63/accesstransformers-8.0.4.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/net.minecraftforge/eventbus/6.0.5/699143dd438431d06b57416944f7cedbe52e1475/eventbus-6.0.5.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/cpw.mods/modlauncher/10.0.9/6d9443f56f50bb85cea383686ff9c867391458b/modlauncher-10.0.9.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/cpw.mods/bootstraplauncher/1.1.2/c546e00443d8432cda6baa1c860346980742628/bootstraplauncher-1.1.2.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/cpw.mods/securejarhandler/2.1.10/51e6a22c6c716beb11e244bf5b8be480f51dd6b5/securejarhandler-2.1.10.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/org.openjdk.nashorn/nashorn-core/15.3/43977e804697048fc8d81d333a36c17d07a5b3dd/nashorn-core-15.3.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-commons/9.5/19ab5b5800a3910d30d3a3e64fdb00fd0cb42de0/asm-commons-9.5.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/net.minecraftforge/mergetool/1.1.5/f3da18e12c696d35a47c82cbb2cc8b5aa15e1154/mergetool-1.1.5-api.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-util/9.5/64b5a1fc8c1b15ed2efd6a063e976bc8d3dc5ffe/asm-util-9.5.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-analysis/9.5/490bacc77de7cbc0be1a30bb3471072d705be4a4/asm-analysis-9.5.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-tree/9.5/fd33c8b6373abaa675be407082fdfda35021254a/asm-tree-9.5.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm/9.5/dc6ea1875f4d64fbc85e1691c95b96a3d8569c90/asm-9.5.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/org.antlr/antlr4/4.9.1/e92af8ab33e428461927b484e90bb155a4f3a052/antlr4-4.9.1.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/org.antlr/antlr4-runtime/4.9.1/428664f05d2b7f7b7610204b5aa7c1763f62011a/antlr4-runtime-4.9.1.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/net.minecraftforge/unsafe/0.2.0/54d7a0a5e8fdb71b973025caa46f341ae5904f39/unsafe-0.2.0.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/com.electronwill.night-config/toml/3.6.4/51d6cefb2b55ee55ee26b16391212fb2c7dfb4f4/toml-3.6.4.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/com.electronwill.night-config/core/3.6.4/510f174abbf1c947494db50ef2445683bd52c230/core-3.6.4.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/net.minecraftforge/JarJarSelector/0.3.19/376cc9c8ea60720cf027c01fc033de915699801c/JarJarSelector-0.3.19.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/net.minecraftforge/JarJarMetadata/0.3.19/83feaa9b770e6ac0e96ee4fc23fa89325c5fe2/JarJarMetadata-0.3.19.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/org.apache.maven/maven-artifact/3.8.5/4433f50c07debefaed0553bd0068f4f48d449313/maven-artifact-3.8.5.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/net.jodah/typetools/0.6.3/a01aaa6ddaea9ec07ec4f209487b7a46a526283a/typetools-0.6.3.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/net.minecrell/terminalconsoleappender/1.2.0/96d02cd3b384ff015a8fef4223bcb4ccf1717c95/terminalconsoleappender-1.2.0.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/org.jline/jline-reader/3.12.1/4382ab1382c7b6f379377ed5f665dc2f6e1218bc/jline-reader-3.12.1.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/org.jline/jline-terminal/3.12.1/c777448314e050d980a6b697c140f3bfe9eb7416/jline-terminal-3.12.1.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/dev.architectury/mixin-patched/0.8.5.12/cf1f787f58d3b08b0cb53ecbba7928c09a1893c8/mixin-patched-0.8.5.12.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/net.minecraftforge/JarJarFileSystems/0.3.19/2464eb7d6b9ddb9db36a82cf8a95193e5c6fe020/JarJarFileSystems-0.3.19.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/net.sf.jopt-simple/jopt-simple/5.0.4/4fdac2fbe92dfad86aa6e9301736f6b4342a3f5c/jopt-simple-5.0.4.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/com.mojang/logging/1.1.1/832b8e6674a9b325a5175a3a6267dfaf34c85139/logging-1.1.1.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-core/2.19.0/3b6eeb4de4c49c0fe38a4ee27188ff5fee44d0bb/log4j-core-2.19.0.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-slf4j2-impl/2.19.0/5c04bfdd63ce9dceb2e284b81e96b6a70010ee10/log4j-slf4j2-impl-2.19.0.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/io.github.juuxel/unprotect/1.2.0/49cc229a0469f28fae41593a9537743ac6a951dc/unprotect-1.2.0.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-api/2.19.0/ea1b37f38c327596b216542bc636cfdc0b8036fa/log4j-api-2.19.0.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/net.minecraftforge/srgutils/0.4.11/fbad1341ffdb47d276bbdc40ecb06da49e053e74/srgutils-0.4.11.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/org.codehaus.plexus/plexus-utils/3.3.0/cf43b5391de623b36fe066a21127baef82c64022/plexus-utils-3.3.0.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.12.0/c6842c86792ff03b9f1d1fe2aab8dc23aa6c6f0e/commons-lang3-3.12.0.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.10/dd9b193aef96e973d5a11ab13cd17430c2e4306b/gson-2.10.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/31.1-jre/60458f877d055d0c9114d9e1a2efb737b4bc282c/guava-31.1-jre.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/com.machinezoo.noexception/noexception/1.7.1/b65330c98e38a1f915fa54a6e5eca496505e3f0a/noexception-1.7.1.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-simple/1.7.30/e606eac955f55ecf1d8edcccba04eb8ac98088dd/slf4j-simple-1.7.30.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/2.0.1/f48d81adce2abf5ad3cfe463df517952749e03bc/slf4j-api-2.0.1.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/commons-io/commons-io/2.11.0/a2503f302b11ebde7ebc3df41daebe0e4eea3689/commons-io-2.11.0.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/org.lwjgl/lwjgl-glfw/3.3.1/cbac1b8d30cb4795149c1ef540f912671a8616d0/lwjgl-glfw-3.3.1.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/org.lwjgl/lwjgl-opengl/3.3.1/831a5533a21a5f4f81bbc51bb13e9899319b5411/lwjgl-opengl-3.3.1.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/org.lwjgl/lwjgl-stb/3.3.1/b119297cf8ed01f247abe8685857f8e7fcf5980f/lwjgl-stb-3.3.1.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/org.lwjgl/lwjgl-tinyfd/3.3.1/ff1914111ef2e3e0110ef2dabc8d8cdaad82347/lwjgl-tinyfd-3.3.1.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/org.lwjgl/lwjgl/3.3.1/ae58664f88e18a9bb2c77b063833ca7aaec484cb/lwjgl-3.3.1.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/org.antlr/ST4/4.3/92f2c1ad8d84abcbeead6cf7f2c53a04166293c2/ST4-4.3.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/org.antlr/antlr-runtime/3.5.2/cd9cd41361c155f3af0f653009dcecb08d8b4afd/antlr-runtime-3.5.2.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/org.abego.treelayout/org.abego.treelayout.core/1.0.3/457216e8e6578099ae63667bb1e4439235892028/org.abego.treelayout.core-1.0.3.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/org.glassfish/javax.json/1.0.4/3178f73569fd7a1e5ffc464e680f7a8cc784b85a/javax.json-1.0.4.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/com.ibm.icu/icu4j/71.1/9e7d3304c23f9ba5cb71915f7cce23231a57a445/icu4j-71.1.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/com.google.guava/failureaccess/1.0.1/1dcf1de382a0bf95a3d8b0849546c88bac1292c9/failureaccess-1.0.1.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/com.google.guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/b421526c5f297295adef1c886e5246c39d4ac629/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/org.checkerframework/checker-qual/3.12.0/d5692f0526415fcc6de94bb5bfbd3afd9dd3b3e5/checker-qual-3.12.0.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/com.google.errorprone/error_prone_annotations/2.11.0/c5a0ace696d3f8b1c1d8cc036d8c03cc0cbe6b69/error_prone_annotations-2.11.0.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/com.google.j2objc/j2objc-annotations/1.3/ba035118bc8bac37d7eff77700720999acd9986d/j2objc-annotations-1.3.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/dev.architectury/architectury-loom-runtime/1.1.8/bf2a4a84e0479a0ab3bb8bfbd906c3737ceb1207/architectury-loom-runtime-1.1.8.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/com.github.oshi/oshi-core/6.2.2/54f5efc19bca95d709d9a37d19ffcbba3d21c1a6/oshi-core-6.2.2.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/com.mojang/authlib/4.0.43/2ff9d747a77570a07a60d32ac77eb6162ad2a2d9/authlib-4.0.43.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/com.mojang/blocklist/1.0.10/5c685c5ffa94c4cd39496c7184c1d122e515ecef/blocklist-1.0.10.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/com.mojang/brigadier/1.1.8/5244ce82c3337bba4a196a3ce858bfaecc74404a/brigadier-1.1.8.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/com.mojang/datafixerupper/6.0.8/3ba4a30557a9b057760af4011f909ba619fc5125/datafixerupper-6.0.8.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/com.mojang/patchy/2.2.10/da05971b07cbb379d002cf7eaec6a2048211fefc/patchy-2.2.10.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/com.mojang/text2speech/1.17.9/3cad216e3a7f0c19b4b394388bc9ffc446f13b14/text2speech-1.17.9.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.15/49d94806b6e3dc933dacbd8acb0fdbab8ebd1e5d/commons-codec-1.15.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.2/4bfc12adfe4842bf07b657f0369c4cb522955686/commons-logging-1.2.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/io.netty/netty-buffer/4.1.82.Final/a544270cf1ae8b8077082f5036436a9a9971ea71/netty-buffer-4.1.82.Final.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec/4.1.82.Final/b77200379acb345a9ffdece1c605e591ac3e4e0a/netty-codec-4.1.82.Final.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/io.netty/netty-common/4.1.82.Final/22d148e85c3f5ebdacc0ce1f5aabb1d420f73f3/netty-common-4.1.82.Final.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/io.netty/netty-handler/4.1.82.Final/644041d1fa96a5d3130a29e8978630d716d76e38/netty-handler-4.1.82.Final.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/io.netty/netty-resolver/4.1.82.Final/38f665ae8dcd29032eea31245ba7806bed2e0fa8/netty-resolver-4.1.82.Final.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport-classes-epoll/4.1.82.Final/e7c7dd18deac93105797f30057c912651ea76521/netty-transport-classes-epoll-4.1.82.Final.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport-native-epoll/4.1.82.Final/476409d6255001ca53a55f65b01c13822f8dc93a/netty-transport-native-epoll-4.1.82.Final-linux-aarch_64.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport-native-epoll/4.1.82.Final/c7350a71920f3ae9142945e25fed4846cce53374/netty-transport-native-epoll-4.1.82.Final-linux-x86_64.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport-native-unix-common/4.1.82.Final/3e895b35ca1b8a0eca56cacff4c2dde5d2c6abce/netty-transport-native-unix-common-4.1.82.Final.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport/4.1.82.Final/e431a218d91acb6476ccad5f5aafde50aa3945ca/netty-transport-4.1.82.Final.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/it.unimi.dsi/fastutil/8.5.9/bb7ea75ecdb216654237830b3a96d87ad91f8cc5/fastutil-8.5.9.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/net.java.dev.jna/jna-platform/5.12.1/97406a297c852f4a41e688a176ec675f72e8329/jna-platform-5.12.1.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/net.java.dev.jna/jna/5.12.1/b1e93a735caea94f503e95e6fe79bf9cdc1e985d/jna-5.12.1.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-compress/1.21/4ec95b60d4e86b5c95a0e919cb172a0af98011ef/commons-compress-1.21.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpclient/4.5.13/e5f6cae5ca7ecaac1ec2827a9e2d65ae2869cada/httpclient-4.5.13.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcore/4.4.15/7f2e0c573eaa7a74bac2e89b359e1f73d92a0a1d/httpcore-4.4.15.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/org.joml/joml/1.10.5/22566d58af70ad3d72308bab63b8339906deb649/joml-1.10.5.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/org.lwjgl/lwjgl-jemalloc/3.3.1/a817bcf213db49f710603677457567c37d53e103/lwjgl-jemalloc-3.3.1.jar
+[Architectury Transformer DEBUG]  - /home/bgame/.gradle/caches/modules-2/files-2.1/org.lwjgl/lwjgl-openal/3.3.1/2623a6b8ae1dfcd880738656a9f0243d2e6840bd/lwjgl-openal-3.3.1.jar
+[Architectury Transformer DEBUG]  - /home/bgame/IdeaProjects/UIWeaver/.gradle/loom-cache/minecraftMaven/net/minecraft/forge-1.20.1-47.2.1-minecraft-merged-project-@forge/1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.2.1/forge-1.20.1-47.2.1-minecraft-merged-project-@forge-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.2.1.jar
+[Architectury Transformer DEBUG]  - /home/bgame/IdeaProjects/UIWeaver/.gradle/loom-cache/remapped_mods/loom_mappings_1_20_1_layered_hash_40359_v2_forge_1_20_1_47_2_1_forge/dev/architectury/architectury-forge/9.1.12/architectury-forge-9.1.12.jar
+[Architectury Transformer] Read classpath in 938.0 ms
+[Architectury Transformer DEBUG] Closed File Systems for /home/bgame/IdeaProjects/UIWeaver/common/build/devlibs/uiweaver-0.1.0-dev.jar
+[Architectury Transformer DEBUG] Transforming 8 transformer(s) from /home/bgame/IdeaProjects/UIWeaver/common/build/devlibs/uiweaver-0.1.0-dev.jar to /tmp/12141844087490375786.jar: 
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RuntimeMixinRefmapDetector@1df82230
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformExpectPlatform@22635ba0
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RemapInjectables@13c10b87
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformPlatformOnly@6a01e23
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeAnnotations@5a955565
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment@6293abcc
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.GenerateFakeForgeMod@7995092a
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.FixForgeMixin@7fc2413d
+[Architectury Transformer DEBUG] Transforming from /home/bgame/IdeaProjects/UIWeaver/common/build/devlibs/uiweaver-0.1.0-dev.jar to /tmp/12141844087490375786.jar with 8 transformer(s) on dev.architectury.transformer.handler.SimpleTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/runtime/sync/SyncEntry with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/runtime/sync/SyncManager with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/runtime/sync/DirtyTracker with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/runtime/network/SyncPacket$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/runtime/network/NetworkChannel$ServerPacketHandler with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/runtime/network/ActionPacket with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/runtime/network/NetworkChannel with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/runtime/network/SyncPacket with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/runtime/registry/UIRegistry with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/runtime/lifecycle/SessionManager with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/runtime/lifecycle/UIScreenSession with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/runtime/lifecycle/ScreenLifecycle with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/runtime/slot/FilteredSlot with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/runtime/menu/UIMenu with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/runtime/action/ActionDispatcher with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/runtime/context/RuntimeActionContext with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/runtime/context/ContextValidator$Result with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/runtime/context/ContextValidator with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/UIScreen with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/UIBuilder with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/action/ActionDeclaration with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/action/ActionContext with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/spec/SpecValidator with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/spec/UIScreenSpec$Builder with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/spec/UIScreenSpec with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/sync/SyncType with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/sync/SyncDeclaration with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/ToggleComponent with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/ColumnBuilder with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/CheckboxBuilder with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/PanelBuilder with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/ButtonBuilder with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/ComponentType with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/DropdownComponent with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/ScrollPanelBuilder with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/TextInputComponent with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/LayoutContainer with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/ButtonComponent with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/FluidBarBuilder with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/PanelComponent with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/EnergyBarComponent with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/ToggleBuilder with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/TabsBuilder with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/MeasureProvider with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/GridBuilder with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/EnergyBarBuilder with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/SliderBuilder with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/DropdownBuilder with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/ScrollPanelComponent with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/LabelBuilder with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/TextInputBuilder with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/PlayerInventoryComponent with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/SliderComponent with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/ProgressBarBuilder with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/FluidBarComponent with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/LabelComponent with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/ProgressBarComponent with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/ComponentBuilder with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/ProgressBarComponent$Direction with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/SlotGridBuilder with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/AbsoluteBuilder with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/UIComponent with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/MeasureProvider$TextMeasurer with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/RowBuilder with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/PlayerInventoryBuilder with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/AbstractComponent with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/CheckboxComponent with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/SlotGridComponent with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/StackBuilder with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/TabsComponent with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/Tooltipable with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/Measurable with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/ContextMenuSource with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/binding/UIBinding with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/binding/Bindable with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/layout/Bounds with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/layout/LayoutEngine with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/layout/Size with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/layout/ColumnLayout with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/layout/RowLayout$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/layout/ColumnLayout$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/layout/StackLayout with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/layout/Insets with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/layout/Size$Mode with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/layout/GridLayout with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/layout/RowLayout with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/layout/AbsoluteLayout with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/layout/Alignment with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/slot/SlotDescriptor$Builder with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/slot/SlotDescriptor with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/slot/SlotBindingDeclaration with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/slot/SlotDescriptor$Role with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/view/UIViewModel with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/debug/ComponentTreeBuilder with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/debug/ComponentTreeNode with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/context/UIContextPayload$None with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/context/UIContextPayload$BlockContext with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/context/UIContextPayload$ItemContext with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/context/UIContextPayload with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/client/render/WidgetRenderer with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/client/render/RenderLayer with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/client/render/WidgetRendererRegistry with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/client/screen/ClientNetworkBridge with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/client/screen/ScreenActionSender with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/client/theme/UITheme$Builder with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/client/theme/UITheme with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/client/theme/ThemeRegistry with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/client/input/InputReceiver with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/client/input/FocusManager with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/client/modal/ModalManager with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/client/modal/UIModal with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/client/popup/PopupManager with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/client/popup/PopupMenu with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/client/popup/ContextMenuItem with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/example/ExampleMachineBlockEntity with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/uiweaver/example/ExampleMachineScreen with maxs=true frames=true
+[Architectury Transformer DEBUG] Checking whether /architectury.common.json is a mixin config.
+[Architectury Transformer DEBUG] Checking whether /architectury.common.json is a mixin config.
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Closed File Systems for /tmp/12141844087490375786.jar
+[Architectury Transformer] Listening at /home/bgame/IdeaProjects/UIWeaver/common/build/devlibs/uiweaver-0.1.0-dev.jar
+[Architectury Transformer DEBUG] Temporary jar [/tmp/12141844087490375786.jar] contains packages: dev.uiweaver.api.view, dev.uiweaver.api.layout, dev.uiweaver.api.binding, dev.uiweaver.api.component, dev.uiweaver.client.input, dev.uiweaver.runtime.context, dev.uiweaver.api.sync, dev.uiweaver.runtime.menu, dev.uiweaver.runtime.registry, dev.uiweaver.runtime.sync, dev.uiweaver.client.screen, dev.uiweaver.example, dev.uiweaver.api.context, dev.uiweaver.client.theme, dev.uiweaver.client.modal, dev.uiweaver.client.render, dev.uiweaver.api.spec, dev.uiweaver.runtime.lifecycle, dev.uiweaver.api.slot, dev.uiweaver.api.debug, dev.uiweaver.api, dev.uiweaver.runtime.slot, dev.uiweaver.client.popup, dev.uiweaver.api.action, dev.uiweaver.runtime.network, dev.uiweaver.runtime.action
+[Architectury Transformer DEBUG] Closed File Systems for /home/bgame/IdeaProjects/UIWeaver/common/build/devlibs/uiweaver-0.1.0-dev.jar
+[Architectury Transformer DEBUG] Classpath entry [/home/bgame/IdeaProjects/UIWeaver/forge/build/classes/java/main] contains packages: dev.uiweaver.forge.client.render.widget, dev.uiweaver.forge.client.debug, dev.uiweaver.test, dev.uiweaver.forge.client.render, dev.uiweaver.forge.client.input, dev.uiweaver.forge.client.modal, dev.uiweaver.forge.client.screen, dev.uiweaver.forge.client.popup, dev.uiweaver.forge, dev.uiweaver.test.forge, dev.uiweaver.forge.client, dev.uiweaver.forge.registry, dev.uiweaver.forge.network
+[Architectury Transformer DEBUG] Classpath entry [/home/bgame/IdeaProjects/UIWeaver/forge/build/resources/main] contains packages: 
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/runtime/network/NetworkChannel.class to dev/uiweaver/runtime/network/NetworkChannel.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping with Dirty Mappings...
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/runtime/network/NetworkChannel with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/runtime/network/NetworkChannel in 63.27 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/UIScreen.class to dev/uiweaver/api/UIScreen.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/UIScreen with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/UIScreen in 82.84 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/UIBuilder.class to dev/uiweaver/api/UIBuilder.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/UIBuilder with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/UIBuilder in 14.86 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/spec/UIScreenSpec.class to dev/uiweaver/api/spec/UIScreenSpec.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/spec/UIScreenSpec with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/spec/UIScreenSpec in 10.73 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/runtime/registry/UIRegistry.class to dev/uiweaver/runtime/registry/UIRegistry.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/runtime/registry/UIRegistry with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/runtime/registry/UIRegistry in 8.522 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/runtime/menu/UIMenu.class to dev/uiweaver/runtime/menu/UIMenu.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/runtime/menu/UIMenu with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/runtime/menu/UIMenu in 6.510 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/runtime/network/SyncPacket.class to dev/uiweaver/runtime/network/SyncPacket.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/runtime/network/SyncPacket with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/runtime/network/SyncPacket in 32.85 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/sync/SyncType.class to dev/uiweaver/api/sync/SyncType.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/sync/SyncType with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/sync/SyncType in 34.25 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/runtime/network/ActionPacket.class to dev/uiweaver/runtime/network/ActionPacket.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/runtime/network/ActionPacket with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/runtime/network/ActionPacket in 33.94 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/client/screen/ScreenActionSender.class to dev/uiweaver/client/screen/ScreenActionSender.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/client/screen/ScreenActionSender with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/client/screen/ScreenActionSender in 8.476 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/component/MeasureProvider$TextMeasurer.class to dev/uiweaver/api/component/MeasureProvider$TextMeasurer.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/MeasureProvider$TextMeasurer with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/component/MeasureProvider$TextMeasurer in 6.549 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/component/MeasureProvider.class to dev/uiweaver/api/component/MeasureProvider.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/MeasureProvider with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/component/MeasureProvider in 7.247 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/client/screen/ClientNetworkBridge.class to dev/uiweaver/client/screen/ClientNetworkBridge.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/client/screen/ClientNetworkBridge with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/client/screen/ClientNetworkBridge in 8.031 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/client/render/WidgetRenderer.class to dev/uiweaver/client/render/WidgetRenderer.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/client/render/WidgetRenderer with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/client/render/WidgetRenderer in 9.541 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/client/render/WidgetRendererRegistry.class to dev/uiweaver/client/render/WidgetRendererRegistry.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/client/render/WidgetRendererRegistry with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/client/render/WidgetRendererRegistry in 10.39 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/component/ComponentType.class to dev/uiweaver/api/component/ComponentType.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/ComponentType with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/component/ComponentType in 8.985 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/context/UIContextPayload.class to dev/uiweaver/api/context/UIContextPayload.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/context/UIContextPayload with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/context/UIContextPayload in 14.33 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/context/UIContextPayload$None.class to dev/uiweaver/api/context/UIContextPayload$None.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/context/UIContextPayload$None with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/context/UIContextPayload$None in 15.57 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/context/UIContextPayload$BlockContext.class to dev/uiweaver/api/context/UIContextPayload$BlockContext.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/context/UIContextPayload$BlockContext with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/context/UIContextPayload$BlockContext in 7.414 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/component/ComponentBuilder.class to dev/uiweaver/api/component/ComponentBuilder.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/ComponentBuilder with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/component/ComponentBuilder in 7.373 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/component/PanelBuilder.class to dev/uiweaver/api/component/PanelBuilder.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/PanelBuilder with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/component/PanelBuilder in 5.160 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/component/LabelBuilder.class to dev/uiweaver/api/component/LabelBuilder.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/LabelBuilder with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/component/LabelBuilder in 4.359 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/component/ScrollPanelBuilder.class to dev/uiweaver/api/component/ScrollPanelBuilder.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/ScrollPanelBuilder with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/component/ScrollPanelBuilder in 4.784 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/component/SlotGridBuilder.class to dev/uiweaver/api/component/SlotGridBuilder.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/SlotGridBuilder with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/component/SlotGridBuilder in 4.131 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/component/TabsBuilder.class to dev/uiweaver/api/component/TabsBuilder.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/TabsBuilder with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/component/TabsBuilder in 4.743 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/action/ActionContext.class to dev/uiweaver/api/action/ActionContext.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/action/ActionContext with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/action/ActionContext in 4.725 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/sync/SyncDeclaration.class to dev/uiweaver/api/sync/SyncDeclaration.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/sync/SyncDeclaration with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/sync/SyncDeclaration in 4.588 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/action/ActionDeclaration.class to dev/uiweaver/api/action/ActionDeclaration.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/action/ActionDeclaration with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/action/ActionDeclaration in 5.705 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/slot/SlotBindingDeclaration.class to dev/uiweaver/api/slot/SlotBindingDeclaration.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/slot/SlotBindingDeclaration with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/slot/SlotBindingDeclaration in 5.141 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/binding/UIBinding.class to dev/uiweaver/api/binding/UIBinding.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/binding/UIBinding with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/binding/UIBinding in 6.077 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/component/ColumnBuilder.class to dev/uiweaver/api/component/ColumnBuilder.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/ColumnBuilder with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/component/ColumnBuilder in 5.163 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/component/UIComponent.class to dev/uiweaver/api/component/UIComponent.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/UIComponent with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/component/UIComponent in 5.015 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/layout/LayoutEngine.class to dev/uiweaver/api/layout/LayoutEngine.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/layout/LayoutEngine with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/layout/LayoutEngine in 4.878 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/layout/Size.class to dev/uiweaver/api/layout/Size.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/layout/Size with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/layout/Size in 4.703 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/layout/Size$Mode.class to dev/uiweaver/api/layout/Size$Mode.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/layout/Size$Mode with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/layout/Size$Mode in 5.416 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/layout/Insets.class to dev/uiweaver/api/layout/Insets.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/layout/Insets with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/layout/Insets in 4.501 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/layout/Alignment.class to dev/uiweaver/api/layout/Alignment.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/layout/Alignment with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/layout/Alignment in 4.657 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/component/RowBuilder.class to dev/uiweaver/api/component/RowBuilder.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/RowBuilder with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/component/RowBuilder in 5.639 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/component/AbstractComponent.class to dev/uiweaver/api/component/AbstractComponent.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/AbstractComponent with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/component/AbstractComponent in 6.333 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/component/Tooltipable.class to dev/uiweaver/api/component/Tooltipable.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/Tooltipable with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/component/Tooltipable in 4.440 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/component/LabelComponent.class to dev/uiweaver/api/component/LabelComponent.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/LabelComponent with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/component/LabelComponent in 4.769 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/component/Measurable.class to dev/uiweaver/api/component/Measurable.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/Measurable with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/component/Measurable in 6.105 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/component/PanelComponent.class to dev/uiweaver/api/component/PanelComponent.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/PanelComponent with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/component/PanelComponent in 4.003 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/component/LayoutContainer.class to dev/uiweaver/api/component/LayoutContainer.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/LayoutContainer with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/component/LayoutContainer in 3.021 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/layout/ColumnLayout.class to dev/uiweaver/api/layout/ColumnLayout.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/layout/ColumnLayout with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/layout/ColumnLayout in 3.585 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/component/ButtonBuilder.class to dev/uiweaver/api/component/ButtonBuilder.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/ButtonBuilder with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/component/ButtonBuilder in 2.530 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/component/ButtonComponent.class to dev/uiweaver/api/component/ButtonComponent.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/ButtonComponent with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/component/ButtonComponent in 4.558 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/layout/RowLayout.class to dev/uiweaver/api/layout/RowLayout.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/layout/RowLayout with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/layout/RowLayout in 3.759 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/component/EnergyBarBuilder.class to dev/uiweaver/api/component/EnergyBarBuilder.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/EnergyBarBuilder with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/component/EnergyBarBuilder in 4.672 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/component/EnergyBarComponent.class to dev/uiweaver/api/component/EnergyBarComponent.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/EnergyBarComponent with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/component/EnergyBarComponent in 5.104 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/binding/Bindable.class to dev/uiweaver/api/binding/Bindable.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/binding/Bindable with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/binding/Bindable in 3.766 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/component/ProgressBarBuilder.class to dev/uiweaver/api/component/ProgressBarBuilder.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/ProgressBarBuilder with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/component/ProgressBarBuilder in 3.769 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/component/ProgressBarComponent$Direction.class to dev/uiweaver/api/component/ProgressBarComponent$Direction.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/ProgressBarComponent$Direction with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/component/ProgressBarComponent$Direction in 3.020 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/component/ProgressBarComponent.class to dev/uiweaver/api/component/ProgressBarComponent.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/ProgressBarComponent with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/component/ProgressBarComponent in 4.261 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/component/FluidBarBuilder.class to dev/uiweaver/api/component/FluidBarBuilder.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/FluidBarBuilder with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/component/FluidBarBuilder in 2.989 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/component/FluidBarComponent.class to dev/uiweaver/api/component/FluidBarComponent.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/FluidBarComponent with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/component/FluidBarComponent in 3.310 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/component/ToggleBuilder.class to dev/uiweaver/api/component/ToggleBuilder.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/ToggleBuilder with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/component/ToggleBuilder in 3.792 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/component/ToggleComponent.class to dev/uiweaver/api/component/ToggleComponent.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/ToggleComponent with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/component/ToggleComponent in 4.156 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/component/TextInputBuilder.class to dev/uiweaver/api/component/TextInputBuilder.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/TextInputBuilder with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/component/TextInputBuilder in 3.453 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/component/TextInputComponent.class to dev/uiweaver/api/component/TextInputComponent.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/TextInputComponent with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/component/TextInputComponent in 4.116 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/component/ScrollPanelComponent.class to dev/uiweaver/api/component/ScrollPanelComponent.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/ScrollPanelComponent with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/component/ScrollPanelComponent in 5.436 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/slot/SlotDescriptor$Role.class to dev/uiweaver/api/slot/SlotDescriptor$Role.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/slot/SlotDescriptor$Role with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/slot/SlotDescriptor$Role in 4.909 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/slot/SlotDescriptor.class to dev/uiweaver/api/slot/SlotDescriptor.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/slot/SlotDescriptor with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/slot/SlotDescriptor in 4.383 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/slot/SlotDescriptor$Builder.class to dev/uiweaver/api/slot/SlotDescriptor$Builder.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/slot/SlotDescriptor$Builder with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/slot/SlotDescriptor$Builder in 4.766 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/component/SlotGridComponent.class to dev/uiweaver/api/component/SlotGridComponent.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/SlotGridComponent with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/component/SlotGridComponent in 4.540 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/component/SliderBuilder.class to dev/uiweaver/api/component/SliderBuilder.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/SliderBuilder with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/component/SliderBuilder in 2.940 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/component/SliderComponent.class to dev/uiweaver/api/component/SliderComponent.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/SliderComponent with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/component/SliderComponent in 4.376 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/component/CheckboxBuilder.class to dev/uiweaver/api/component/CheckboxBuilder.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/CheckboxBuilder with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/component/CheckboxBuilder in 3.358 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/component/CheckboxComponent.class to dev/uiweaver/api/component/CheckboxComponent.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/CheckboxComponent with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/component/CheckboxComponent in 3.405 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/component/TabsComponent.class to dev/uiweaver/api/component/TabsComponent.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/TabsComponent with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/component/TabsComponent in 3.069 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/layout/StackLayout.class to dev/uiweaver/api/layout/StackLayout.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/layout/StackLayout with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/layout/StackLayout in 4.048 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/spec/UIScreenSpec$Builder.class to dev/uiweaver/api/spec/UIScreenSpec$Builder.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/spec/UIScreenSpec$Builder with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/spec/UIScreenSpec$Builder in 4.396 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/spec/SpecValidator.class to dev/uiweaver/api/spec/SpecValidator.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/spec/SpecValidator with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/spec/SpecValidator in 4.978 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/runtime/lifecycle/UIScreenSession.class to dev/uiweaver/runtime/lifecycle/UIScreenSession.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/runtime/lifecycle/UIScreenSession with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/runtime/lifecycle/UIScreenSession in 4.513 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/runtime/lifecycle/SessionManager.class to dev/uiweaver/runtime/lifecycle/SessionManager.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/runtime/lifecycle/SessionManager with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/runtime/lifecycle/SessionManager in 3.407 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/runtime/slot/FilteredSlot.class to dev/uiweaver/runtime/slot/FilteredSlot.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/runtime/slot/FilteredSlot with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/runtime/slot/FilteredSlot in 3.960 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/runtime/sync/SyncManager.class to dev/uiweaver/runtime/sync/SyncManager.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/runtime/sync/SyncManager with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/runtime/sync/SyncManager in 3.710 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/runtime/sync/DirtyTracker.class to dev/uiweaver/runtime/sync/DirtyTracker.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/runtime/sync/DirtyTracker with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/runtime/sync/DirtyTracker in 3.447 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/runtime/action/ActionDispatcher.class to dev/uiweaver/runtime/action/ActionDispatcher.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/runtime/action/ActionDispatcher with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/runtime/action/ActionDispatcher in 2.593 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/runtime/sync/SyncEntry.class to dev/uiweaver/runtime/sync/SyncEntry.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/runtime/sync/SyncEntry with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/runtime/sync/SyncEntry in 4.981 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/runtime/network/SyncPacket$1.class to dev/uiweaver/runtime/network/SyncPacket$1.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/runtime/network/SyncPacket$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/view/UIViewModel.class to dev/uiweaver/api/view/UIViewModel.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/runtime/network/SyncPacket$1 in 4.849 ms
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/view/UIViewModel with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/view/UIViewModel in 7.099 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/layout/Bounds.class to dev/uiweaver/api/layout/Bounds.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/layout/Bounds with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/runtime/context/ContextValidator.class to dev/uiweaver/runtime/context/ContextValidator.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/layout/Bounds in 5.645 ms
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/runtime/context/ContextValidator with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/layout/ColumnLayout$1.class to dev/uiweaver/api/layout/ColumnLayout$1.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/runtime/context/ContextValidator in 9.518 ms
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/layout/ColumnLayout$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/runtime/context/ContextValidator$Result.class to dev/uiweaver/runtime/context/ContextValidator$Result.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/layout/ColumnLayout$1 in 7.466 ms
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/runtime/context/ContextValidator$Result with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/layout/RowLayout$1.class to dev/uiweaver/api/layout/RowLayout$1.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/runtime/context/ContextValidator$Result in 7.146 ms
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/layout/RowLayout$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/layout/RowLayout$1 in 8.198 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/client/theme/ThemeRegistry.class to dev/uiweaver/client/theme/ThemeRegistry.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/client/theme/ThemeRegistry with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/client/theme/ThemeRegistry in 3.965 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/client/theme/UITheme.class to dev/uiweaver/client/theme/UITheme.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/client/theme/UITheme with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/client/theme/UITheme in 5.278 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/client/theme/UITheme$Builder.class to dev/uiweaver/client/theme/UITheme$Builder.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/client/theme/UITheme$Builder with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/client/theme/UITheme$Builder in 4.157 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/client/render/RenderLayer.class to dev/uiweaver/client/render/RenderLayer.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/client/render/RenderLayer with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/client/render/RenderLayer in 3.482 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/client/input/FocusManager.class to dev/uiweaver/client/input/FocusManager.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/client/input/FocusManager with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/client/input/FocusManager in 3.280 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/client/popup/PopupManager.class to dev/uiweaver/client/popup/PopupManager.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/client/popup/PopupManager with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/client/popup/PopupManager in 5.144 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/client/modal/ModalManager.class to dev/uiweaver/client/modal/ModalManager.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/client/modal/ModalManager with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/client/modal/ModalManager in 4.207 ms
+[Architectury Transformer DEBUG] Transforming from dev/uiweaver/api/component/DropdownComponent.class to dev/uiweaver/api/component/DropdownComponent.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00007f15e0086c90@470f1802
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/uiweaver/api/component/DropdownComponent with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: uiweaver-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/uiweaver/api/component/DropdownComponent in 4.158 ms

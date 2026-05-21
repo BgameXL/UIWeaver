@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Known Limitations — UIWeaver</title>
+    <link rel="stylesheet" href="style.css">
+    <script>if(localStorage.getItem('theme')==='dark')document.documentElement.setAttribute('data-theme','dark');</script>
+</head>
+<body>
+<header>
+    <a class="logo" href="index.html">UIWeaver</a>
+    <span class="version">v0.1.0</span>
+    <nav>
+        <a href="https://github.com/BgameXL/UIWeaver">GitHub</a>
+        <button id="theme-btn" onclick="toggleTheme()">dark</button>
+    </nav>
+</header>
+<div class="layout">
+
+    <aside>
+        <div class="nav-section">
+            <div class="nav-section-title">Getting Started</div>
+            <a href="index.html" >Introduction</a>
+            <a href="installation.html" >Installation</a>
+            <a href="first-screen.html" >Your First Screen</a>
+        </div>
+        <div class="nav-section">
+            <div class="nav-section-title">Core Concepts</div>
+            <a href="component-tree.html" >Component Tree</a>
+            <a href="layout.html" >Layout Containers</a>
+            <a href="viewmodel.html" >ViewModel &amp; Binding</a>
+            <a href="server-actions.html" >Server Actions</a>
+            <a href="debug.html" >Debug &amp; Inspector</a>
+        </div>
+        <div class="nav-section">
+            <div class="nav-section-title">Components</div>
+            <a href="components-layout.html" >Layout</a>
+            <a href="components-display.html" >Display</a>
+            <a href="components-input.html" >Input</a>
+            <a href="components-inventory.html" >Inventory</a>
+        </div>
+        <div class="nav-section">
+            <div class="nav-section-title">Reference</div>
+            <a href="api.html" >Component API</a>
+            <a href="limitations.html" class="active">Known Limitations</a>
+        </div>
+    </aside>
+    <main>
+        <h1>Known Limitations</h1>
+        <p class="page-subtitle">What is still being worked on.</p>
+
+        <p>UIWeaver is experimental. These are the known areas that need more work before UIWeaver is ready for complex production UIs.</p>
+
+        <h2>Slot layout synchronization</h2>
+        <p>Minecraft requires <code>Slot</code> objects to be registered at exact pixel positions matching what the screen renders. UIWeaver computes slot positions from the layout pass, but any inconsistency between the layout result and the registered slot positions causes misaligned click targets and item rendering issues.</p>
+        <p>This is the highest priority area for improvement.</p>
+
+        <h2>Tabs</h2>
+        <p>Inactive tabs should not participate in layout, receive input, or be considered by the inspector unless explicitly debugging. The current implementation handles this in most cases but can produce stale child bounds after switching tabs quickly.</p>
+
+        <h2>Styling</h2>
+        <p>There is no styling API yet. Component appearance is determined by the default renderer. Planned:</p>
+        <ul style="margin: 12px 0 16px 20px; line-height: 2;">
+            <li>Panel backgrounds and borders</li>
+            <li>Hover and active states</li>
+            <li>Spacing tokens</li>
+            <li>Theme variants</li>
+            <li>Reusable style presets</li>
+        </ul>
+
+        <h2>Scroll and large inventories</h2>
+        <p>The current <code>scrollPanel</code> works for general content but does not support virtual scrolling over very large item handlers (thousands of slots). Implementing that requires a custom slot remapping layer outside the standard UIWeaver component model.</p>
+
+        <h2>API stability</h2>
+        <p>UIWeaver is at v0.1.0. Method names and package structure may change in future versions. Check the GitHub changelog before upgrading.</p>
+
+        <div class="pagination"><a href="api.html"><span class="label">← Previous</span><span class="title">Component API</span></a></div>
+    </main>
+</div>
+<script>
+    function toggleTheme() {
+        var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+        document.documentElement.setAttribute('data-theme', dark ? '' : 'dark');
+        localStorage.setItem('theme', dark ? 'light' : 'dark');
+        document.getElementById('theme-btn').textContent = dark ? 'dark' : 'light';
+    }
+    if (localStorage.getItem('theme') === 'dark')
+        document.getElementById('theme-btn').textContent = 'light';
+</script>
+</body>
+</html>

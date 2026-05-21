@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d6e9159d-bf15-4910-b9d2-f87407302281" name="Changes" comment="figures">
+      <change afterPath="$PROJECT_DIR$/.github/workflows/release.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/common/uiweaver.common.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/common/uiweaver.common.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/common/uiweaver.common.test.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/fabric/uiweaver.fabric.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/fabric/uiweaver.fabric.test.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/forge/uiweaver.forge.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/forge/uiweaver.forge.test.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/UIBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/UIScreen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/action/ActionContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/action/ActionDeclaration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/binding/Bindable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/binding/UIBinding.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/component/AbsoluteBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/component/AbstractComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/component/ButtonBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/component/ButtonComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/component/CheckboxBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/component/CheckboxComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/component/ColumnBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/component/ComponentBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/component/ComponentType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/component/ContextMenuSource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/component/DropdownBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/component/DropdownComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/component/EnergyBarBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/component/EnergyBarComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/component/FluidBarBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/component/FluidBarComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/component/GridBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/component/LabelBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/component/LabelComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/component/LayoutContainer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/component/Measurable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/component/MeasureProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/component/PanelBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/component/PanelComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/component/PlayerInventoryBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/component/PlayerInventoryComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/component/ProgressBarBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/component/ProgressBarComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/component/RowBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/component/ScrollPanelBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/component/ScrollPanelComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/component/SliderBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/component/SliderComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/component/SlotGridBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/component/SlotGridComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/component/StackBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/component/TabsBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/component/TabsComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/component/TextInputBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/component/TextInputComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/component/ToggleBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/component/ToggleComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/component/Tooltipable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/component/UIComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/context/UIContextPayload.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/debug/ComponentTreeBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/debug/ComponentTreeNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/layout/AbsoluteLayout.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/layout/Alignment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/layout/Bounds.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/layout/ColumnLayout.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/layout/GridLayout.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/layout/Insets.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/layout/LayoutEngine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/layout/RowLayout.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/layout/Size.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/layout/StackLayout.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/slot/SlotBindingDeclaration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/slot/SlotDescriptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/spec/SpecValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/spec/UIScreenSpec.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/sync/SyncDeclaration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/sync/SyncType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/api/view/UIViewModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/client/input/FocusManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/client/input/InputReceiver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/client/modal/ModalManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/client/modal/UIModal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/client/popup/ContextMenuItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/client/popup/PopupManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/client/popup/PopupMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/client/render/RenderLayer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/client/render/WidgetRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/client/render/WidgetRendererRegistry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/client/screen/ClientNetworkBridge.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/client/screen/ScreenActionSender.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/client/theme/ThemeRegistry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/client/theme/UITheme.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/example/ExampleMachineBlockEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/example/ExampleMachineScreen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/runtime/action/ActionDispatcher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/runtime/context/ContextValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/runtime/context/RuntimeActionContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/runtime/lifecycle/ScreenLifecycle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/runtime/lifecycle/SessionManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/runtime/lifecycle/UIScreenSession.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/runtime/menu/UIMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/runtime/network/ActionPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/runtime/network/NetworkChannel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/runtime/network/SyncPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/runtime/registry/UIRegistry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/runtime/slot/FilteredSlot.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/runtime/sync/DirtyTracker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/runtime/sync/SyncEntry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/dev/uiweaver/runtime/sync/SyncManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/resources/architectury.common.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/resources/assets/uiweaver/lang/en_us.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/resources/uiweaver.accesswidener" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fabric/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fabric/src/main/java/dev/uiweaver/fabric/UIWeaverFabric.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fabric/src/main/java/dev/uiweaver/fabric/UIWeaverFabricClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fabric/src/main/java/dev/uiweaver/fabric/client/FabricClientSetup.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fabric/src/main/java/dev/uiweaver/fabric/client/debug/UIInspector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fabric/src/main/java/dev/uiweaver/fabric/client/input/InputHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fabric/src/main/java/dev/uiweaver/fabric/client/render/FabricWidgetRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fabric/src/main/java/dev/uiweaver/fabric/client/render/FabricWidgetRendererRegistry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fabric/src/main/java/dev/uiweaver/fabric/client/render/LayoutResolver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fabric/src/main/java/dev/uiweaver/fabric/client/render/UIBackground.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fabric/src/main/java/dev/uiweaver/fabric/client/render/UIRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fabric/src/main/java/dev/uiweaver/fabric/client/render/WidgetRendererSetup.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fabric/src/main/java/dev/uiweaver/fabric/client/render/widget/ButtonRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fabric/src/main/java/dev/uiweaver/fabric/client/render/widget/EnergyBarRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fabric/src/main/java/dev/uiweaver/fabric/client/render/widget/FluidBarRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fabric/src/main/java/dev/uiweaver/fabric/client/render/widget/LabelRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fabric/src/main/java/dev/uiweaver/fabric/client/render/widget/ProgressBarRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fabric/src/main/java/dev/uiweaver/fabric/client/render/widget/ScrollPanelRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fabric/src/main/java/dev/uiweaver/fabric/client/render/widget/SlotGridRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fabric/src/main/java/dev/uiweaver/fabric/client/render/widget/TextInputRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fabric/src/main/java/dev/uiweaver/fabric/client/screen/FabricScreenActionSender.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fabric/src/main/java/dev/uiweaver/fabric/client/screen/UIContainerScreen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fabric/src/main/java/dev/uiweaver/fabric/network/ClientSyncHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fabric/src/main/java/dev/uiweaver/fabric/network/FabricNetworkChannel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fabric/src/main/java/dev/uiweaver/fabric/network/ServerActionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fabric/src/main/java/dev/uiweaver/fabric/registry/FabricMenuRegistry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fabric/src/main/resources/assets/uiweaver_test/en_us.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fabric/src/main/resources/fabric.mod.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/forge/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/forge/gradle.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/forge/src/main/java/dev/uiweaver/forge/UIWeaverForge.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/forge/src/main/java/dev/uiweaver/forge/client/ForgeClientSetup.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/forge/src/main/java/dev/uiweaver/forge/client/debug/UIDebugOverlay.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/forge/src/main/java/dev/uiweaver/forge/client/debug/UIInspector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/forge/src/main/java/dev/uiweaver/forge/client/input/InputHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/forge/src/main/java/dev/uiweaver/forge/client/modal/GenericModal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/forge/src/main/java/dev/uiweaver/forge/client/modal/Modals.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/forge/src/main/java/dev/uiweaver/forge/client/popup/PopupRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/forge/src/main/java/dev/uiweaver/forge/client/render/ForgeWidgetRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/forge/src/main/java/dev/uiweaver/forge/client/render/ForgeWidgetRendererRegistry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/forge/src/main/java/dev/uiweaver/forge/client/render/LayoutResolver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/forge/src/main/java/dev/uiweaver/forge/client/render/TooltipRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/forge/src/main/java/dev/uiweaver/forge/client/render/UIBackground.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/forge/src/main/java/dev/uiweaver/forge/client/render/UIRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/forge/src/main/java/dev/uiweaver/forge/client/render/WidgetRendererSetup.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/forge/src/main/java/dev/uiweaver/forge/client/render/widget/ButtonRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/forge/src/main/java/dev/uiweaver/forge/client/render/widget/CheckboxRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/forge/src/main/java/dev/uiweaver/forge/client/render/widget/DropdownRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/forge/src/main/java/dev/uiweaver/forge/client/render/widget/EnergyBarRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/forge/src/main/java/dev/uiweaver/forge/client/render/widget/FluidBarRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/forge/src/main/java/dev/uiweaver/forge/client/render/widget/LabelRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/forge/src/main/java/dev/uiweaver/forge/client/render/widget/PanelRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/forge/src/main/java/dev/uiweaver/forge/client/render/widget/PlayerInventoryRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/forge/src/main/java/dev/uiweaver/forge/client/render/widget/ProgressBarRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/forge/src/main/java/dev/uiweaver/forge/client/render/widget/ScrollPanelRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/forge/src/main/java/dev/uiweaver/forge/client/render/widget/SliderRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/forge/src/main/java/dev/uiweaver/forge/client/render/widget/SlotGridRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/forge/src/main/java/dev/uiweaver/forge/client/render/widget/TabsRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/forge/src/main/java/dev/uiweaver/forge/client/render/widget/TextInputRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/forge/src/main/java/dev/uiweaver/forge/client/render/widget/ToggleRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/forge/src/main/java/dev/uiweaver/forge/client/render/widget/WidgetRendererSetup.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/forge/src/main/java/dev/uiweaver/forge/client/screen/ForgeScreenActionSender.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/forge/src/main/java/dev/uiweaver/forge/client/screen/UIContainerScreen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/forge/src/main/java/dev/uiweaver/forge/network/ClientSyncHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/forge/src/main/java/dev/uiweaver/forge/network/ForgeNetworkChannel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/forge/src/main/java/dev/uiweaver/forge/network/ServerActionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/forge/src/main/java/dev/uiweaver/forge/registry/UIMenuRegistry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/forge/src/main/resources/META-INF/mods.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/forge/src/main/resources/assets/uiwaver_test/lang/en_us.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/forge/src/main/resources/pack.mcmeta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CopilotChats">
+    <option name="panelChat">
+      <chat>
+        <option name="activeSessionId" value="94103595-3272-45f8-9e2f-70a3f02ceaca" />
+        <option name="sessions">
+          <session>
+            <option name="chatType" value="PANEL" />
+            <option name="id" value="94103595-3272-45f8-9e2f-70a3f02ceaca" />
+            <option name="modeId" value="Ask" />
+            <option name="modelType" value="builtin_family" />
+            <option name="modelValue" value="auto" />
+            <option name="targetType" value="LOCAL" />
+          </session>
+        </option>
+        <option name="type" value="PANEL" />
+      </chat>
+    </option>
+  </component>
+  <component name="CopilotPersistence">
+    <persistenceIdMap>
+      <entry key="_/home/bgame/IdeaProjects/UIWeaver" value="3Drlb4Edd02JxUyprVGXzVEyiVZ" />
+    </persistenceIdMap>
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="uiweaver" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="package-info" />
+        <option value="GitHub Workflow" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="1.20.1" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;BgameXL&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/BgameXL/UIWeaver.git&quot;,
+    &quot;accountId&quot;: &quot;068aefb2-6928-4679-9d80-168fd9fbf886&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3Drlb4Edd02JxUyprVGXzVEyiVZ" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "gh-pages",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/bgame/IdeaProjects/UIWeaver/forge/src/main/java/dev/uiweaver/test",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/forge/src/main/java/dev/uiweaver/test" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Minecraft Client (:fabric)">
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="DEBUG_JUST_MY_CODE" value="false" />
+      <module name="" />
+      <option name="RUN_TOOL" value="" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="DEBUG_JUST_MY_CODE" value="false" />
+      <option name="RUN_TOOL" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d6e9159d-bf15-4910-b9d2-f87407302281" name="Changes" comment="" />
+      <created>1779048140807</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1779048140807</updated>
+      <workItem from="1779048141886" duration="3171000" />
+      <workItem from="1779052168951" duration="7242000" />
+      <workItem from="1779065336255" duration="4812000" />
+      <workItem from="1779070168727" duration="2097000" />
+      <workItem from="1779110102978" duration="7769000" />
+      <workItem from="1779130106272" duration="13778000" />
+      <workItem from="1779144199056" duration="4835000" />
+      <workItem from="1779232399979" duration="2511000" />
+      <workItem from="1779283016188" duration="600000" />
+      <workItem from="1779312881956" duration="12760000" />
+      <workItem from="1779328841133" duration="909000" />
+      <workItem from="1779329839930" duration="42000" />
+      <workItem from="1779383623215" duration="1425000" />
+    </task>
+    <task id="LOCAL-00001" summary="alright">
+      <option name="closed" value="true" />
+      <created>1779070203739</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1779070203739</updated>
+    </task>
+    <task id="LOCAL-00002" summary="more changes">
+      <option name="closed" value="true" />
+      <created>1779121858617</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1779121858617</updated>
+    </task>
+    <task id="LOCAL-00003" summary="waos">
+      <option name="closed" value="true" />
+      <created>1779128543735</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1779128543735</updated>
+    </task>
+    <task id="LOCAL-00004" summary="new changes">
+      <option name="closed" value="true" />
+      <created>1779136522813</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1779136522813</updated>
+    </task>
+    <task id="LOCAL-00005" summary="new changesededs">
+      <option name="closed" value="true" />
+      <created>1779138054965</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1779138054965</updated>
+    </task>
+    <task id="LOCAL-00006" summary="waos">
+      <option name="closed" value="true" />
+      <created>1779142675288</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1779142675288</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Funding for-by-by-made possible by viewers like you.">
+      <option name="closed" value="true" />
+      <created>1779144101726</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1779144101726</updated>
+    </task>
+    <task id="LOCAL-00008" summary="README.md">
+      <option name="closed" value="true" />
+      <created>1779145227638</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1779145227638</updated>
+    </task>
+    <task id="LOCAL-00009" summary="README.md">
+      <option name="closed" value="true" />
+      <created>1779145660383</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1779145660383</updated>
+    </task>
+    <task id="LOCAL-00010" summary="license">
+      <option name="closed" value="true" />
+      <created>1779148767879</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1779148767879</updated>
+    </task>
+    <task id="LOCAL-00011" summary="no test">
+      <option name="closed" value="true" />
+      <created>1779232479205</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1779232479206</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Fabric">
+      <option name="closed" value="true" />
+      <created>1779319071176</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1779319071176</updated>
+    </task>
+    <task id="LOCAL-00013" summary="jar">
+      <option name="closed" value="true" />
+      <created>1779319124708</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1779319124708</updated>
+    </task>
+    <task id="LOCAL-00014" summary="myb">
+      <option name="closed" value="true" />
+      <created>1779320042979</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1779320042979</updated>
+    </task>
+    <task id="LOCAL-00015" summary="myb again">
+      <option name="closed" value="true" />
+      <created>1779320862432</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1779320862432</updated>
+    </task>
+    <task id="LOCAL-00016" summary="figures">
+      <option name="closed" value="true" />
+      <created>1779322661931</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1779322661931</updated>
+    </task>
+    <task id="LOCAL-00017" summary="figures">
+      <option name="closed" value="true" />
+      <created>1779324014319</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1779324014319</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="alright" />
+    <MESSAGE value="more changes" />
+    <MESSAGE value="new changes" />
+    <MESSAGE value="new changesededs" />
+    <MESSAGE value="waos" />
+    <MESSAGE value="Funding for-by-by-made possible by viewers like you." />
+    <MESSAGE value="README.md" />
+    <MESSAGE value="license" />
+    <MESSAGE value="no test" />
+    <MESSAGE value="Fabric" />
+    <MESSAGE value="jar" />
+    <MESSAGE value="myb" />
+    <MESSAGE value="myb again" />
+    <MESSAGE value="figures" />
+    <option name="LAST_COMMIT_MESSAGE" value="figures" />
+  </component>
+  <component name="github-copilot-workspace">
+    <instructionFileLocations>
+      <option value=".github/instructions" />
+    </instructionFileLocations>
+    <promptFileLocations>
+      <option value=".github/prompts" />
+    </promptFileLocations>
+  </component>
+</project>

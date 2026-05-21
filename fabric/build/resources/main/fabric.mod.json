@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "uiweaver",
+  "version": "0.1.0",
+  "name": "UIWeaver",
+  "description": "Ergonomic UI framework for Minecraft mods",
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "dev.uiweaver.fabric.UIWeaverFabric"
+    ],
+    "client": [
+      "dev.uiweaver.fabric.UIWeaverFabricClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.14.23",
+    "fabric-api": "*",
+    "minecraft": "~1.20.1",
+    "architectury": ">=9.1.12"
+  }
+}

@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: dev.architectury:mixin-patched:0.8.5.12" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="dev.architectury" artifactId="mixin-patched" version="0.8.5.12" baseVersion="0.8.5.12" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/dev.architectury/mixin-patched/0.8.5.12/cf1f787f58d3b08b0cb53ecbba7928c09a1893c8/mixin-patched-0.8.5.12.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

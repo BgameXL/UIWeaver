@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Component Tree — UIWeaver</title>
+    <link rel="stylesheet" href="style.css">
+    <script>if(localStorage.getItem('theme')==='dark')document.documentElement.setAttribute('data-theme','dark');</script>
+</head>
+<body>
+<header>
+    <a class="logo" href="index.html">UIWeaver</a>
+    <span class="version">v0.1.0</span>
+    <nav>
+        <a href="https://github.com/BgameXL/UIWeaver">GitHub</a>
+        <button id="theme-btn" onclick="toggleTheme()">dark</button>
+    </nav>
+</header>
+<div class="layout">
+
+    <aside>
+        <div class="nav-section">
+            <div class="nav-section-title">Getting Started</div>
+            <a href="index.html" >Introduction</a>
+            <a href="installation.html" >Installation</a>
+            <a href="first-screen.html" >Your First Screen</a>
+        </div>
+        <div class="nav-section">
+            <div class="nav-section-title">Core Concepts</div>
+            <a href="component-tree.html" class="active">Component Tree</a>
+            <a href="layout.html" >Layout Containers</a>
+            <a href="viewmodel.html" >ViewModel &amp; Binding</a>
+            <a href="server-actions.html" >Server Actions</a>
+            <a href="debug.html" >Debug &amp; Inspector</a>
+        </div>
+        <div class="nav-section">
+            <div class="nav-section-title">Components</div>
+            <a href="components-layout.html" >Layout</a>
+            <a href="components-display.html" >Display</a>
+            <a href="components-input.html" >Input</a>
+            <a href="components-inventory.html" >Inventory</a>
+        </div>
+        <div class="nav-section">
+            <div class="nav-section-title">Reference</div>
+            <a href="api.html" >Component API</a>
+            <a href="limitations.html" >Known Limitations</a>
+        </div>
+    </aside>
+    <main>
+        <h1>Component Tree</h1>
+        <p class="page-subtitle">How UIWeaver screens are structured.</p>
+
+        <p>Every UIWeaver screen is built from a tree of components. The root is always a single container — usually a <code>column</code> — and all other components are children of it.</p>
+
+        <h2>Structure</h2>
+        <pre><code>root (column)
+├── label
+├── row
+│   ├── energyBar
+│   └── progressBar
+└── button</code></pre>
+
+        <p>Components are added with <code>.add()</code>. Containers can hold any number of children:</p>
+        <pre><code>ui.column()
+    .add(ui.label(...))
+    .add(ui.row()
+        .add(ui.button(...))
+        .add(ui.button(...))
+    );</code></pre>
+
+        <h2>IDs</h2>
+        <p>Give components an ID with <code>.id("name")</code>. IDs are used for ViewModel binding, debug inspection, and server action targeting:</p>
+        <pre><code>ui.progressBar().id("mainProgress").bind("progress")</code></pre>
+
+        <h2>How layout works</h2>
+        <p>UIWeaver runs a layout pass before rendering. Each container measures its children and assigns them positions. You describe <em>what</em> the structure is — the framework decides <em>where</em> everything goes.</p>
+        <p>This means you never write <code>x = leftPos + 24</code>. If padding or a sibling changes size, everything adjusts automatically.</p>
+
+        <h2>Lifecycle</h2>
+        <table>
+            <thead><tr><th>Phase</th><th>What happens</th></tr></thead>
+            <tbody>
+            <tr><td>Build</td><td>Component tree is constructed on first open</td></tr>
+            <tr><td>Layout</td><td>Sizes and positions are calculated</td></tr>
+            <tr><td>Render</td><td>Each component draws itself</td></tr>
+            <tr><td>Input</td><td>Clicks and keys are dispatched top-down</td></tr>
+            <tr><td>Sync</td><td>ViewModel sends changed values to client</td></tr>
+            </tbody>
+        </table>
+
+        <div class="pagination"><a href="first-screen.html"><span class="label">← Previous</span><span class="title">Your First Screen</span></a><a href="layout.html" style="text-align:right"><span class="label">Next →</span><span class="title">Layout Containers</span></a></div>
+    </main>
+</div>
+<script>
+    function toggleTheme() {
+        var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+        document.documentElement.setAttribute('data-theme', dark ? '' : 'dark');
+        localStorage.setItem('theme', dark ? 'light' : 'dark');
+        document.getElementById('theme-btn').textContent = dark ? 'dark' : 'light';
+    }
+    if (localStorage.getItem('theme') === 'dark')
+        document.getElementById('theme-btn').textContent = 'light';
+</script>
+</body>
+</html>

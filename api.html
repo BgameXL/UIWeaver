@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Component API — UIWeaver</title>
+    <link rel="stylesheet" href="style.css">
+    <script>if(localStorage.getItem('theme')==='dark')document.documentElement.setAttribute('data-theme','dark');</script>
+</head>
+<body>
+<header>
+    <a class="logo" href="index.html">UIWeaver</a>
+    <span class="version">v0.1.0</span>
+    <nav>
+        <a href="https://github.com/BgameXL/UIWeaver">GitHub</a>
+        <button id="theme-btn" onclick="toggleTheme()">dark</button>
+    </nav>
+</header>
+<div class="layout">
+
+    <aside>
+        <div class="nav-section">
+            <div class="nav-section-title">Getting Started</div>
+            <a href="index.html" >Introduction</a>
+            <a href="installation.html" >Installation</a>
+            <a href="first-screen.html" >Your First Screen</a>
+        </div>
+        <div class="nav-section">
+            <div class="nav-section-title">Core Concepts</div>
+            <a href="component-tree.html" >Component Tree</a>
+            <a href="layout.html" >Layout Containers</a>
+            <a href="viewmodel.html" >ViewModel &amp; Binding</a>
+            <a href="server-actions.html" >Server Actions</a>
+            <a href="debug.html" >Debug &amp; Inspector</a>
+        </div>
+        <div class="nav-section">
+            <div class="nav-section-title">Components</div>
+            <a href="components-layout.html" >Layout</a>
+            <a href="components-display.html" >Display</a>
+            <a href="components-input.html" >Input</a>
+            <a href="components-inventory.html" >Inventory</a>
+        </div>
+        <div class="nav-section">
+            <div class="nav-section-title">Reference</div>
+            <a href="api.html" class="active">Component API</a>
+            <a href="limitations.html" >Known Limitations</a>
+        </div>
+    </aside>
+    <main>
+        <h1>Component API</h1>
+        <p class="page-subtitle">Method reference for all components.</p>
+
+        <p>Quick reference for all common methods available on UIWeaver components.</p>
+
+        <h2>Universal</h2>
+        <table>
+            <thead><tr><th>Method</th><th>Description</th></tr></thead>
+            <tbody>
+            <tr><td><code>.id(String)</code></td><td>Assign an ID for binding, inspection, and targeting</td></tr>
+            <tr><td><code>.size(w, h)</code></td><td>Fixed pixel size</td></tr>
+            <tr><td><code>.width(w)</code></td><td>Fixed width</td></tr>
+            <tr><td><code>.height(h)</code></td><td>Fixed height</td></tr>
+            <tr><td><code>.fillWidth()</code></td><td>Expand to parent's available width</td></tr>
+            <tr><td><code>.fillHeight()</code></td><td>Expand to parent's available height</td></tr>
+            <tr><td><code>.grow()</code></td><td>Take remaining space along parent axis</td></tr>
+            <tr><td><code>.visible(bool)</code></td><td>Show or hide (hidden components still occupy space)</td></tr>
+            <tr><td><code>.tooltip(Component)</code></td><td>Tooltip shown on hover</td></tr>
+            </tbody>
+        </table>
+
+        <h2>Containers only</h2>
+        <table>
+            <thead><tr><th>Method</th><th>Description</th></tr></thead>
+            <tbody>
+            <tr><td><code>.padding(n)</code></td><td>Inner padding all sides</td></tr>
+            <tr><td><code>.padding(x, y)</code></td><td>Horizontal and vertical padding</td></tr>
+            <tr><td><code>.gap(n)</code></td><td>Space between children</td></tr>
+            <tr><td><code>.add(component)</code></td><td>Add a child component</td></tr>
+            </tbody>
+        </table>
+
+        <h2>Bindable components</h2>
+        <table>
+            <thead><tr><th>Method</th><th>Description</th></tr></thead>
+            <tbody>
+            <tr><td><code>.bind(key)</code></td><td>Bind to a single ViewModel value</td></tr>
+            <tr><td><code>.bind(key1, key2)</code></td><td>Bind to two values (e.g. current + max)</td></tr>
+            </tbody>
+        </table>
+
+        <h2>Interactive components</h2>
+        <table>
+            <thead><tr><th>Method</th><th>Description</th></tr></thead>
+            <tbody>
+            <tr><td><code>.action(String)</code></td><td>Named action sent to server on interaction</td></tr>
+            <tr><td><code>.value(n)</code></td><td>Initial value (slider)</td></tr>
+            <tr><td><code>.placeholder(String)</code></td><td>Placeholder text (textInput)</td></tr>
+            </tbody>
+        </table>
+
+        <h2>UIWeaver.screen()</h2>
+        <table>
+            <thead><tr><th>Method</th><th>Description</th></tr></thead>
+            <tbody>
+            <tr><td><code>.root(component)</code></td><td>Set the root component</td></tr>
+            <tr><td><code>.viewModel(vm)</code></td><td>Attach a ViewModel</td></tr>
+            <tr><td><code>.open()</code></td><td>Send to player and open the screen</td></tr>
+            </tbody>
+        </table>
+
+        <div class="pagination"><a href="components-inventory.html"><span class="label">← Previous</span><span class="title">Inventory Components</span></a><a href="limitations.html" style="text-align:right"><span class="label">Next →</span><span class="title">Known Limitations</span></a></div>
+    </main>
+</div>
+<script>
+    function toggleTheme() {
+        var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+        document.documentElement.setAttribute('data-theme', dark ? '' : 'dark');
+        localStorage.setItem('theme', dark ? 'light' : 'dark');
+        document.getElementById('theme-btn').textContent = dark ? 'dark' : 'light';
+    }
+    if (localStorage.getItem('theme') === 'dark')
+        document.getElementById('theme-btn').textContent = 'light';
+</script>
+</body>
+</html>

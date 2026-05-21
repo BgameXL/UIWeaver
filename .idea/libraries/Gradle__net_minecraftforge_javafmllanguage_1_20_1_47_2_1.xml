@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: net.minecraftforge:javafmllanguage:1.20.1-47.2.1" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="net.minecraftforge" artifactId="javafmllanguage" version="1.20.1-47.2.1" baseVersion="1.20.1-47.2.1" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.minecraftforge/javafmllanguage/1.20.1-47.2.1/cf7ffa37334b68b8b0d92a45cc5222f9c71394b8/javafmllanguage-1.20.1-47.2.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.minecraftforge/javafmllanguage/1.20.1-47.2.1/b2d481b3e3fc5f18ff8249a9d5f42cdd9cb1e72e/javafmllanguage-1.20.1-47.2.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

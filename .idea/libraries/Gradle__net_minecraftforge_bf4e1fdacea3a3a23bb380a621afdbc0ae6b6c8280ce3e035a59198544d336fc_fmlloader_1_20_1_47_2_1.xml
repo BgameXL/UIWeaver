@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: net.minecraftforge.bf4e1fdacea3a3a23bb380a621afdbc0ae6b6c8280ce3e035a59198544d336fc:fmlloader:1.20.1-47.2.1" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="net.minecraftforge.bf4e1fdacea3a3a23bb380a621afdbc0ae6b6c8280ce3e035a59198544d336fc" artifactId="fmlloader" version="1.20.1-47.2.1" baseVersion="1.20.1-47.2.1" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/fabric-loom/forge/transformed-dependencies-v1/net/minecraftforge/bf4e1fdacea3a3a23bb380a621afdbc0ae6b6c8280ce3e035a59198544d336fc/fmlloader/1.20.1-47.2.1/fmlloader-1.20.1-47.2.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/fabric-loom/forge/transformed-dependencies-v1/net/minecraftforge/bf4e1fdacea3a3a23bb380a621afdbc0ae6b6c8280ce3e035a59198544d336fc/fmlloader/1.20.1-47.2.1/fmlloader-1.20.1-47.2.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

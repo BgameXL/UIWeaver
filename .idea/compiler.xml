@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="uiweaver.common.main" target="17" />
+      <module name="uiweaver.common.test" target="17" />
+      <module name="uiweaver.fabric.main" target="17" />
+      <module name="uiweaver.fabric.test" target="17" />
+      <module name="uiweaver.forge.main" target="17" />
+      <module name="uiweaver.forge.test" target="17" />
+      <module name="uiweaver.main" target="17" />
+      <module name="uiweaver.test" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

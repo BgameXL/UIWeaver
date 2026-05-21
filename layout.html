@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Containers — UIWeaver</title>
+    <link rel="stylesheet" href="style.css">
+    <script>if(localStorage.getItem('theme')==='dark')document.documentElement.setAttribute('data-theme','dark');</script>
+</head>
+<body>
+<header>
+    <a class="logo" href="index.html">UIWeaver</a>
+    <span class="version">v0.1.0</span>
+    <nav>
+        <a href="https://github.com/BgameXL/UIWeaver">GitHub</a>
+        <button id="theme-btn" onclick="toggleTheme()">dark</button>
+    </nav>
+</header>
+<div class="layout">
+
+    <aside>
+        <div class="nav-section">
+            <div class="nav-section-title">Getting Started</div>
+            <a href="index.html" >Introduction</a>
+            <a href="installation.html" >Installation</a>
+            <a href="first-screen.html" >Your First Screen</a>
+        </div>
+        <div class="nav-section">
+            <div class="nav-section-title">Core Concepts</div>
+            <a href="component-tree.html" >Component Tree</a>
+            <a href="layout.html" class="active">Layout Containers</a>
+            <a href="viewmodel.html" >ViewModel &amp; Binding</a>
+            <a href="server-actions.html" >Server Actions</a>
+            <a href="debug.html" >Debug &amp; Inspector</a>
+        </div>
+        <div class="nav-section">
+            <div class="nav-section-title">Components</div>
+            <a href="components-layout.html" >Layout</a>
+            <a href="components-display.html" >Display</a>
+            <a href="components-input.html" >Input</a>
+            <a href="components-inventory.html" >Inventory</a>
+        </div>
+        <div class="nav-section">
+            <div class="nav-section-title">Reference</div>
+            <a href="api.html" >Component API</a>
+            <a href="limitations.html" >Known Limitations</a>
+        </div>
+    </aside>
+    <main>
+        <h1>Layout Containers</h1>
+        <p class="page-subtitle">column, row, grid, tabs, and scrollPanel.</p>
+
+        <p>Layout containers position their children automatically. You set constraints — padding, gap, size — and the container handles the math.</p>
+
+        <h2>column</h2>
+        <p>Stacks children vertically top to bottom.</p>
+        <pre><code>ui.column()
+    .padding(8)
+    .gap(6)
+    .add(ui.label(...))
+    .add(ui.button(...))</code></pre>
+
+        <h2>row</h2>
+        <p>Places children horizontally left to right.</p>
+        <pre><code>ui.row()
+    .gap(8)
+    .fillWidth()
+    .add(ui.energyBar())
+    .add(ui.progressBar().grow())</code></pre>
+
+        <h2>grid</h2>
+        <p>Arranges children in a fixed number of columns.</p>
+        <pre><code>ui.grid(3, 3)   // 3 columns, 3 rows</code></pre>
+
+        <h2>tabs</h2>
+        <p>Shows one child panel at a time with a tab bar.</p>
+        <pre><code>ui.tabs()
+    .tab("Main",  mainPanel)
+    .tab("Inv",   invPanel)
+    .tab("Tune",  tunePanel)</code></pre>
+        <p>Only the active tab participates in layout and input. Inactive tabs are skipped entirely.</p>
+
+        <h2>scrollPanel</h2>
+        <p>Makes its content scrollable when it overflows the panel bounds.</p>
+        <pre><code>ui.scrollPanel()
+    .size(200, 120)
+    .add(ui.column().gap(4)
+        // many children
+    )</code></pre>
+
+        <h2>Size modifiers</h2>
+        <table>
+            <thead><tr><th>Method</th><th>Effect</th></tr></thead>
+            <tbody>
+            <tr><td><code>.size(w, h)</code></td><td>Fixed width and height</td></tr>
+            <tr><td><code>.width(w)</code></td><td>Fixed width only</td></tr>
+            <tr><td><code>.height(h)</code></td><td>Fixed height only</td></tr>
+            <tr><td><code>.fillWidth()</code></td><td>Expand to parent width</td></tr>
+            <tr><td><code>.fillHeight()</code></td><td>Expand to parent height</td></tr>
+            <tr><td><code>.grow()</code></td><td>Fill remaining space in parent axis</td></tr>
+            <tr><td><code>.padding(n)</code></td><td>Inner padding on all sides</td></tr>
+            <tr><td><code>.gap(n)</code></td><td>Space between children</td></tr>
+            </tbody>
+        </table>
+
+        <div class="pagination"><a href="component-tree.html"><span class="label">← Previous</span><span class="title">Component Tree</span></a><a href="viewmodel.html" style="text-align:right"><span class="label">Next →</span><span class="title">ViewModel & Binding</span></a></div>
+    </main>
+</div>
+<script>
+    function toggleTheme() {
+        var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+        document.documentElement.setAttribute('data-theme', dark ? '' : 'dark');
+        localStorage.setItem('theme', dark ? 'light' : 'dark');
+        document.getElementById('theme-btn').textContent = dark ? 'dark' : 'light';
+    }
+    if (localStorage.getItem('theme') === 'dark')
+        document.getElementById('theme-btn').textContent = 'light';
+</script>
+</body>
+</html>

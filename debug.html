@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug & Inspector — UIWeaver</title>
+    <link rel="stylesheet" href="style.css">
+    <script>if(localStorage.getItem('theme')==='dark')document.documentElement.setAttribute('data-theme','dark');</script>
+</head>
+<body>
+<header>
+    <a class="logo" href="index.html">UIWeaver</a>
+    <span class="version">v0.1.0</span>
+    <nav>
+        <a href="https://github.com/BgameXL/UIWeaver">GitHub</a>
+        <button id="theme-btn" onclick="toggleTheme()">dark</button>
+    </nav>
+</header>
+<div class="layout">
+
+    <aside>
+        <div class="nav-section">
+            <div class="nav-section-title">Getting Started</div>
+            <a href="index.html" >Introduction</a>
+            <a href="installation.html" >Installation</a>
+            <a href="first-screen.html" >Your First Screen</a>
+        </div>
+        <div class="nav-section">
+            <div class="nav-section-title">Core Concepts</div>
+            <a href="component-tree.html" >Component Tree</a>
+            <a href="layout.html" >Layout Containers</a>
+            <a href="viewmodel.html" >ViewModel &amp; Binding</a>
+            <a href="server-actions.html" >Server Actions</a>
+            <a href="debug.html" class="active">Debug &amp; Inspector</a>
+        </div>
+        <div class="nav-section">
+            <div class="nav-section-title">Components</div>
+            <a href="components-layout.html" >Layout</a>
+            <a href="components-display.html" >Display</a>
+            <a href="components-input.html" >Input</a>
+            <a href="components-inventory.html" >Inventory</a>
+        </div>
+        <div class="nav-section">
+            <div class="nav-section-title">Reference</div>
+            <a href="api.html" >Component API</a>
+            <a href="limitations.html" >Known Limitations</a>
+        </div>
+    </aside>
+    <main>
+        <h1>Debug & Inspector</h1>
+        <p class="page-subtitle">Built-in tools for diagnosing layout and sync issues.</p>
+
+        <p>UIWeaver includes a debug overlay and inspector to help diagnose layout and sync issues without adding print statements.</p>
+
+        <h2>Enabling the debug overlay</h2>
+        <p>Press <code>F8</code> while a UIWeaver screen is open (configurable in keybinds). The overlay draws colored borders around every component showing its computed bounds.</p>
+
+        <h2>What the overlay shows</h2>
+        <table>
+            <thead><tr><th>Color</th><th>Meaning</th></tr></thead>
+            <tbody>
+            <tr><td>Blue</td><td>Container bounds</td></tr>
+            <tr><td>Green</td><td>Leaf component bounds</td></tr>
+            <tr><td>Red</td><td>Component overflowing its parent</td></tr>
+            <tr><td>Yellow</td><td>Component with no computed size</td></tr>
+            </tbody>
+        </table>
+
+        <h2>Inspector</h2>
+        <p>Press <code>F9</code> to open the inspector panel. It shows the full component tree with:</p>
+        <ul style="margin: 12px 0 16px 20px; line-height: 2;">
+            <li>Component type and ID</li>
+            <li>Computed bounds (x, y, width, height)</li>
+            <li>Visibility state</li>
+            <li>Bound ViewModel keys and their current values</li>
+        </ul>
+
+        <h2>Common issues and what to look for</h2>
+        <table>
+            <thead><tr><th>Symptom</th><th>Check</th></tr></thead>
+            <tbody>
+            <tr><td>Component invisible</td><td>Red or yellow border — bounds are zero or outside parent</td></tr>
+            <tr><td>Slot misaligned with visual</td><td>Slot grid bounds vs actual slot positions</td></tr>
+            <tr><td>Inactive tab receiving input</td><td>Inspector — visibility should be false for inactive tabs</td></tr>
+            <tr><td>ViewModel value not updating</td><td>Inspector — check bound key current value</td></tr>
+            <tr><td>Layout looks wrong after resize</td><td>Overlay — check if parent clipped the child</td></tr>
+            </tbody>
+        </table>
+
+        <div class="note"><strong>Note:</strong> The debug overlay is client-only and has no effect in production. It can be left in the code safely.</div>
+
+        <div class="pagination"><a href="server-actions.html"><span class="label">← Previous</span><span class="title">Server Actions</span></a><a href="components-layout.html" style="text-align:right"><span class="label">Next →</span><span class="title">Layout Components</span></a></div>
+    </main>
+</div>
+<script>
+    function toggleTheme() {
+        var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+        document.documentElement.setAttribute('data-theme', dark ? '' : 'dark');
+        localStorage.setItem('theme', dark ? 'light' : 'dark');
+        document.getElementById('theme-btn').textContent = dark ? 'dark' : 'light';
+    }
+    if (localStorage.getItem('theme') === 'dark')
+        document.getElementById('theme-btn').textContent = 'light';
+</script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Installation — UIWeaver</title>
+    <link rel="stylesheet" href="style.css">
+    <script>if(localStorage.getItem('theme')==='dark')document.documentElement.setAttribute('data-theme','dark');</script>
+</head>
+<body>
+<header>
+    <a class="logo" href="index.html">UIWeaver</a>
+    <span class="version">v0.1.0</span>
+    <nav>
+        <a href="https://github.com/BgameXL/UIWeaver">GitHub</a>
+        <button id="theme-btn" onclick="toggleTheme()">dark</button>
+    </nav>
+</header>
+<div class="layout">
+
+    <aside>
+        <div class="nav-section">
+            <div class="nav-section-title">Getting Started</div>
+            <a href="index.html" >Introduction</a>
+            <a href="installation.html" class="active">Installation</a>
+            <a href="first-screen.html" >Your First Screen</a>
+        </div>
+        <div class="nav-section">
+            <div class="nav-section-title">Core Concepts</div>
+            <a href="component-tree.html" >Component Tree</a>
+            <a href="layout.html" >Layout Containers</a>
+            <a href="viewmodel.html" >ViewModel &amp; Binding</a>
+            <a href="server-actions.html" >Server Actions</a>
+            <a href="debug.html" >Debug &amp; Inspector</a>
+        </div>
+        <div class="nav-section">
+            <div class="nav-section-title">Components</div>
+            <a href="components-layout.html" >Layout</a>
+            <a href="components-display.html" >Display</a>
+            <a href="components-input.html" >Input</a>
+            <a href="components-inventory.html" >Inventory</a>
+        </div>
+        <div class="nav-section">
+            <div class="nav-section-title">Reference</div>
+            <a href="api.html" >Component API</a>
+            <a href="limitations.html" >Known Limitations</a>
+        </div>
+    </aside>
+    <main>
+        <h1>Installation</h1>
+        <p class="page-subtitle">Adding UIWeaver to your mod project.</p>
+
+        <h2>Requirements</h2>
+        <table>
+            <thead><tr><th>Requirement</th><th>Version</th></tr></thead>
+            <tbody>
+            <tr><td>Minecraft</td><td>1.20.1</td></tr>
+            <tr><td>Forge</td><td>47.x</td></tr>
+            <tr><td>Java</td><td>17+</td></tr>
+            </tbody>
+        </table>
+
+        <h2>Adding UIWeaver as a dependency</h2>
+        <p>In your <code>build.gradle</code>:</p>
+        <pre><code>repositories {
+    maven { url "https://maven.pkg.github.com/BgameXL/UIWeaver" }
+}
+
+dependencies {
+    implementation fg.deobf("com.bgame:uiweaver-forge:0.1.0")
+}</code></pre>
+
+        <p>In <code>gradle.properties</code>:</p>
+        <pre><code>uiweaver_version=0.1.0</code></pre>
+
+        <h2>Verify the setup</h2>
+        <p>After syncing Gradle, you should have access to the <code>com.bgame.uiweaver</code> package. Import <code>UIWeaver</code> in any class to confirm it resolved correctly:</p>
+        <pre><code>import com.bgame.uiweaver.UIWeaver;</code></pre>
+
+        <div class="note"><strong>Note:</strong> UIWeaver is licensed under LGPL-3.0. You can use it as a library in closed-source mods as long as modifications to UIWeaver itself stay under LGPL-3.0.</div>
+
+        <div class="pagination"><a href="index.html"><span class="label">← Previous</span><span class="title">Introduction</span></a><a href="first-screen.html" style="text-align:right"><span class="label">Next →</span><span class="title">Your First Screen</span></a></div>
+    </main>
+</div>
+<script>
+    function toggleTheme() {
+        var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+        document.documentElement.setAttribute('data-theme', dark ? '' : 'dark');
+        localStorage.setItem('theme', dark ? 'light' : 'dark');
+        document.getElementById('theme-btn').textContent = dark ? 'dark' : 'light';
+    }
+    if (localStorage.getItem('theme') === 'dark')
+        document.getElementById('theme-btn').textContent = 'light';
+</script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ViewModel & Binding — UIWeaver</title>
+    <link rel="stylesheet" href="style.css">
+    <script>if(localStorage.getItem('theme')==='dark')document.documentElement.setAttribute('data-theme','dark');</script>
+</head>
+<body>
+<header>
+    <a class="logo" href="index.html">UIWeaver</a>
+    <span class="version">v0.1.0</span>
+    <nav>
+        <a href="https://github.com/BgameXL/UIWeaver">GitHub</a>
+        <button id="theme-btn" onclick="toggleTheme()">dark</button>
+    </nav>
+</header>
+<div class="layout">
+
+    <aside>
+        <div class="nav-section">
+            <div class="nav-section-title">Getting Started</div>
+            <a href="index.html" >Introduction</a>
+            <a href="installation.html" >Installation</a>
+            <a href="first-screen.html" >Your First Screen</a>
+        </div>
+        <div class="nav-section">
+            <div class="nav-section-title">Core Concepts</div>
+            <a href="component-tree.html" >Component Tree</a>
+            <a href="layout.html" >Layout Containers</a>
+            <a href="viewmodel.html" class="active">ViewModel &amp; Binding</a>
+            <a href="server-actions.html" >Server Actions</a>
+            <a href="debug.html" >Debug &amp; Inspector</a>
+        </div>
+        <div class="nav-section">
+            <div class="nav-section-title">Components</div>
+            <a href="components-layout.html" >Layout</a>
+            <a href="components-display.html" >Display</a>
+            <a href="components-input.html" >Input</a>
+            <a href="components-inventory.html" >Inventory</a>
+        </div>
+        <div class="nav-section">
+            <div class="nav-section-title">Reference</div>
+            <a href="api.html" >Component API</a>
+            <a href="limitations.html" >Known Limitations</a>
+        </div>
+    </aside>
+    <main>
+        <h1>ViewModel & Binding</h1>
+        <p class="page-subtitle">Syncing server state to the UI.</p>
+
+        <p>A ViewModel is the bridge between server state and the UI. It holds typed values that are automatically synced to the client when they change.</p>
+
+        <h2>Defining a ViewModel</h2>
+        <pre><code>public class MachineViewModel extends UIViewModel {
+
+    public final SyncedInt   energy    = syncInt("energy", 0);
+    public final SyncedInt   maxEnergy = syncInt("maxEnergy", 10000);
+    public final SyncedFloat progress  = syncFloat("progress", 0f);
+    public final SyncedBool  working   = syncBool("working", false);
+    public final SyncedStr   status    = syncStr("status", "Idle");
+}</code></pre>
+
+        <h2>Synced types</h2>
+        <table>
+            <thead><tr><th>Type</th><th>Method</th></tr></thead>
+            <tbody>
+            <tr><td><code>SyncedInt</code></td><td><code>syncInt(key, defaultValue)</code></td></tr>
+            <tr><td><code>SyncedFloat</code></td><td><code>syncFloat(key, defaultValue)</code></td></tr>
+            <tr><td><code>SyncedBool</code></td><td><code>syncBool(key, defaultValue)</code></td></tr>
+            <tr><td><code>SyncedStr</code></td><td><code>syncStr(key, defaultValue)</code></td></tr>
+            </tbody>
+        </table>
+
+        <h2>Updating values</h2>
+        <p>Set values on the server. UIWeaver detects changes and sends only the dirty values:</p>
+        <pre><code>viewModel.energy.set(container.getEnergyStored());
+viewModel.progress.set(currentProgress / maxProgress);
+viewModel.working.set(isRunning());</code></pre>
+
+        <h2>Binding to components</h2>
+        <p>Use <code>.bind(key)</code> to connect a component to a ViewModel value:</p>
+        <pre><code>ui.progressBar().bind("progress")
+
+ui.energyBar().bind("energy", "maxEnergy")
+
+ui.label(Component.literal("")).bind("status")  // updates text
+
+ui.toggle().bind("working")</code></pre>
+
+        <div class="note"><strong>Note:</strong> Binding is one-way — server to client. User input goes back through server actions, not through ViewModel writes.</div>
+
+        <div class="pagination"><a href="layout.html"><span class="label">← Previous</span><span class="title">Layout Containers</span></a><a href="server-actions.html" style="text-align:right"><span class="label">Next →</span><span class="title">Server Actions</span></a></div>
+    </main>
+</div>
+<script>
+    function toggleTheme() {
+        var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+        document.documentElement.setAttribute('data-theme', dark ? '' : 'dark');
+        localStorage.setItem('theme', dark ? 'light' : 'dark');
+        document.getElementById('theme-btn').textContent = dark ? 'dark' : 'light';
+    }
+    if (localStorage.getItem('theme') === 'dark')
+        document.getElementById('theme-btn').textContent = 'light';
+</script>
+</body>
+</html>
