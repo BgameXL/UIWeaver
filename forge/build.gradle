@@ -45,6 +45,7 @@ shadowJar {
 remapJar {
     input.set shadowJar.archiveFile
     dependsOn shadowJar
+    archiveBaseName = rootProject.archives_base_name + "-forge"
 }
 
 sourcesJar {
