@@ -1,48 +1,184 @@
 name: Release
 
 on:
-  release:
-    types: [published]
+  workflow_dispatch:
+    inputs:
+      versionType:
+        description: 'Version type'
+        required: false
+        type: choice
+        default: 'release'
+        options:
+          - release
+          - beta
+          - alpha
 
 jobs:
-  build-and-publish:
+  build:
+    name: Build
     runs-on: ubuntu-latest
+    outputs:
+      FABRIC_JAR: ${{ steps.meta.outputs.FABRIC_JAR }}
+      FORGE_JAR: ${{ steps.meta.outputs.FORGE_JAR }}
+      FABRIC_VERSION: ${{ steps.meta.outputs.FABRIC_VERSION }}
+      FORGE_VERSION: ${{ steps.meta.outputs.FORGE_VERSION }}
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      - name: Set up JDK 17
+      - name: Setup Java
         uses: actions/setup-java@v4
         with:
-          java-version: 17
-          distribution: temurin
+          java-version: '17'
+          distribution: 'temurin'
+          cache: 'gradle'
+
+      - name: Validate Gradle wrapper
+        uses: gradle/wrapper-validation-action@v2
 
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-home-cache-cleanup: true
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
 
       - name: Build
-        run: ./gradlew build
+        run: ./gradlew build --no-daemon --parallel
+        env:
+          GRADLE_OPTS: -Dorg.gradle.jvmargs="-Xmx2g -XX:MaxMetaspaceSize=512m"
 
-      - name: Publish to CurseForge and Modrinth
-        uses: Kir-Antipov/mc-publish@v3.3
+      - name: Extract metadata
+        id: meta
+        run: |
+          FABRIC_JAR=$(find fabric/build/libs -name "uiweaver-fabric-*.jar" -not -name "*sources*" -not -name "*dev*" -not -name "*javadoc*" | head -1)
+          FORGE_JAR=$(find forge/build/libs -name "uiweaver-forge-*.jar" -not -name "*sources*" -not -name "*dev*" -not -name "*javadoc*" | head -1)
+          FABRIC_VERSION=$(basename "$FABRIC_JAR" | sed 's/uiweaver-fabric-\(.*\)\.jar/\1/')
+          FORGE_VERSION=$(basename "$FORGE_JAR" | sed 's/uiweaver-forge-\(.*\)\.jar/\1/')
+          echo "FABRIC_JAR=$FABRIC_JAR" >> $GITHUB_OUTPUT
+          echo "FORGE_JAR=$FORGE_JAR" >> $GITHUB_OUTPUT
+          echo "FABRIC_VERSION=$FABRIC_VERSION" >> $GITHUB_OUTPUT
+          echo "FORGE_VERSION=$FORGE_VERSION" >> $GITHUB_OUTPUT
+          echo "Fabric: $FABRIC_VERSION ($FABRIC_JAR)"
+          echo "Forge:  $FORGE_VERSION ($FORGE_JAR)"
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-artifacts
+          path: |
+            fabric/build/libs/
+            forge/build/libs/
+          retention-days: 7
+
+  deploy-curseforge-fabric:
+    name: CurseForge (Fabric)
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: build-artifacts
+
+      - name: Upload to CurseForge
+        uses: Kir-Antipov/mc-publish@995edadc13559a8b28d0b7e6571229f067ec7659
         with:
           curseforge-id: 1547409
           curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
+          files: fabric/build/libs/uiweaver-fabric-${{ needs.build.outputs.FABRIC_VERSION }}.jar
+          name: UIWeaver ${{ needs.build.outputs.FABRIC_VERSION }} (Fabric)
+          version: ${{ needs.build.outputs.FABRIC_VERSION }}-fabric
+          version-type: ${{ inputs.versionType }}
+          loaders: fabric
+          game-versions: 1.20.1
+          game-version-filter: none
+          java: 17
+          retry-attempts: 3
+          retry-delay: 10000
+          fail-mode: fail
 
+  deploy-curseforge-forge:
+    name: CurseForge (Forge)
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: build-artifacts
+
+      - name: Upload to CurseForge
+        uses: Kir-Antipov/mc-publish@995edadc13559a8b28d0b7e6571229f067ec7659
+        with:
+          curseforge-id: 1547409
+          curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
+          files: forge/build/libs/uiweaver-forge-${{ needs.build.outputs.FORGE_VERSION }}.jar
+          name: UIWeaver ${{ needs.build.outputs.FORGE_VERSION }} (Forge)
+          version: ${{ needs.build.outputs.FORGE_VERSION }}-forge
+          version-type: ${{ inputs.versionType }}
+          loaders: forge
+          game-versions: 1.20.1
+          game-version-filter: none
+          java: 17
+          retry-attempts: 3
+          retry-delay: 10000
+          fail-mode: fail
+
+  deploy-modrinth-fabric:
+    name: Modrinth (Fabric)
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: build-artifacts
+
+      - name: Upload to Modrinth
+        uses: Kir-Antipov/mc-publish@995edadc13559a8b28d0b7e6571229f067ec7659
+        with:
           modrinth-id: upvJ1pjQ
           modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
-
-          files: |
-            forge/build/libs/!(*-@(dev|sources|javadoc)).jar
-            fabric/build/libs/!(*-@(dev|sources|javadoc)).jar
-
-          name: UIWeaver ${{ github.event.release.tag_name }}
-          version: ${{ github.event.release.tag_name }}
-          version-type: release
-          changelog: ${{ github.event.release.body }}
-
+          files: fabric/build/libs/uiweaver-fabric-${{ needs.build.outputs.FABRIC_VERSION }}.jar
+          name: UIWeaver ${{ needs.build.outputs.FABRIC_VERSION }} (Fabric)
+          version: ${{ needs.build.outputs.FABRIC_VERSION }}-fabric
+          version-type: ${{ inputs.versionType }}
+          loaders: fabric
           game-versions: 1.20.1
-          loaders: |
-            forge
-            fabric
+          game-version-filter: none
           java: 17
+          retry-attempts: 3
+          retry-delay: 10000
+          fail-mode: fail
+
+  deploy-modrinth-forge:
+    name: Modrinth (Forge)
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: build-artifacts
+
+      - name: Upload to Modrinth
+        uses: Kir-Antipov/mc-publish@995edadc13559a8b28d0b7e6571229f067ec7659
+        with:
+          modrinth-id: upvJ1pjQ
+          modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
+          files: forge/build/libs/uiweaver-forge-${{ needs.build.outputs.FORGE_VERSION }}.jar
+          name: UIWeaver ${{ needs.build.outputs.FORGE_VERSION }} (Forge)
+          version: ${{ needs.build.outputs.FORGE_VERSION }}-forge
+          version-type: ${{ inputs.versionType }}
+          loaders: forge
+          game-versions: 1.20.1
+          game-version-filter: none
+          java: 17
+          retry-attempts: 3
+          retry-delay: 10000
+          fail-mode: fail
