@@ -247,6 +247,10 @@ UIWeaver is currently a prototype framework. It already proves the core idea, bu
 
 The next major step is stabilizing layout behavior, especially for tabs and inventory slots, then improving the styling system so UI's can look polished instead of purely functional.
 
+## Community
+
+Join the UIWeaver Discord server for discussion, feedback, development updates, and support.
+[Discord](https://discord.gg/r7PeUvMytZ)
 ---
 ## License
 
