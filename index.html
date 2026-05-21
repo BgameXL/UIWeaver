@@ -60,10 +60,15 @@
     function navigate(id) {
         var content = PAGES[id];
         if (!content) return;
+        var page = document.createElement('div');
+        page.innerHTML = content;
+        page.querySelectorAll('.pagination').forEach(function(el) {
+            el.remove();
+        });
         var pag = PAGINATION[id];
         var prev = pag[0] ? '<a href="#' + pag[0] + '" onclick="navigate(\'' + pag[0] + '\'")><span class="label">← Previous</span><span class="title">' + pag[1] + '</span></a>' : '<span></span>';
         var next = pag[2] ? '<a href="#' + pag[2] + '" onclick="navigate(\'' + pag[2] + '\')" style="text-align:right"><span class="label">Next →</span><span class="title">' + pag[3] + '</span></a>' : '<span></span>';
-        document.getElementById('content').innerHTML = content + '<div class="pagination">' + prev + next + '</div>';
+        document.getElementById('content').innerHTML = page.innerHTML + '<div class="pagination">' + prev + next + '</div>';
         document.querySelectorAll('#sidebar a').forEach(function(a) {
             a.classList.toggle('active', a.getAttribute('href') === '#' + id);
         });
