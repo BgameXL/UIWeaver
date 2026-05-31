@@ -1,26 +1,18 @@
 # UIWeaver
 
-**UIWeaver** is an experimental UI framework, focused on building server-driven, declarative, and debuggable interfaces without writing every screen by hand.
+**UIWeaver** is an experimental Minecraft UI framework for building mod screens from reusable layout components instead of hand-positioning every widget.
 
-The goal is to make Minecraft mod UI's feel closer to modern app layouts while still respecting the realities of Minecraft screens, server validation, inventories, synced state, and mod-loader integration.
-
-Status: experimental framework
+It is currently a prototype. The main focus right now is making screens easier to structure, keep synced with the server, and debug when something ends up in the wrong place.
 
 ---
 
-## Why UIWeaver?
+## Why this exists
 
-Minecraft GUI development often becomes repetitive and fragile:
+Minecraft screens can get messy fast. A lot of UI code ends up being a mix of rendering, slot positioning, button handling, sync packets, tooltips, and hardcoded coordinates.
 
-- every screen manually positions widgets with hardcoded coordinates
-- layouts break when the screen size or GUI scale changes
-- client-side buttons can accidentally trust state that should be validated server-side
-- sync logic, rendering logic, input handling, and inventory logic easily get mixed together
-- debugging layout issues is painful because component bounds are usually invisible
+That works for small menus, but it becomes painful once a screen has tabs, inventories, progress bars, server actions, or resizable layouts.
 
-UIWeaver tries to solve this by separating UI declaration, layout, rendering, synced state, and server actions.
-
-Instead of manually drawing everything at fixed positions, a UI can be described as a tree of components:
+UIWeaver tries to make that workflow less brittle by letting a screen be described as a component tree:
 
 ```java
 ui.column()
@@ -34,9 +26,14 @@ ui.column()
     )
     .add(ui.progressBar().bind("progress"));
 ```
+
+Instead of calculating every `x` and `y` by hand, the layout decides where each child should go.
+
 ---
-## Declarative UI
-Screens are built from components such as:
+
+## Components
+
+UIWeaver includes basic building blocks for common Minecraft mod screens:
 
 - `column`
 - `row`
@@ -54,69 +51,79 @@ Screens are built from components such as:
 - `fluidBar`
 - `slotGrid`
 
-The UI describes **what** should exist, while the framework decides **where** it should be placed.
+The goal is not to hide Minecraft's UI system completely. Slots, tooltips, GUI scale, and server validation still matter. UIWeaver is meant to make those pieces easier to organize.
 
 ---
-### Layout Containers
-Layout containers manage child positioning automatically.
 
-Examples:
+## Layout
+
+Containers handle spacing and child placement:
+
 ```java
 ui.column().padding(8).gap(4)
 ```
+
 ```java
 ui.row().gap(8).fillWidth()
 ```
+
 ```java
 ui.grid(3, 3)
 ```
-This avoids manually calculating `x`, `y`, `width`, and `height` for every widget.
+
+This keeps most screens from turning into a long list of manual coordinates.
 
 ---
-### Server-Driven Actions
 
-Buttons and interactive widgets can send named actions back to the server.
+## Server actions
 
-Example:
+Buttons can send named actions to the server:
+
 ```java
 ui.button(Component.literal("Start"))
     .id("btnStart")
     .action("start");
 ```
-The server can then decide whether the action is valid.
 
-This is important because the client should never be trusted to directly mutate machine state.
+The server decides what the action actually does and whether it is allowed. This avoids putting machine logic or trusted state changes on the client.
 
 ---
-### ViewModel Sync
-UIWeaver uses a `UIViewModel` concept to expose synced values to the UI.
+
+## Synced state
+
+A screen can read values from a `UIViewModel`:
+
 ```text
 energy = 100
 maxEnergy = 10000
 working = false
 progress = 42
 ```
-Widgets such as bars, labels, and toggles can read from this state and update visually.
+
+Bars, labels, toggles, and other widgets can use those values for display without each widget needing its own packet handling.
 
 ---
 
-### Debug Overlay and Inspector
-UIWeaver includes debugging tools to inspect component bounds and layout behavior.
+## Debug tools
 
-Useful for finding issues such as:
+UIWeaver has a debug overlay and inspector for layout problems.
 
-- components overflowing their parent
-- inactive tabs still being inspected
-- stale child bounds after layout changes
-- slot grids not matching their visual position
-- panels being clipped or placed too high
-- 
-The debug overlay can draw colored bounds for visible components, and the inspector can show component type, id, bounds, visibility, and ViewModel values.
+They are useful when:
+
+- a component is outside its parent
+- inactive tabs are still being checked
+- child bounds are stale after a relayout
+- slot visuals do not match real Minecraft `Slot` positions
+- a panel is clipped or appears too high
+
+The overlay can draw visible component bounds, while the inspector can show type, id, size, position, visibility, and synced values.
 
 ---
+
 ## Example
 
-A basic machine UI can be structured as:
+A basic machine screen can be written like this:
+
 ```java
 .root(ui.column().padding(10).gap(8).size(530, 340)
 
@@ -178,84 +185,95 @@ A basic machine UI can be structured as:
     )
 )
 ```
----
-## Current Features
 
-- Component tree based UI declarations
+---
+
+## Current features
+
+- Component tree screen definitions
 - Rows, columns, grids, tabs, and scroll panels
 - Labels, buttons, toggles, checkboxes, sliders, and text inputs
 - Progress, energy, and fluid bars
 - Basic inventory slot grids
-- ViewModel-driven state
+- Synced ViewModel values
 - Named server actions
 - Forge client renderer integration
-- Debug overlay for component bounds
-- UI inspector for tree and ViewModel debugging
-
----
-## Known Limitations
-UIWeaver is still early and some systems need more work.
-### Slot Layout
-Slot visuals and actual Minecraft `Slot` positions need to stay perfectly synchronized. This is currently one of the most important areas to improve before building complex UIs.
-
-### Tabs Layout
-Tabs need special handling because only the active tab should be rendered, inspected, and allowed to receive input. Inactive tab contents should not participate in the visible layout pass unless explicitly debugging inactive tabs.
-
-### Styling System
-The framework would benefit from a stronger style system:
-
-- panel backgrounds
-- borders
-- hover styles
-- active states
-- spacing tokens
-- theme variants
-- reusable style presets
-
----
-## Design Goals
-UIWeaver aims to become:
-
-1. **Declarative** — UI code should describe structure, not pixel math.
-2. **Server-safe** — client interactions should become validated server actions.
-3. **Composable** — complex screens should be made from reusable components.
-4. **Debuggable** — layout and sync issues should be visible and inspectable.
-5. **Modder-friendly** — creating a usable UI should require less boilerplate than vanilla screens.
-6. **Minecraft-aware** — inventories, slots, tooltips, GUI scale, and server sync must be first-class concerns.
+- Component bounds overlay
+- UI inspector for layout and state debugging
 
 ---
 
-## Future Roadmap
-Potential future improvements:
+## Current limitations
 
-- style/theme API
+UIWeaver is still early, so some parts are not stable yet.
+
+### Slot placement
+
+The rendered slot grid and the real Minecraft `Slot` objects must line up exactly. This is one of the most important things to stabilize before using the framework for larger inventories.
+
+### Tabs
+
+Only the active tab should render, receive input, and appear in normal inspection. Inactive tab contents need stricter handling so they do not affect visible layout by accident.
+
+### Styling
+
+The styling system is still basic. Panels, borders, hover states, active states, spacing presets, and reusable themes are planned but not finished.
+
+---
+
+## Direction
+
+The long-term goal is to make Minecraft mod screens easier to build without losing control over the parts that matter.
+
+UIWeaver should help with:
+
+- building screens from smaller pieces
+- avoiding hardcoded pixel math where possible
+- keeping client interaction server-validated
+- making layout bugs easier to see
+- supporting Minecraft-specific UI needs like slots, tooltips, GUI scale, and synced data
+
+---
+
+## Roadmap
+
+Possible future work:
+
+- style and theme API
 - reusable panel/card components
-- better slot binding and absolute slot synchronization
-- tab-aware layout engine
+- stronger slot binding
+- tab-aware layout pass
 - animation support
-- declarative tooltips
-- server-validated form inputs
+- tooltip helpers
+- validated form inputs
 - screen editor
 - drag-and-drop layout debugging
-- reusable UI templates
-- better support for Forge and Fabric
-- add NeoForge support
+- reusable screen templates
+- Fabric support
+- NeoForge support
 
 ---
-## Project Status
-UIWeaver is currently a prototype framework. It already proves the core idea, building Minecraft UI's from a declarative component tree with layout, sync, actions, and debugging tools.
 
-The next major step is stabilizing layout behavior, especially for tabs and inventory slots, then improving the styling system so UI's can look polished instead of purely functional.
+## Project status
+
+UIWeaver is a prototype. It already proves the basic approach: screens can be built from a component tree with layout, synced values, actions, and debugging tools.
+
+The next priority is making tabs and inventory slots reliable, then improving styling so screens can look polished instead of just functional.
+
+---
 
 ## Community
 
 Join the UIWeaver Discord server for discussion, feedback, development updates, and support.
+
 [Discord](https://discord.gg/r7PeUvMytZ)
+
 ---
+
 ## License
 
 UIWeaver is licensed under the [GNU Lesser General Public License v3.0](https://www.gnu.org/licenses/lgpl-3.0.en.html).
 
-This means you may use UIWeaver as a library in your own Mods, including closed-source or commercial projects, as long as modifications to UIWeaver itself remain available under the LGPL-3.0 license.
+You may use UIWeaver as a library in your own mods, including closed-source or commercial projects, as long as changes made to UIWeaver itself remain available under the LGPL-3.0 license.
 
 See the [LICENSE](./LICENSE) file for the full license text.
